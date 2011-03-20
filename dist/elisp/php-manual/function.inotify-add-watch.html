@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Add a watch to an initialized inotify instance</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="ref.inotify.html">Inotify Functions</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.inotify-init.html">inotify_init</a></div>
+ <div class="up"><a href="ref.inotify.html">Inotify Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="function.inotify-add-watch" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">inotify_add_watch</h1>
+  <p class="verinfo">(PECL inotify &gt;= 0.1.2)</p><p class="refpurpose"><span class="refname">inotify_add_watch</span> &mdash; <span class="dc-title">Add a watch to an initialized inotify instance</span></p>
+
+ </div>
+ 
+ <a name="function.inotify-add-watch.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname"><b>inotify_add_watch</b></span>
+    ( <span class="methodparam"><span class="type">resource</span> <tt class="parameter">$inotify_instance</tt></span>
+   , <span class="methodparam"><span class="type">string</span> <tt class="parameter">$pathname</tt></span>
+   , <span class="methodparam"><span class="type">int</span> <tt class="parameter">$mask</tt></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   <b>inotify_add_watch()</b> adds a new watch or modify an
+   existing watch for the file or directory specified in
+   <i><tt class="parameter">pathname</tt></i>
+.
+  </p>
+  <p class="para">
+   Using <b>inotify_add_watch()</b> on a watched object replaces
+   the existing watch. Using the <b><tt class="constant">IN_MASK_ADD</tt></b> constant
+   adds (OR) events to the existing watch.
+  </p>
+ </div>
+
+ 
+ <a name="function.inotify-add-watch.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">inotify_instance</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       Resource returned by
+<a href="function.inotify-init.html" class="function">inotify_init()</a>
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">pathname</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       File or directory to watch
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">mask</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       Events to watch for. See <a href="inotify.constants.html" class="link">Predefined Constants</a>.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+ 
+ <a name="function.inotify-add-watch.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   The return value is a unique (inotify instance wide) watch descriptor.
+  </p>
+ </div>
+
+ 
+ <a name="function.inotify-add-watch.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.inotify-init.html" class="function" rel="rdfs-seeAlso">inotify_init()</a> - Initialize an inotify instance</li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="ref.inotify.html">Inotify Functions</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.inotify-init.html">inotify_init</a></div>
+ <div class="up"><a href="ref.inotify.html">Inotify Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

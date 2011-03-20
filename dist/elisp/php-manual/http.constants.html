@@ -1,0 +1,1767 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Predefined Constants</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="http.resources.html">Resource Types</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="http.request.options.html">Request Options</a></div>
+ <div class="up"><a href="book.http.html">HTTP</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div>
+  <h1>Predefined Constants</h1>
+
+  <p class="simpara">
+The constants below are defined by this extension, and
+will only be available when the extension has either
+been compiled into PHP or dynamically loaded at runtime.
+</p>
+  <dl id="http.constants.support">
+
+   <strong class="title">Constants usable with <a href="function.http-support.html" class="function">http_support()</a></strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_SUPPORT</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      querying for this constant will always return <b><tt class="constant">TRUE</tt></b>
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_SUPPORT_REQUESTS</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      whether support to issue HTTP requests is given, ie. libcurl support was compiled in
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_SUPPORT_MAGICMIME</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      whether support to guess the Content-Type of HTTP messages is given, ie. libmagic support was compiled in
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_SUPPORT_ENCODINGS</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      whether support for zlib encodings is given, ie. libz support was compiled in
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_SUPPORT_SSLREQUESTS</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      whether support to issue HTTP requests over SSL is given, ie. linked libcurl was built with SSL support
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.params">
+
+   <strong class="title">Constants usable with <a href="function.http-parse-params.html" class="function">http_parse_params()</a></strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_PARAMS_ALLOW_COMMA</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      allow commands additionally to semicolons as separator
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_PARAMS_ALLOW_FAILURE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      continue parsing after an error occurred
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_PARAMS_RAISE_ERROR</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      raise PHP warnings on parse errors
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_PARAMS_DEFAULT</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      all three values above, bitwise or&#039;ed
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.cookie">
+
+   <strong class="title">Constants usable with <a href="function.http-parse-cookie.html" class="function">http_parse_cookie()</a> and its return value</strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_COOKIE_PARSE_RAW</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      don&#039;t urldecode values
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_COOKIE_SECURE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      whether &quot;secure&quot; was found in the cookie&#039;s parameters list
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_COOKIE_HTTPONLY</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      whether &quot;httpOnly&quot; was found in the cookie&#039;s parameter list
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.deflate">
+
+   <strong class="title">Constants usable with <a href="function.http-deflate.html" class="function">http_deflate()</a> and <b class="classname">HttpDeflateStream</b></strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_DEFLATE_LEVEL_DEF</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_DEFLATE_LEVEL_MIN</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_DEFLATE_LEVEL_MAX</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_DEFLATE_TYPE_ZLIB</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_DEFLATE_TYPE_GZIP</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_DEFLATE_TYPE_RAW</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_DEFLATE_STRATEGY_DEF</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_DEFLATE_STRATEGY_FILT</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_DEFLATE_STRATEGY_HUFF</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_DEFLATE_STRATEGY_RLE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_DEFLATE_STRATEGY_FIXED</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.encodingstream">
+
+   <strong class="title">Constants usable with <b class="classname">HttpDeflateStream</b> and <b class="classname">HttpInflateStream</b></strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_ENCODING_STREAM_FLUSH_NONE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      don&#039;t flush
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_ENCODING_STREAM_FLUSH_SYNC</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      synchronized flush only
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_ENCODING_STREAM_FLUSH_FULL</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      full data flush
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.error">
+
+   <strong class="title">Constants used for error reporting and Exceptions</strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_E_RUNTIME</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      runtime error
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_E_INVALID_PARAM</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      an invalid parameter was passed
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_E_HEADER</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      header() or similar operation failed
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_E_MALFORMED_HEADERS</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      HTTP header parse error
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_E_REQUEST_METHOD</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      unknown/invalid request method
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_E_MESSAGE_TYPE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      with operation incompatible message type
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_E_ENCODING</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      encoding/decoding error
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_E_REQUEST</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      request failure
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_E_REQUEST_POOL</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      request pool failure
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_E_SOCKET</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      socket exception
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_E_RESPONSE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      response failure
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_E_URL</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      invalid URL
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_E_QUERYSTRING</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      querystring operation failure
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.message">
+
+   <strong class="title">Constants usable with <b class="classname">HttpMessage</b></strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_MSG_NONE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      the message is of no specific type
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_MSG_REQUEST</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      request style message
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_MSG_RESPONSE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      response style message
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.querystring">
+
+   <strong class="title">Constants usable with <b class="classname">HttpQueryString</b></strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_QUERYSTRING_TYPE_BOOL</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_QUERYSTRING_TYPE_INT</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_QUERYSTRING_TYPE_FLOAT</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_QUERYSTRING_TYPE_STRING</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_QUERYSTRING_TYPE_ARRAY</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_QUERYSTRING_TYPE_OBJECT</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.request.httpauth">
+
+   <strong class="title">Constants used for the <i>httpauthtype</i> <a href="http.request.options.html" class="link">request option</a></strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_AUTH_BASIC</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      use &quot;basic&quot; authentication
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_AUTH_DIGEST</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      use &quot;digest&quot; authentication
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_AUTH_NTLM</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      use &quot;NTLM&quot; authentication
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_AUTH_GSSNEG</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      use &quot;GSS-NEGOTIATE&quot; authentication
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_AUTH_ANY</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      try any authentication scheme
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.request.protocol">
+
+   <strong class="title">Constants used for the HTTP <i>protocol</i> version <a href="http.request.options.html" class="link">request option</a></strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_VERSION_ANY</tt></b> 
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      no specific HTTP protocol version
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_VERSION_1_0</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      HTTP version 1.0
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_VERSION_1_1</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      HTTP version 1.1
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.request.ssl">
+
+   <strong class="title">Constants used for the SSL <i>protocol</i> type and version <a href="http.request.options.html" class="link">request option</a></strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_SSL_VERSION_ANY</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      no specific SSL protocol version
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_SSL_VERSION_TLSv1</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      use TLSv1 only
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_SSL_VERSION_SSLv3</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      use SSLv3 only
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_SSL_VERSION_SSLv2</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      use SSLv2 only
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.request.proxy">
+
+   <strong class="title">Constants used for the <i>proxytype</i> <a href="http.request.options.html" class="link">request option</a></strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_PROXY_SOCKS4</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      the proxy is a SOCKS4 type proxy
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_PROXY_SOCKS5</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      the proxy is a SOCKS5 type proxy
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_PROXY_HTTP</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      standard HTTP proxy
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.request.dns">
+
+   <strong class="title">Constants used for the <i>ipresolve</i> <a href="http.request.options.html" class="link">request option</a></strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_IPRESOLVE_V4</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      use IPv4 only for name lookups
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_IPRESOLVE_V6</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      use IPv6 only for name lookups
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_IPRESOLVE_ANY</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      use any IP mechanism only for name lookups
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.request.methods">
+
+   <strong class="title">Predefined HTTP request method constants</strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_GET</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_HEAD</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_POST</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_PUT</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_DELETE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_OPTIONS</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_TRACE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_CONNECT</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_PROPFIND</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_PROPPATCH</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_MKCOL</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_COPY</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_MOVE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_LOCK</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_UNLOCK</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_VERSION_CONTROL</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_REPORT</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_CHECKOUT</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_CHECKIN</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_UNCHECKOUT</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_MKWORKSPACE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_UPDATE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_LABEL</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_MERGE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_BASELINE_CONTROL</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_MKACTIVITY</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_METH_ACL</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.redirect">
+
+   <strong class="title">Constants usable with <a href="function.http-redirect.html" class="function">http_redirect()</a></strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_REDIRECT</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      guess applicable redirect method
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_REDIRECT_PERM</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      permanent redirect (<i>301 Moved permanently</i>)
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_REDIRECT_FOUND</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      standard redirect (<i>302 Found</i>)
+     </span>
+     <blockquote><p><b class="note">Note</b>: 
+      <span class="simpara">
+       RFC 1945 and RFC 2068 specify that the client is not allowed
+       to change the method on the redirected request.  However, most
+       existing user agent implementations treat 302 as if it were a 303
+       response, performing a GET on the Location field-value regardless
+       of the original request method. The status codes 303 and 307 have
+       been added for servers that wish to make unambiguously clear which
+       kind of reaction is expected of the client.
+      </span>
+     </p></blockquote>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_REDIRECT_POST</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      redirect applicable to POST requests (<i>303 See other</i>)
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_REDIRECT_PROXY</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      proxy redirect (<i>305 Use proxy</i>)
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_REDIRECT_TEMP</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      temporary redirect (<i>307 Temporary Redirect</i>)
+     </span>
+    </dd>
+
+   
+  </dl>
+
+  <dl id="http.constants.url">
+
+   <strong class="title">Constants usable with <a href="function.http-build-url.html" class="function">http_build_url()</a></strong>
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_URL_REPLACE</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      replace every part of the first URL when there&#039;s one of the second URL
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_URL_JOIN_PATH</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      join relative paths
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_URL_JOIN_QUERY</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      join query strings
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_URL_STRIP_USER</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      strip any user authentication information
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_URL_STRIP_PASS</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      strip any password authentication information
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_URL_STRIP_AUTH</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      strip any authentication information
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_URL_STRIP_PORT</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      strip explicit port numbers
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_URL_STRIP_PATH</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      strip complete path
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_URL_STRIP_QUERY</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      strip query string
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_URL_STRIP_FRAGMENT</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      strip any fragments (#identifier)
+     </span>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term">
+     <b><tt class="constant">HTTP_URL_STRIP_ALL</tt></b>
+      (<a href="language.types.integer.html" class="type integer">integer</a>)
+    </span>
+
+    </dt><dd class="listitem">
+
+     <span class="simpara">
+      strip anything but scheme and host
+     </span>
+    </dd>
+
+   
+  </dl>
+
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="http.resources.html">Resource Types</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="http.request.options.html">Request Options</a></div>
+ <div class="up"><a href="book.http.html">HTTP</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

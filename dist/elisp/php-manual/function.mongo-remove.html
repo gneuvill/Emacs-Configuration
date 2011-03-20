@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Removes documents from a database collection</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.mongo-query.html">mongo_query</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.mongo-update.html">mongo_update</a></div>
+ <div class="up"><a href="ref.mongo.html">Mongo Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="function.mongo-remove" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">mongo_remove</h1>
+  <p class="verinfo">(PECL mongo &gt;= 0.8.0)</p><p class="refpurpose"><span class="refname">mongo_remove</span> &mdash; <span class="dc-title">Removes documents from a database collection</span></p>
+
+ </div>
+
+ <a name="function.mongo-remove.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><b>mongo_remove</b></span>
+    ( <span class="methodparam"><span class="type">resource</span> <tt class="parameter">$connection</tt></span>
+   , <span class="methodparam"><span class="type">string</span> <tt class="parameter">$ns</tt></span>
+   , <span class="methodparam"><span class="type">array</span> <tt class="parameter">$query</tt></span>
+   , <span class="methodparam"><span class="type">bool</span> <tt class="parameter">$justOne</tt></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Removes objects from a database collection based on criteria.
+  </p>
+ </div>
+
+
+ <a name="function.mongo-remove.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">connection</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The database connection to use.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">ns</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The database and collection name
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">query</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       Array of criteria for objects to remove.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">justOne</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       If only one object matching the criteria should be removed.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="function.mongo-remove.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   If the remove was successful.
+  </p>
+ </div>
+
+
+ <a name="function.mongo-remove.examples"></a><div class="refsect1 examples">
+  <h3 class="title">Examples</h3>
+  <p class="para">
+   </p><div class="example">
+    <p><b>Example #1 <b>mongo_remove()</b> example</b></p>
+    <div class="example-contents para"><p>
+     In this example, all users named Doug are deleted from 
+     the users collection of the www database.
+    </p></div>
+    <div class="example-contents programlisting">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$rquery&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"username"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"Doug"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mongo_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"localhost"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$conn</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect."</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mongo_remove</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"www.users"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$rquery</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div><p>
+  </p>
+ </div>
+
+
+ <a name="function.mongo-remove.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.mongo-insert.html" class="function" rel="rdfs-seeAlso">mongo_insert()</a> - Inserts an array into a database collection</li>
+    <li class="member"><a href="function.mongo-update.html" class="function" rel="rdfs-seeAlso">mongo_update()</a> - Updates objects in a database collection</li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.mongo-query.html">mongo_query</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.mongo-update.html">mongo_update</a></div>
+ <div class="up"><a href="ref.mongo.html">Mongo Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

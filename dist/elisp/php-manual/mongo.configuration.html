@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Runtime Configuration</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mongo.installation.html">Installation</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongo.constants.html">Predefined Constants</a></div>
+ <div class="up"><a href="mongo.setup.html">Installing/Configuring</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mongo.configuration" class="section">
+ <h2 class="title">Runtime Configuration</h2>
+ <p class="simpara">
+The behaviour of these functions is affected by settings in <var class="filename">php.ini</var>.
+</p>
+ <p class="para">
+  </p><table class="doctable table">
+   <caption><b>Mongo Configure Options</b></caption>
+   
+    <thead valign="middle">
+     <tr valign="middle">
+      <th>Name</th>
+      <th>Default</th>
+      <th>Changeable</th>
+      <th>Changelog</th>
+     </tr>
+
+    </thead>
+
+    <tbody valign="middle" class="tbody">
+     <tr valign="middle">
+      <td align="left"><a href="mongo.configuration.html#ini.mongo.default-host" class="link">mongo.default_host</a></td>
+      <td align="left">NULL</td>
+      <td align="left">PHP_INI_ALL</td>
+     </tr>
+
+     <tr valign="middle">
+      <td align="left"><a href="mongo.configuration.html#ini.mongo.default-port" class="link">mongo.default_port</a></td>
+      <td align="left">NULL</td>
+      <td align="left">PHP_INI_ALL</td>
+     </tr>
+
+     <tr valign="middle">
+      <td align="left"><a href="mongo.configuration.html#ini.mongo.auto-reconnect" class="link">mongo.auto_reconnect</a></td>
+      <td align="left">NULL</td>
+      <td align="left">PHP_INI_SYSTEM</td>
+     </tr>
+
+     <tr valign="middle">
+      <td align="left"><a href="mongo.configuration.html#ini.mongo.allow-persistent" class="link">mongo.allow_persistent</a></td>
+      <td align="left">NULL</td>
+      <td align="left">PHP_INI_SYSTEM</td>
+     </tr>
+
+     <tr valign="middle">
+      <td align="left"><a href="mongo.configuration.html#ini.mongo.max-persistent" class="link">mongo.max_persistent</a></td>
+      <td align="left">NULL</td>
+      <td align="left">PHP_INI_SYSTEM</td>
+     </tr>
+
+     <tr valign="middle">
+      <td align="left"><a href="mongo.configuration.html#ini.mongo.max-connections" class="link">mongo.max_connections</a></td>
+      <td align="left">NULL</td>
+      <td align="left">PHP_INI_SYSTEM</td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+<p>
+  For further details and definitions of the
+PHP_INI_* modes, see the <a href="configuration.changes.modes.html" class="xref">Where a configuration setting may be set</a>.
+ </p>
+
+ <p class="para">Here&#039;s a short explanation of
+the configuration directives.</p>
+
+ <p class="para">
+  </p><dl>
+
+   <dt id="ini.mongo.default-host" class="varlistentry">
+    <span class="term">
+     <i><tt class="parameter">mongo.default_host</tt></i>
+
+     <a href="language.types.string.html" class="type string">string</a>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Default hostname.  <i>&quot;localhost&quot;</i> is recommended.
+     </p>
+    </dd>
+
+   
+
+   <dt id="ini.mongo.default-port" class="varlistentry">
+    <span class="term">
+     <i><tt class="parameter">mongo.default_port</tt></i>
+
+     <a href="language.types.string.html" class="type string">string</a>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      The default TCP port number to use when connecting to
+      the database server if no other port is specified. The
+      database&#039;s default is <i>27017</i>.
+     </p>
+    </dd>
+
+   
+  
+   <dt id="ini.mongo.auto-reconnect" class="varlistentry">
+    <span class="term">
+     <i><tt class="parameter">mongo.auto_reconnect</tt></i>
+
+     <a href="language.types.boolean.html" class="type bool">bool</a>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Whether to reconnect to the database if the connection
+      is lost.
+     </p>
+    </dd>
+
+     
+
+   <dt id="ini.mongo.allow-persistent" class="varlistentry">
+    <span class="term">
+     <i><tt class="parameter">mongo.allow_persistent</tt></i>
+
+     <a href="language.types.boolean.html" class="type bool">bool</a>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      If persistent connections are allowed.
+     </p>
+    </dd>
+
+     
+
+   <dt id="ini.mongo.max-persistent" class="varlistentry">
+    <span class="term">
+     <i><tt class="parameter">mongo.max_persistent</tt></i>
+
+     <a href="language.types.integer.html" class="type int">int</a>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      The number of simultaneous persistent connections to allow.
+      -1 allows unlimited persistent connections.
+     </p>
+    </dd>
+
+     
+
+   <dt id="ini.mongo.max-connections" class="varlistentry">
+    <span class="term">
+     <i><tt class="parameter">mongo.max_connections</tt></i>
+
+     <a href="language.types.integer.html" class="type int">int</a>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      The number of simultaneous connections to allow.
+      -1 allows unlimited connections.
+     </p>
+    </dd>
+
+     
+
+  </dl>
+<p>
+ </p>
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mongo.installation.html">Installation</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mongo.constants.html">Predefined Constants</a></div>
+ <div class="up"><a href="mongo.setup.html">Installing/Configuring</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

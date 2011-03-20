@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+<title>PHP Comments - PHP Mode Manual</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="PHP Mode Manual">
+<meta name="generator" content="makeinfo 4.11">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Completion.html#Completion" title="Completion">
+<link rel="next" href="PHP-Documentation.html#PHP-Documentation" title="PHP Documentation">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual documents PHP mode version 1.5.0 for
+use with GNU Emacs.
+
+Copyright (C) 2008  Aaron S. Hawley
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of the GNU Free Documentation License,
+     Version 1.2 or any later version published by the Free Software
+     Foundation; with no Invariant Sections, and no Cover Texts.  A
+     copy of the license is included in the section entitled ``Copying
+     This Manual.''
+
+     A copy of the license is also available from the Free Software
+     Foundation Web site at `http://www.gnu.org/licenses/fdl.html'.
+
+
+The document was typeset with
+GNU Texinfo (http://www.texinfo.org/).
+
+$Date: 2008-11-04 11:51:51 -0500 (Tue, 04 Nov 2008) $
+
+$Revision: 90 $
+
+
+
+-->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="PHP-Comments"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="PHP-Documentation.html#PHP-Documentation">PHP Documentation</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Completion.html#Completion">Completion</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="chapter">8 PHP Comments</h2>
+
+<p><a name="index-comment-208"></a>The usual commands for inserting, managing and editing
+source code comments in Emacs<a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a> and Emacs's C mode<a rel="footnote" href="#fn-2" name="fnd-2"><sup>2</sup></a> are supported in PHP mode.  The following
+noteworthy commands are useful for working with PHP or are
+extensions expressly provided by PHP mode.
+
+<!-- These commands aren't provided by PHP mode, but are -->
+<!-- important to mention sine the PHP language has comments! -->
+<!-- It should probably discuss the various types of comments. -->
+<!-- A section should explain the phpdoc format as supported -->
+<!-- in PHP mode. -->
+     
+<a name="index-comment_002c-insert-209"></a>
+<a name="index-indent-comment-210"></a>
+<a name="index-insert-comment-211"></a>
+<a name="index-comment_002c-indent-212"></a>
+<a name="index-comment_002dindent-213"></a>
+<a name="index-comment_002ddwim-214"></a>
+<a name="index-M_002d_003b-215"></a>
+<dl><dt><kbd>M-;</kbd><dd>Insert comment at point (<code>comment-dwim</code>).  If comment
+already exist, indent comment (<code>comment-indent</code>). 
+<a name="index-M_002dx-comment_002dindent-216"></a><a name="index-newline_002c-comment-217"></a><a name="index-comment-newline-218"></a><a name="index-c_002dindent_002dnew_002dcomment_002dline-219"></a><a name="index-M_002dj-220"></a><br><dt><kbd>M-j</kbd><dd>Insert a newline in a comment on the next line with the
+comment starting at the same column as the current line
+(<code>c-indent-new-comment-line</code>). 
+<a name="index-column_002c-comment-221"></a><a name="index-comment-column-222"></a><a name="index-comment_002dcolumn-223"></a><a name="index-comment_002dset_002dcolumn-224"></a><a name="index-C_002dx-_003b-225"></a><br><dt><kbd>C-x ;</kbd><dd>Set the current column as the column to start comments from
+in the buffer (<code>comment-set-column</code>).  This affects the
+variable <code>comment-column</code>. 
+<a name="index-comment-region-226"></a><a name="index-region_002c-comment-227"></a><a name="index-comment_002dregion-228"></a><a name="index-C_002dc-C_002dc-229"></a><br><dt><kbd>C-c C-c</kbd><dd>Comment out the current region (<code>comment-region</code>).  If
+region is already commented, the region is uncommented. 
+<!-- I'm not going to bother mentioning the numeric prefix -->
+<!-- argument variations. - ash 2008-01-01 -->
+<a name="index-comment_002c-kill-230"></a><a name="index-kill-comment-231"></a><a name="index-comment_002ddwim-232"></a><a name="index-comment_002dset_002dcolumn-233"></a><a name="index-comment_002dkill-234"></a><a name="index-M_002d_002d-C_002dx-_003b-235"></a><br><dt><kbd>M-- C-x ;</kbd><br><dt><kbd>C-u M-;</kbd><dd>Kill the comment on the current line (<code>comment-kill</code>
+called by <code>comment-set-column</code> or <code>comment-dwim</code>). 
+<br><dt><kbd>C-u </kbd><var>n</var><kbd> M-;</kbd><dd>Kill the next <var>n</var> comments (<code>comment-dwim</code>). 
+<a name="index-region_002c-comment-box-236"></a><a name="index-comment-box-237"></a><a name="index-comment_002dbox-238"></a><a name="index-M_002dx-comment_002dbox-239"></a><br><dt><kbd>M-x comment-box</kbd><dd>Surround region with comment characters.
+
+   </dl>
+
+   <div class="footnote">
+<hr>
+<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> See <a href="http://emacswiki.org/cgi-bin/info-ref?find=Comments.html#Comments">Manipulating Comments</a>.</p>
+
+   <p class="footnote"><small>[<a name="fn-2" href="#fnd-2">2</a>]</small> See <a href="http://cc-mode.sourceforge.net/html-manual/Comment-Commands.html#Comment-Commands">Comment Commands</a>.</p>
+
+   <hr></div>
+
+   </body></html>
+

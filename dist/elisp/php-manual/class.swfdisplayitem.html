@@ -1,0 +1,345 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The SWFDisplayItem class</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.swfbutton.setup.html">SWFButton->setUp</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.swfdisplayitem.addaction.html">SWFDisplayItem->addAction</a></div>
+ <div class="up"><a href="book.ming.html">Ming</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div>
+ <h1 class="title">The SWFDisplayItem class</h1>
+ 
+ 
+ <div class="partintro">
+ 
+
+  <div id="swfdisplayitem.intro" class="section">
+   <h2 class="title">Introduction</h2>
+   <p class="para">
+    SWFDisplayItem.
+   </p>
+  </div>
+
+ 
+  <div id="swfdisplayitem.synopsis" class="section">
+   <h2 class="title">Class synopsis</h2>
+ 
+
+   <div class="classsynopsis">
+    <div class="ooclass"><b class="classname">SWFDisplayItem</b></div>
+ 
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+      <b class="classname">SWFDisplayItem</b>
+     </span>
+     {</div>
+
+ 
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methods */</div>
+    <div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>addAction</b></span>
+     ( <span class="methodparam"><span class="type"><a href="class.swfaction.html" class="type SWFAction">SWFAction</a></span> <tt class="parameter">$action</tt></span>
+    , <span class="methodparam"><span class="type">int</span> <tt class="parameter">$flags</tt></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>addColor</b></span>
+     ( <span class="methodparam"><span class="type">int</span> <tt class="parameter">$red</tt></span>
+    , <span class="methodparam"><span class="type">int</span> <tt class="parameter">$green</tt></span>
+    , <span class="methodparam"><span class="type">int</span> <tt class="parameter">$blue</tt></span>
+    [, <span class="methodparam"><span class="type">int</span> <tt class="parameter">$a</tt></span>
+   ] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>endMask</b></span>
+     ( <span class="methodparam">void</span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">float</span> <span class="methodname"><b>getRot</b></span>
+     ( <span class="methodparam">void</span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">float</span> <span class="methodname"><b>getX</b></span>
+     ( <span class="methodparam">void</span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">float</span> <span class="methodname"><b>getXScale</b></span>
+     ( <span class="methodparam">void</span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">float</span> <span class="methodname"><b>getXSkew</b></span>
+     ( <span class="methodparam">void</span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">float</span> <span class="methodname"><b>getY</b></span>
+     ( <span class="methodparam">void</span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">float</span> <span class="methodname"><b>getYScale</b></span>
+     ( <span class="methodparam">void</span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">float</span> <span class="methodname"><b>getYSkew</b></span>
+     ( <span class="methodparam">void</span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>move</b></span>
+     ( <span class="methodparam"><span class="type">float</span> <tt class="parameter">$dx</tt></span>
+    , <span class="methodparam"><span class="type">float</span> <tt class="parameter">$dy</tt></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>moveTo</b></span>
+     ( <span class="methodparam"><span class="type">float</span> <tt class="parameter">$x</tt></span>
+    , <span class="methodparam"><span class="type">float</span> <tt class="parameter">$y</tt></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>multColor</b></span>
+     ( <span class="methodparam"><span class="type">float</span> <tt class="parameter">$red</tt></span>
+    , <span class="methodparam"><span class="type">float</span> <tt class="parameter">$green</tt></span>
+    , <span class="methodparam"><span class="type">float</span> <tt class="parameter">$blue</tt></span>
+    [, <span class="methodparam"><span class="type">float</span> <tt class="parameter">$a</tt></span>
+   ] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>remove</b></span>
+     ( <span class="methodparam">void</span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>rotate</b></span>
+     ( <span class="methodparam"><span class="type">float</span> <tt class="parameter">$angle</tt></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>rotateTo</b></span>
+     ( <span class="methodparam"><span class="type">float</span> <tt class="parameter">$angle</tt></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>scale</b></span>
+     ( <span class="methodparam"><span class="type">float</span> <tt class="parameter">$dx</tt></span>
+    , <span class="methodparam"><span class="type">float</span> <tt class="parameter">$dy</tt></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>scaleTo</b></span>
+     ( <span class="methodparam"><span class="type">float</span> <tt class="parameter">$x</tt></span>
+    [, <span class="methodparam"><span class="type">float</span> <tt class="parameter">$y</tt></span>
+   ] )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>setDepth</b></span>
+     ( <span class="methodparam"><span class="type">int</span> <tt class="parameter">$depth</tt></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>setMaskLevel</b></span>
+     ( <span class="methodparam"><span class="type">int</span> <tt class="parameter">$level</tt></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>setMatrix</b></span>
+     ( <span class="methodparam"><span class="type">float</span> <tt class="parameter">$a</tt></span>
+    , <span class="methodparam"><span class="type">float</span> <tt class="parameter">$b</tt></span>
+    , <span class="methodparam"><span class="type">float</span> <tt class="parameter">$c</tt></span>
+    , <span class="methodparam"><span class="type">float</span> <tt class="parameter">$d</tt></span>
+    , <span class="methodparam"><span class="type">float</span> <tt class="parameter">$x</tt></span>
+    , <span class="methodparam"><span class="type">float</span> <tt class="parameter">$y</tt></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>setName</b></span>
+     ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$name</tt></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>setRatio</b></span>
+     ( <span class="methodparam"><span class="type">float</span> <tt class="parameter">$ratio</tt></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>skewX</b></span>
+     ( <span class="methodparam"><span class="type">float</span> <tt class="parameter">$ddegrees</tt></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>skewXTo</b></span>
+     ( <span class="methodparam"><span class="type">float</span> <tt class="parameter">$degrees</tt></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>skewY</b></span>
+     ( <span class="methodparam"><span class="type">float</span> <tt class="parameter">$ddegrees</tt></span>
+    )</div>
+<div class="methodsynopsis dc-description">
+    <span class="type">void</span> <span class="methodname"><b>skewYTo</b></span>
+     ( <span class="methodparam"><span class="type">float</span> <tt class="parameter">$degrees</tt></span>
+    )</div>
+
+ 
+   }</div>
+
+ 
+  </div>
+ </div>
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="function.swfdisplayitem.addaction.html">SWFDisplayItem->addAction</a> — Adds this SWFAction to the given SWFSprite instance</li><li><a href="function.swfdisplayitem.addcolor.html">SWFDisplayItem->addColor</a> — Adds the given color to this item's color transform</li><li><a href="function.swfdisplayitem.endmask.html">SWFDisplayItem->endMask</a> — Another way of defining a MASK layer</li><li><a href="function.swfdisplayitem.getrot.html">SWFDisplayItem->getRot</a> — Description</li><li><a href="function.swfdisplayitem.getx.html">SWFDisplayItem->getX</a> — Description</li><li><a href="function.swfdisplayitem.getxscale.html">SWFDisplayItem->getXScale</a> — Description</li><li><a href="function.swfdisplayitem.getxskew.html">SWFDisplayItem->getXSkew</a> — Description</li><li><a href="function.swfdisplayitem.gety.html">SWFDisplayItem->getY</a> — Description</li><li><a href="function.swfdisplayitem.getyscale.html">SWFDisplayItem->getYScale</a> — Description</li><li><a href="function.swfdisplayitem.getyskew.html">SWFDisplayItem->getYSkew</a> — Description</li><li><a href="function.swfdisplayitem.move.html">SWFDisplayItem->move</a> — Moves object in relative coordinates</li><li><a href="function.swfdisplayitem.moveto.html">SWFDisplayItem->moveTo</a> — Moves object in global coordinates</li><li><a href="function.swfdisplayitem.multcolor.html">SWFDisplayItem->multColor</a> — Multiplies the item's color transform</li><li><a href="function.swfdisplayitem.remove.html">SWFDisplayItem->remove</a> — Removes the object from the movie</li><li><a href="function.swfdisplayitem.rotate.html">SWFDisplayItem->rotate</a> — Rotates in relative coordinates</li><li><a href="function.swfdisplayitem.rotateto.html">SWFDisplayItem->rotateTo</a> — Rotates the object in global coordinates</li><li><a href="function.swfdisplayitem.scale.html">SWFDisplayItem->scale</a> — Scales the object in relative coordinates</li><li><a href="function.swfdisplayitem.scaleto.html">SWFDisplayItem->scaleTo</a> — Scales the object in global coordinates</li><li><a href="function.swfdisplayitem.setdepth.html">SWFDisplayItem->setDepth</a> — Sets z-order</li><li><a href="function.swfdisplayitem.setmasklevel.html">SWFDisplayItem->setMaskLevel</a> — Defines a MASK layer at level</li><li><a href="function.swfdisplayitem.setmatrix.html">SWFDisplayItem->setMatrix</a> — Sets the item's transform matrix</li><li><a href="function.swfdisplayitem.setname.html">SWFDisplayItem->setName</a> — Sets the object's name</li><li><a href="function.swfdisplayitem.setratio.html">SWFDisplayItem->setRatio</a> — Sets the object's ratio</li><li><a href="function.swfdisplayitem.skewx.html">SWFDisplayItem->skewX</a> — Sets the X-skew</li><li><a href="function.swfdisplayitem.skewxto.html">SWFDisplayItem->skewXTo</a> — Sets the X-skew</li><li><a href="function.swfdisplayitem.skewy.html">SWFDisplayItem->skewY</a> — Sets the Y-skew</li><li><a href="function.swfdisplayitem.skewyto.html">SWFDisplayItem->skewYTo</a> — Sets the Y-skew</li></ul>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.swfbutton.setup.html">SWFButton->setUp</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.swfdisplayitem.addaction.html">SWFDisplayItem->addAction</a></div>
+ <div class="up"><a href="book.ming.html">Ming</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

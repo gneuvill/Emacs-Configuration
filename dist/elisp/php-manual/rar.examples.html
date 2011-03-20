@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Examples</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="rar.constants.html">Predefined Constants</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.rar.html">Rar Functions</a></div>
+ <div class="up"><a href="book.rar.html">Rar</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div>
+ <h1>Examples</h1>
+
+ <p class="para">
+  </p><div class="example">
+   <p><b>Example #1 Rar extension overview example</b></p>
+   <div class="example-contents programlisting">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$rar_file&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">rar_open</span><span style="color: #007700">(</span><span style="color: #DD0000">'example.rar'</span><span style="color: #007700">)&nbsp;or&nbsp;die(</span><span style="color: #DD0000">"Can't&nbsp;open&nbsp;Rar&nbsp;archive"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$entries&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">rar_list</span><span style="color: #007700">(</span><span style="color: #0000BB">$rar_file</span><span style="color: #007700">);<br /><br />foreach&nbsp;(</span><span style="color: #0000BB">$entries&nbsp;</span><span style="color: #007700">as&nbsp;</span><span style="color: #0000BB">$entry</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Filename:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$entry</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getName</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Packed&nbsp;size:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$entry</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getPackedSize</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Unpacked&nbsp;size:&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$entry</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getUnpackedSize</span><span style="color: #007700">()&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$entry</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">extract</span><span style="color: #007700">(</span><span style="color: #DD0000">'/dir/extract/to/'</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">rar_close</span><span style="color: #007700">(</span><span style="color: #0000BB">$rar_file</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div><p>
+ </p>
+ <p class="para">
+  This example opens a Rar file archive and extracts each entry to the
+  specified directory.
+ </p>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="rar.constants.html">Predefined Constants</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.rar.html">Rar Functions</a></div>
+ <div class="up"><a href="book.rar.html">Rar</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

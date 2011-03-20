@@ -1,0 +1,483 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The DOMNode class</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="domnamednodemap.item.html">DOMNamedNodeMap::item</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="domnode.appendchild.html">DOMNode::appendChild</a></div>
+ <div class="up"><a href="book.dom.html">DOM</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div>
+ <h1 class="title">The DOMNode class</h1>
+ 
+ 
+ <div class="partintro">
+ 
+
+ 
+  <div id="domnode.synopsis" class="section">
+   <h2 class="title">Class synopsis</h2>
+ 
+
+   <div class="classsynopsis">
+    <div class="ooclass"><b class="classname">DOMNode</b></div>
+ 
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+      <b class="classname">DOMNode</b>
+     </span>
+ 
+     {</div>
+
+ 
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Properties */</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="modifier">readonly</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.nodename">$nodeName</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.nodevalue">$nodeValue</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="modifier">readonly</span>
+     <span class="type">int</span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.nodetype">$nodeType</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="modifier">readonly</span>
+     <span class="type"><a href="class.domnode.html" class="type DOMNode">DOMNode</a></span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.parentnode">$parentNode</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="modifier">readonly</span>
+     <span class="type"><a href="class.domnodelist.html" class="type DOMNodeList">DOMNodeList</a></span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.childnodes">$childNodes</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="modifier">readonly</span>
+     <span class="type"><a href="class.domnode.html" class="type DOMNode">DOMNode</a></span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.firstchild">$firstChild</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="modifier">readonly</span>
+     <span class="type"><a href="class.domnode.html" class="type DOMNode">DOMNode</a></span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.lastchild">$lastChild</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="modifier">readonly</span>
+     <span class="type"><a href="class.domnode.html" class="type DOMNode">DOMNode</a></span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.previoussibling">$previousSibling</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="modifier">readonly</span>
+     <span class="type"><a href="class.domnode.html" class="type DOMNode">DOMNode</a></span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.nextsibling">$nextSibling</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="modifier">readonly</span>
+     <span class="type"><a href="class.domnamednodemap.html" class="type DOMNamedNodeMap">DOMNamedNodeMap</a></span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.attributes">$attributes</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="modifier">readonly</span>
+     <span class="type"><a href="class.domdocument.html" class="type DOMDocument">DOMDocument</a></span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.ownerdocument">$ownerDocument</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="modifier">readonly</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.namespaceuri">$namespaceURI</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.prefix">$prefix</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="modifier">readonly</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.localname">$localName</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="modifier">readonly</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.baseuri">$baseURI</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.domnode.html#domnode.props.textcontent">$textContent</a></var>
+    ;</div>
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methods */</div>
+    <div class="methodsynopsis dc-description">
+   <span class="type">DOMNode</span> <span class="methodname"><a href="domnode.appendchild.html" class="function">appendChild</a></span>
+    ( <span class="methodparam"><span class="type"><a href="class.domnode.html" class="type DOMNode">DOMNode</a></span> <tt class="parameter">$newnode</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">DOMNode</span> <span class="methodname"><a href="domnode.clonenode.html" class="function">cloneNode</a></span>
+    ([ <span class="methodparam"><span class="type">bool</span> <tt class="parameter">$deep</tt></span>
+  ] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="domnode.hasattributes.html" class="function">hasAttributes</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="domnode.haschildnodes.html" class="function">hasChildNodes</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">DOMNode</span> <span class="methodname"><a href="domnode.insertbefore.html" class="function">insertBefore</a></span>
+    ( <span class="methodparam"><span class="type"><a href="class.domnode.html" class="type DOMNode">DOMNode</a></span> <tt class="parameter">$newnode</tt></span>
+   [, <span class="methodparam"><span class="type"><a href="class.domnode.html" class="type DOMNode">DOMNode</a></span> <tt class="parameter">$refnode</tt></span>
+  ] )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="domnode.isdefaultnamespace.html" class="function">isDefaultNamespace</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$namespaceURI</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="domnode.issamenode.html" class="function">isSameNode</a></span>
+    ( <span class="methodparam"><span class="type"><a href="class.domnode.html" class="type DOMNode">DOMNode</a></span> <tt class="parameter">$node</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="domnode.issupported.html" class="function">isSupported</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$feature</tt></span>
+   , <span class="methodparam"><span class="type">string</span> <tt class="parameter">$version</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><a href="domnode.lookupnamespaceuri.html" class="function">lookupNamespaceURI</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$prefix</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><a href="domnode.lookupprefix.html" class="function">lookupPrefix</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$namespaceURI</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="domnode.normalize.html" class="function">normalize</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">DOMNode</span> <span class="methodname"><a href="domnode.removechild.html" class="function">removeChild</a></span>
+    ( <span class="methodparam"><span class="type"><a href="class.domnode.html" class="type DOMNode">DOMNode</a></span> <tt class="parameter">$oldnode</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">DOMNode</span> <span class="methodname"><a href="domnode.replacechild.html" class="function">replaceChild</a></span>
+    ( <span class="methodparam"><span class="type"><a href="class.domnode.html" class="type DOMNode">DOMNode</a></span> <tt class="parameter">$newnode</tt></span>
+   , <span class="methodparam"><span class="type"><a href="class.domnode.html" class="type DOMNode">DOMNode</a></span> <tt class="parameter">$oldnode</tt></span>
+   )</div>
+
+   }</div>
+
+ 
+  </div>
+ 
+
+  <div id="domnode.props" class="section">
+   <h2 class="title">Properties</h2>
+   <dl>
+
+    <dt id="domnode.props.nodename" class="varlistentry">
+     <span class="term"><var class="varname">nodeName</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">Returns the most accurate name for the current node type</p>
+     </dd>
+
+    
+    <dt id="domnode.props.nodevalue" class="varlistentry">
+     <span class="term"><var class="varname">nodeValue</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">The value of this node, depending on its type</p>
+     </dd>
+
+    
+    <dt id="domnode.props.nodetype" class="varlistentry">
+     <span class="term"><var class="varname">nodeType</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">Gets the type of the node. One of the predefined XML_xxx_NODE constants</p>
+     </dd>
+
+    
+    <dt id="domnode.props.parentnode" class="varlistentry">
+     <span class="term"><var class="varname">parentNode</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">The parent of this node</p>
+     </dd>
+
+    
+    <dt id="domnode.props.childnodes" class="varlistentry">
+     <span class="term"><var class="varname">childNodes</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       A <a href="class.domnodelist.html" class="classname">DOMNodeList</a> that contains all
+       children of this node. If there are no children, this is an empty
+       <a href="class.domnodelist.html" class="classname">DOMNodeList</a>.
+      </p>
+     </dd>
+
+    
+    <dt id="domnode.props.firstchild" class="varlistentry">
+     <span class="term"><var class="varname">firstChild</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The first child of this node. If there is no such node, this
+       returns <b><tt class="constant">NULL</tt></b>.
+      </p>
+     </dd>
+
+    
+    <dt id="domnode.props.lastchild" class="varlistentry">
+     <span class="term"><var class="varname">lastChild</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">The last child of this node. If there is no such node, this returns <b><tt class="constant">NULL</tt></b>.</p>
+     </dd>
+
+    
+    <dt id="domnode.props.previoussibling" class="varlistentry">
+     <span class="term"><var class="varname">previousSibling</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The node immediately preceding this node. If there is no such
+       node, this returns <b><tt class="constant">NULL</tt></b>.
+      </p>
+     </dd>
+
+    
+    <dt id="domnode.props.nextsibling" class="varlistentry">
+     <span class="term"><var class="varname">nextSibling</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The node immediately following this node. If there is no such
+       node, this returns <b><tt class="constant">NULL</tt></b>.
+      </p>
+     </dd>
+
+    
+    <dt id="domnode.props.attributes" class="varlistentry">
+     <span class="term"><var class="varname">attributes</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       A <a href="class.domnamednodemap.html" class="classname">DOMNamedNodeMap</a> containing the
+       attributes of this node (if it is a <a href="class.domelement.html" class="classname">DOMElement</a>)
+       or <b><tt class="constant">NULL</tt></b> otherwise.
+      </p>
+     </dd>
+
+    
+    <dt id="domnode.props.ownerdocument" class="varlistentry">
+     <span class="term"><var class="varname">ownerDocument</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">The <a href="class.domdocument.html" class="classname">DOMDocument</a> object associated with this node.</p>
+     </dd>
+
+    
+    <dt id="domnode.props.namespaceuri" class="varlistentry">
+     <span class="term"><var class="varname">namespaceURI</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">The namespace URI of this node, or <b><tt class="constant">NULL</tt></b> if it is unspecified.</p>
+     </dd>
+
+    
+    <dt id="domnode.props.prefix" class="varlistentry">
+     <span class="term"><var class="varname">prefix</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">The namespace prefix of this node, or <b><tt class="constant">NULL</tt></b> if it is unspecified.</p>
+     </dd>
+
+    
+    <dt id="domnode.props.localname" class="varlistentry">
+     <span class="term"><var class="varname">localName</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">Returns the local part of the qualified name of this node.</p>
+     </dd>
+
+    
+    <dt id="domnode.props.baseuri" class="varlistentry">
+     <span class="term"><var class="varname">baseURI</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The absolute base URI of this node or <b><tt class="constant">NULL</tt></b> if the implementation
+       wasn&#039;t able to obtain an absolute URI.
+      </p>
+     </dd>
+
+    
+    <dt id="domnode.props.textcontent" class="varlistentry">
+     <span class="term"><var class="varname">textContent</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">This attribute returns the text content of this node and its descendants.</p>
+     </dd>
+
+    
+   </dl>
+
+  </div>
+
+ 
+
+  <div class="section">
+   <h2 class="title">See Also</h2>
+   <p class="para">
+    </p><ul class="simplelist">
+     <li class="member"><a href="http://www.w3.org/TR/2003/WD-DOM-Level-3-Core-20030226/DOM3-Core.html#core-ID-1950641247" class="link external">&raquo; W3C specification of Node</a></li>
+    </ul><p>
+   </p>
+  </div>
+
+ 
+ </div>
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="domnode.appendchild.html">DOMNode::appendChild</a> — Adds new child at the end of the children</li><li><a href="domnode.clonenode.html">DOMNode::cloneNode</a> — Clones a node</li><li><a href="domnode.hasattributes.html">DOMNode::hasAttributes</a> — Checks if node has attributes</li><li><a href="domnode.haschildnodes.html">DOMNode::hasChildNodes</a> — Checks if node has children</li><li><a href="domnode.insertbefore.html">DOMNode::insertBefore</a> — Adds a new child before a reference node</li><li><a href="domnode.isdefaultnamespace.html">DOMNode::isDefaultNamespace</a> — Checks if the specified namespaceURI is the default namespace or not</li><li><a href="domnode.issamenode.html">DOMNode::isSameNode</a> — Indicates if two nodes are the same node</li><li><a href="domnode.issupported.html">DOMNode::isSupported</a> — Checks if feature is supported for specified version</li><li><a href="domnode.lookupnamespaceuri.html">DOMNode::lookupNamespaceURI</a> — Gets the namespace URI of the node based on the prefix</li><li><a href="domnode.lookupprefix.html">DOMNode::lookupPrefix</a> — Gets the namespace prefix of the node based on the namespace URI</li><li><a href="domnode.normalize.html">DOMNode::normalize</a> — Normalizes the node</li><li><a href="domnode.removechild.html">DOMNode::removeChild</a> — Removes child from list of children</li><li><a href="domnode.replacechild.html">DOMNode::replaceChild</a> — Replaces a child</li></ul>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="domnamednodemap.item.html">DOMNamedNodeMap::item</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="domnode.appendchild.html">DOMNode::appendChild</a></div>
+ <div class="up"><a href="book.dom.html">DOM</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

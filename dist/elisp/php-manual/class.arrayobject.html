@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The ArrayObject class</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.spl-object-hash.html">spl_object_hash</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="arrayobject.append.html">ArrayObject::append</a></div>
+ <div class="up"><a href="book.spl.html">SPL</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div>
+ <h1 class="title">The ArrayObject class</h1>
+ 
+ 
+ <div class="partintro">
+ 
+
+  <div id="arrayobject.intro" class="section">
+   <h2 class="title">Introduction</h2>
+   <p class="para">
+    ...
+   </p>
+  </div>
+
+ 
+  <div id="arrayobject.synopsis" class="section">
+   <h2 class="title">Class synopsis</h2>
+ 
+
+   <div class="classsynopsis">
+    <div class="ooclass"><b class="classname">ArrayObject</b></div>
+ 
+
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+      <b class="classname">ArrayObject</b>
+     </span>
+
+     <span class="oointerface">implements 
+      <a href="class.iteratoraggregate.html" class="interfacename">IteratorAggregate</a>
+     </span>
+ 
+     <span class="oointerface">, 
+      <a href="class.traversable.html" class="interfacename">Traversable</a>
+     </span>
+ 
+     <span class="oointerface">, 
+      <a href="class.arrayaccess.html" class="interfacename">ArrayAccess</a>
+     </span>
+ 
+     <span class="oointerface">, 
+      <a href="class.countable.html" class="interfacename">Countable</a>
+     </span>
+ 
+     {</div>
+
+ 
+    
+ 
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methods */</div>
+    <div class="constructorsynopsis dc-description">
+    <span class="methodname"><a href="arrayobject.construct.html" class="function">__construct</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$input</tt></span>
+   )</div>
+
+    <div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="arrayobject.append.html" class="function">append</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$newval</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname"><a href="arrayobject.count.html" class="function">count</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">ArrayIterator</span> <span class="methodname"><a href="arrayobject.getiterator.html" class="function">getIterator</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="arrayobject.offsetexists.html" class="function">offsetExists</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$index</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname"><a href="arrayobject.offsetget.html" class="function">offsetGet</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$index</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="arrayobject.offsetset.html" class="function">offsetSet</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$index</tt></span>
+   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$newval</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="arrayobject.offsetunset.html" class="function">offsetUnset</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$index</tt></span>
+   )</div>
+
+   }</div>
+ 
+  </div>
+ 
+
+ 
+ </div>
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="arrayobject.append.html">ArrayObject::append</a> — Appends the value</li><li><a href="arrayobject.construct.html">ArrayObject::__construct</a> — Construct a new array object</li><li><a href="arrayobject.count.html">ArrayObject::count</a> — Get the number of elements in the Iterator</li><li><a href="arrayobject.getiterator.html">ArrayObject::getIterator</a> — Create a new iterator from an ArrayObject instance</li><li><a href="arrayobject.offsetexists.html">ArrayObject::offsetExists</a> — Returns whether the requested $index exists</li><li><a href="arrayobject.offsetget.html">ArrayObject::offsetGet</a> — Returns the value at the specified $index</li><li><a href="arrayobject.offsetset.html">ArrayObject::offsetSet</a> — Sets the value at the specified $index to $newval</li><li><a href="arrayobject.offsetunset.html">ArrayObject::offsetUnset</a> — Unsets the value at the specified $index</li></ul>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.spl-object-hash.html">spl_object_hash</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="arrayobject.append.html">ArrayObject::append</a></div>
+ <div class="up"><a href="book.spl.html">SPL</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

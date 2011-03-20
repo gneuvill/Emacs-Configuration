@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+<title>Editing - PHP Mode Manual</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="PHP Mode Manual">
+<meta name="generator" content="makeinfo 4.11">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Indentation.html#Indentation" title="Indentation">
+<link rel="next" href="Completion.html#Completion" title="Completion">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual documents PHP mode version 1.5.0 for
+use with GNU Emacs.
+
+Copyright (C) 2008  Aaron S. Hawley
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of the GNU Free Documentation License,
+     Version 1.2 or any later version published by the Free Software
+     Foundation; with no Invariant Sections, and no Cover Texts.  A
+     copy of the license is included in the section entitled ``Copying
+     This Manual.''
+
+     A copy of the license is also available from the Free Software
+     Foundation Web site at `http://www.gnu.org/licenses/fdl.html'.
+
+
+The document was typeset with
+GNU Texinfo (http://www.texinfo.org/).
+
+$Date: 2008-11-04 11:51:51 -0500 (Tue, 04 Nov 2008) $
+
+$Revision: 90 $
+
+
+
+-->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Editing"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Completion.html#Completion">Completion</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Indentation.html#Indentation">Indentation</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="chapter">6 Editing</h2>
+
+<!-- Provide an introduction to this section. -->
+     
+<a name="index-paragraph_002c-fill-139"></a>
+<a name="index-filling-140"></a>
+<a name="index-indentation_002c-filling-141"></a>
+<a name="index-filling-indentation-142"></a>
+<a name="index-filling-comment-143"></a>
+<a name="index-comment_002c-filling-144"></a>
+<a name="index-Docblock-comment-145"></a>
+<a name="index-comment_002c-Docblock-146"></a>
+<a name="index-c_002dfill_002dparagraph-147"></a>
+<a name="index-M_002dq-148"></a>
+<dl><dt><kbd>M-q</kbd><dd>Fill the paragraph to current value of <code>fill-column</code>. 
+The command does the right thing for indented code and PHP
+comments including Docblock comments. 
+<a name="index-column_002c-fill-149"></a><a name="index-fill-column-150"></a><a name="index-fill_002dcolumn-151"></a><a name="index-set_002dfill_002dcolumn-152"></a><a name="index-fill_002dparagraph-153"></a><a name="index-C_002dx-f-154"></a><br><dt><kbd>C-u </kbd><var>n</var><kbd> C-x f</kbd><dd>Set the <code>fill-column</code> to <var>n</var> when using the
+<kbd>M-q</kbd> command (<code>fill-paragraph</code>). 
+<a name="index-function_002c-mark-155"></a><a name="index-kill_002dregion-156"></a><a name="index-kill_002dring_002dsave-157"></a><a name="index-indent_002dregion-158"></a><a name="index-indent_002drigidly-159"></a><a name="index-c_002dmark_002dfunction-160"></a><a name="index-C_002dM_002dh-161"></a><a name="index-C_002dw-162"></a><a name="index-M_002dw-163"></a><a name="index-C_002dM_002d_005c-164"></a><br><dt><kbd>C-M-h</kbd><dd>Mark the current function (<code>c-mark-function</code>).  Puts
+the mark at the end and of the function and the point at the
+beginning.  Useful if you want to kill the region with
+<kbd>C-w</kbd> or <kbd>M-w</kbd>, or indent the region with
+<kbd>C-M-\</kbd> or <kbd>C-x TAB</kbd> (See <a href="Indentation.html#Indentation">Indentation</a>.). 
+<a name="index-defun_002c-mark-165"></a><a name="index-mark_002ddefun-166"></a><a name="index-M_002dx-mark_002ddefun-167"></a><br><dt><kbd>M-x mark-defun</kbd><dd>Like <kbd>C-M-h</kbd> (<code>c-mark-function</code>), except place the
+mark at the end of the function even if it's not at the
+top-level.  With functions that are methods defined in a
+class, they may be indented and not top-level functions,
+however this command will only mark the current function.
+
+     <!-- Perhaps, M-x mark-defun should be the default for running -->
+     <!-- C-M-h again.  This is the downside of inheriting C mode's -->
+     <!-- key bindings. -->
+</dl>
+
+<!-- This narrowing stuff could deserve its own -->
+<!-- chapter/section. -->
+   <p><a name="index-narrowing-168"></a><a name="index-widening-169"></a>The traditional commands for narrowing to a region in
+Emacs<a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a> are supported in PHP mode.  The
+following commands are notable to mention for working with
+PHP or are extensions expressly provided PHP mode.
+
+     
+<a name="index-function-narrowing-170"></a>
+<a name="index-function_002c-narrow-171"></a>
+<a name="index-narrow_002dto_002ddefun-172"></a>
+<a name="index-C_002dx-n-d-173"></a>
+<dl><dt><kbd>C-x n d</kbd><dd>Narrow the buffer to the contents of the current function
+(<code>narrow-to-defun</code>).  This will narrow to the function
+as identified to the current function, even if it is nested
+in an object or another function.  The logic to narrow the
+function is the same as the <code>beginning-of-defun</code> and
+<code>end-of-defun</code> commands &ndash; see <a href="Motion.html#Motion">Motion</a>, and the
+<code>mark-defun</code> command &ndash; see above. 
+<a name="index-widening-174"></a><a name="index-widen-175"></a><a name="index-C_002dx-n-w-176"></a><br><dt><kbd>C-x n w</kbd><dd>Undo any narrowing by widening the buffer again by making
+the rest of the buffer available (<code>widen</code>). 
+</dl>
+
+   <div class="footnote">
+<hr>
+<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> See <a href="http://emacswiki.org/cgi-bin/info-ref?find=Narrowing.html#Narrowing">Narrowing</a>.</p>
+
+   <hr></div>
+
+   </body></html>
+

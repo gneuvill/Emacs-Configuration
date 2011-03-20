@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Send encoded mail</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.mb-regex-set-options.html">mb_regex_set_options</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.mb-split.html">mb_split</a></div>
+ <div class="up"><a href="ref.mbstring.html">Multibyte String Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="function.mb-send-mail" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">mb_send_mail</h1>
+  <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5)</p><p class="refpurpose"><span class="refname">mb_send_mail</span> &mdash; <span class="dc-title">Send encoded mail</span></p>
+
+ </div>
+   
+ <a name="function.mb-send-mail.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><b>mb_send_mail</b></span>
+    ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$to</tt></span>
+   , <span class="methodparam"><span class="type">string</span> <tt class="parameter">$subject</tt></span>
+   , <span class="methodparam"><span class="type">string</span> <tt class="parameter">$message</tt></span>
+   [, <span class="methodparam"><span class="type">string</span> <tt class="parameter">$additional_headers</tt><span class="initializer">= NULL</span></span>
+   [, <span class="methodparam"><span class="type">string</span> <tt class="parameter">$additional_parameter</tt><span class="initializer">= NULL</span></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   Sends email. Headers and messages are converted and encoded according
+   to the <a href="function.mb-language.html" class="function">mb_language()</a> setting. It&#039;s a wrapper function
+   for <a href="function.mail.html" class="function">mail()</a>, so see also <a href="function.mail.html" class="function">mail()</a> for details.
+  </p>
+ </div>
+
+
+ <a name="function.mb-send-mail.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">to</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The mail addresses being sent to. Multiple
+       recipients may be specified by putting a comma between each
+       address in <i><tt class="parameter">to</tt></i>
+. 
+       This parameter is not automatically encoded.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">subject</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The subject of the mail.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">message</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The message of the mail.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">additional_headers</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       <i><tt class="parameter">additional_headers</tt></i>
+ is inserted at
+       the end of the header. This is typically used to add extra
+       headers.  Multiple extra headers are separated with a
+       newline (&quot;\n&quot;).
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">additional_parameter</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       <i><tt class="parameter">additional_parameter</tt></i>
+ is a MTA command line
+       parameter. It is useful when setting the correct Return-Path
+       header when using sendmail.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="function.mb-send-mail.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Returns <b><tt class="constant">TRUE</tt></b> on success or <b><tt class="constant">FALSE</tt></b> on failure.
+  </p>
+ </div>
+
+
+ <a name="function.mb-send-mail.changelog"></a><div class="refsect1 changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   </p><table class="doctable informaltable">
+    
+     <thead valign="middle">
+      <tr valign="middle">
+       <th>Version</th>
+       <th>Description</th>
+      </tr>
+
+     </thead>
+
+     <tbody valign="middle" class="tbody">
+      <tr valign="middle">
+       <td align="left">5.0.0</td>
+       <td align="left">
+        The <i>Content-Type</i> and <i>Content-Transfer-Encoding</i> 
+        headers may be redefined as of PHP 5.0.0. Before this time, the values defined by
+        <a href="function.mb-language.html" class="function">mb_language()</a> are always used.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+<p>
+  </p>
+ </div>
+
+
+ <a name="function.mb-send-mail.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.mail.html" class="function" rel="rdfs-seeAlso">mail()</a> - Send mail</li>
+    <li class="member"><a href="function.mb-encode-mimeheader.html" class="function" rel="rdfs-seeAlso">mb_encode_mimeheader()</a> - Encode string for MIME header</li>
+    <li class="member"><a href="function.mb-language.html" class="function" rel="rdfs-seeAlso">mb_language()</a> - Set/Get current language</li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.mb-regex-set-options.html">mb_regex_set_options</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.mb-split.html">mb_split</a></div>
+ <div class="up"><a href="ref.mbstring.html">Multibyte String Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

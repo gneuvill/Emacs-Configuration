@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Installation</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mcve.requirements.html">Requirements</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mcve.configuration.html">Runtime Configuration</a></div>
+ <div class="up"><a href="mcve.setup.html">Installing/Configuring</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mcve.installation" class="section">
+ <h2 class="title">Installation</h2>
+ <p class="para">
+  To enable MCVE (Monetra) Support in PHP, first verify your LibMonetra
+  (formerly libmcve) installation directory.  If you are compiling 
+  MCVE/Monetra support directly into PHP, you will then need to configure
+  PHP with the <span class="option">--with-mcve</span> option.  If you
+  use this option without specifying the path to your libmonetra installation,
+  PHP will attempt to look in the default LibMonetra Install location
+  (<var class="filename">/usr/local</var>). If Monetra (MCVE) is in a non-standard
+  location, run configure with: <span class="option">--with-mcve=$mcve_path</span>, where $mcve_path
+  is the path to your MCVE/Monetra installation.  Please note that
+  MCVE/Monetra support requires that $mcve_path/lib and $mcve_path/include
+  exist, and include <var class="filename">mcve.h</var> or 
+  <var class="filename">monetra.h</var> under the include directory and
+  <var class="filename">libmcve.so</var> and/or <var class="filename">libmcve.a</var> 
+  and/or <var class="filename">libmonetra.so</var> and/or 
+  <var class="filename">libmonetra.a</var> under the lib directory.
+ </p>
+ <p class="para">
+  If you want to install MCVE/Monetra support as a module, you can do
+  so by using the PECL repository, and issuing the  &#039;pecl install mcve&#039;
+  command if you are running a PEAR version of at least 1.4.0.
+ </p>
+ <p class="para">
+  Since MCVE/Monetra has true server/client separation, there are no
+  additional requirements for running PHP with MCVE support.  To test
+  your MCVE/Monetra extension in PHP, you may connect to 
+  testbox.monetra.com on port 8333 for IP, or port 8444 for SSL using
+  the MCVE/Monetra PHP API.
+  Use &#039;vitale&#039; for your username, and &#039;test&#039; for your password.
+  Additional information about test facilities are available at
+  <a href="http://www.mainstreetsoftworks.com/" class="link external">&raquo; http://www.mainstreetsoftworks.com/</a>.
+ </p>
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mcve.requirements.html">Requirements</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mcve.configuration.html">Runtime Configuration</a></div>
+ <div class="up"><a href="mcve.setup.html">Installing/Configuring</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

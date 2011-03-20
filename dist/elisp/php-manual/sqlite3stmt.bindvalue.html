@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Binds the value of a parameter to a statement variable</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="sqlite3stmt.bindparam.html">SQLite3Stmt::bindParam</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="sqlite3stmt.clear.html">SQLite3Stmt::clear</a></div>
+ <div class="up"><a href="class.sqlite3stmt.html">SQLite3Stmt</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="sqlite3stmt.bindvalue" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">SQLite3Stmt::bindValue</h1>
+  <p class="verinfo">(PHP 5 &gt;= 5.3.0)</p><p class="refpurpose"><span class="refname">SQLite3Stmt::bindValue</span> &mdash; <span class="dc-title">Binds the value of a parameter to a statement variable</span></p>
+
+ </div>
+
+ <a name="sqlite3stmt.bindvalue.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><b>SQLite3Stmt::bindValue</b></span>
+    ( <span class="methodparam"><span class="type">int</span> <tt class="parameter">$param_number</tt></span>
+   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$param</tt></span>
+   [, <span class="methodparam"><span class="type">int</span> <tt class="parameter">$type</tt></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Binds the value of a parameter to a statement variable.
+  </p>
+ </div>
+
+
+ <a name="sqlite3stmt.bindvalue.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">param_number</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       An <a href="language.types.integer.html" class="type integer">integer</a> identifying the statement variable to which the
+       value should be bound.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">param</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The value to bind to a statement variable.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">type</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The data type of the value to bind.
+       </p><ul class="itemizedlist">
+        <li class="listitem">
+         <p class="para">
+          <i>SQLITE3_INTEGER</i>: The value is a signed integer,
+          stored in 1, 2, 3, 4, 6, or 8 bytes depending on the magnitude of
+          the value.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <i>SQLITE3_FLOAT</i>: The value is a floating point
+          value, stored as an 8-byte IEEE floating point number.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <i>SQLITE3_TEXT</i>: The value is a text string, stored
+          using the database encoding (UTF-8, UTF-16BE or UTF-16-LE).
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <i>SQLITE3_BLOB</i>: The value is a blob of data, stored
+          exactly as it was input.
+         </p>
+        </li>
+        <li class="listitem">
+         <p class="para">
+          <i>SQLITE3_NULL</i>: The value is a NULL value.
+         </p>
+        </li>
+       </ul><p>
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+
+ </div>
+
+
+ <a name="sqlite3stmt.bindvalue.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Returns <b><tt class="constant">TRUE</tt></b> if the value is bound to the statement variable, <b><tt class="constant">FALSE</tt></b>
+   on failure.
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="sqlite3stmt.bindparam.html">SQLite3Stmt::bindParam</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="sqlite3stmt.clear.html">SQLite3Stmt::clear</a></div>
+ <div class="up"><a href="class.sqlite3stmt.html">SQLite3Stmt</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

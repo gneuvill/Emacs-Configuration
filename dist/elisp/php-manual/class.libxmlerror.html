@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The libXMLError class</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="libxml.constants.html">Predefined Constants</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.libxml.html">libxml Functions</a></div>
+ <div class="up"><a href="book.libxml.html">libxml</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div>
+ <h1 class="title">The libXMLError class</h1>
+ 
+ 
+ <div class="partintro">
+ 
+
+  <div id="libxmlerror.intro" class="section">
+   <h2 class="title">Introduction</h2>
+   <p class="para">
+    Contains various information about errors thrown by libxml.
+   </p>
+  </div>
+
+ 
+  <div id="libxmlerror.synopsis" class="section">
+   <h2 class="title">Class synopsis</h2>
+ 
+
+   <div class="classsynopsis">
+    <div class="ooclass"><b class="classname">libXMLError</b></div>
+ 
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+      <b class="classname">libXMLError</b>
+     </span>
+     {</div>
+
+ 
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Properties */</div>
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type">int</span>
+      <var class="varname"><a href="class.libxmlerror.html#libxmlerror.props.level">$level</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type">int</span>
+      <var class="varname"><a href="class.libxmlerror.html#libxmlerror.props.code">$code</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type">int</span>
+      <var class="varname"><a href="class.libxmlerror.html#libxmlerror.props.column">$column</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.libxmlerror.html#libxmlerror.props.message">$message</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type">string</span>
+      <var class="varname"><a href="class.libxmlerror.html#libxmlerror.props.file">$file</a></var>
+    ;</div>
+
+    <div class="fieldsynopsis">
+     <span class="modifier">public</span>
+     <span class="type">int</span>
+      <var class="varname"><a href="class.libxmlerror.html#libxmlerror.props.line">$line</a></var>
+    ;</div>
+
+   }</div>
+
+  </div>
+ 
+
+  <div id="libxmlerror.props" class="section">
+   <h2 class="title">Properties</h2>
+   <dl>
+
+    <dt id="libxmlerror.props.level" class="varlistentry">
+     <span class="term"><var class="varname">level</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       the severity of the error (one of the following constants:
+       <b><tt class="constant">LIBXML_ERR_WARNING</tt></b>,
+       <b><tt class="constant">LIBXML_ERR_ERROR</tt></b> or
+       <b><tt class="constant">LIBXML_ERR_FATAL</tt></b>)
+      </p>
+     </dd>
+
+    
+    <dt id="libxmlerror.props.code" class="varlistentry">
+     <span class="term"><var class="varname">code</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The error&#039;s code.
+      </p>
+     </dd>
+
+    
+    <dt id="libxmlerror.props.column" class="varlistentry">
+     <span class="term"><var class="varname">column</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The column where the error occurred.
+      </p>
+      <blockquote><p><b class="note">Note</b>: 
+       
+        This property isn&#039;t entirely implemented in libxml and therefore
+        <i>0</i> is often returned.
+       <br />
+      </p></blockquote>
+     </dd>
+
+    
+    <dt id="libxmlerror.props.message" class="varlistentry">
+     <span class="term"><var class="varname">message</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The error message, if any.
+      </p>
+     </dd>
+
+    
+    <dt id="libxmlerror.props.file" class="varlistentry">
+     <span class="term"><var class="varname">file</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">The filename, or empty if the XML was loaded from a string.</p>
+     </dd>
+
+    
+    <dt id="libxmlerror.props.line" class="varlistentry">
+     <span class="term"><var class="varname">line</var></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The line where the error occurred.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </div>
+
+ 
+ </div>
+ 
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="libxml.constants.html">Predefined Constants</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.libxml.html">libxml Functions</a></div>
+ <div class="up"><a href="book.libxml.html">libxml</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

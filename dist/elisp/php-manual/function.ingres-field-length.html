@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Get the length of a field</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.ingres-fetch-row.html">ingres_fetch_row</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.ingres-field-name.html">ingres_field_name</a></div>
+ <div class="up"><a href="ref.ingres.html">Ingres Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="function.ingres-field-length" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">ingres_field_length</h1>
+  <p class="verinfo">(PHP 4 &gt;= 4.0.2, PHP 5 &lt;= 5.0.5, PECL ingres &gt;= 1.0.0)</p><p class="refpurpose"><span class="refname">ingres_field_length</span> &mdash; <span class="dc-title">Get the length of a field</span></p>
+
+ </div>
+ 
+ <a name="function.ingres-field-length.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname"><b>ingres_field_length</b></span>
+    ( <span class="methodparam"><span class="type">resource</span> <tt class="parameter">$result</tt></span>
+   , <span class="methodparam"><span class="type">int</span> <tt class="parameter">$index</tt></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   <b>ingres_field_length()</b> returns the length of a
+   field.  This is the number of bytes the server uses to store
+   the field.  For detailed information, see the Ingres <i>OpenAPI User
+   Guide</i>, Appendix <i>&quot;Data Types&quot;</i> in the Ingres documentation.
+  </p>
+ </div>
+
+
+ <a name="function.ingres-field-length.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">result</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The query result identifier
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">index</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       <i><tt class="parameter">index</tt></i>
+ is the number of the field and must
+       be between 1 and the value given by
+       <a href="function.ingres-num-fields.html" class="function">ingres_num_fields()</a>
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="function.ingres-field-length.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Returns the length of a field.
+  </p>
+ </div>
+
+
+ <a name="function.ingres-field-length.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.ingres-query.html" class="function" rel="rdfs-seeAlso">ingres_query()</a> - Send an SQL query to Ingres</li>
+    <li class="member"><a href="function.ingres-fetch-array.html" class="function" rel="rdfs-seeAlso">ingres_fetch_array()</a> - Fetch a row of result into an array</li>
+    <li class="member"><a href="function.ingres-fetch-object.html" class="function" rel="rdfs-seeAlso">ingres_fetch_object()</a> - Fetch a row of result into an object</li>
+    <li class="member"><a href="function.ingres-fetch-row.html" class="function" rel="rdfs-seeAlso">ingres_fetch_row()</a> - Fetch a row of result into an enumerated array</li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.ingres-fetch-row.html">ingres_fetch_row</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.ingres-field-name.html">ingres_field_name</a></div>
+ <div class="up"><a href="ref.ingres.html">Ingres Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

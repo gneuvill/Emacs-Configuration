@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Convert ASCII encoded domain name to UTF-8</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.idn-to-ascii.html">idn_to_ascii</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="book.intl.html">intl</a></div>
+ <div class="up"><a href="ref.idn.html">Idn Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="function.idn-to-utf8" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">idn_to_utf8</h1>
+  <p class="verinfo">(PECL idn &gt;= 0.1)</p><p class="refpurpose"><span class="refname">idn_to_utf8</span> &mdash; <span class="dc-title">Convert ASCII encoded domain name to UTF-8</span></p>
+
+ </div>
+
+ <a name="function.idn-to-utf8.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><b>idn_to_utf8</b></span>
+    ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$ascii_domain</tt></span>
+   [, <span class="methodparam"><span class="type">int</span> <tt class="parameter reference">&amp;$errorcode</tt></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+    This function converts a ASCII encoded domain name to its original UTF-8 version.
+  </p>
+ </div>
+
+
+ <a name="function.idn-to-utf8.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">ascii_domain</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+        The ASCII encoded domain name. Looks like &quot;xn--...&quot; if the it originally contained non-ASCII characters.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">errorcode</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+        Will be set to the IDNA error code.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+
+ </div>
+
+
+ <a name="function.idn-to-utf8.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+    The UTF-8 encoded version of the domain name or <b><tt class="constant">FALSE</tt></b> in case of an error.
+    RFC 3490 4.2 states though &quot;ToUnicode never fails. If any step fails, then the original input
+    sequence is returned immediately in that step.&quot; 
+  </p>
+ </div>
+
+
+ <a name="function.idn-to-utf8.errors"></a><div class="refsect1 errors">
+  <h3 class="title">Errors/Exceptions</h3>
+  <p class="para">
+    If an error occurs <b><tt class="constant">FALSE</tt></b> is returned and the optional errorcode is set.
+    In addition a E_WARNING message is printed.
+  </p>
+ </div>
+
+
+ <a name="function.idn-to-utf8.examples"></a><div class="refsect1 examples">
+  <h3 class="title">Examples</h3>
+  <p class="para">
+   </p><div class="example">
+    <p><b>Example #1 <b>idn_to_utf8()</b> example</b></p>
+    <div class="example-contents para"><p>
+      First a simple example and then one explaining how to catch errors (which should never happen according to the RFC).
+    </p></div>
+    <div class="example-contents programlisting">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;maybe&nbsp;convert&nbsp;the&nbsp;result&nbsp;to&nbsp;ISO-8859-1&nbsp;using&nbsp;utf8_decode()<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">idn_to_utf8</span><span style="color: #007700">(</span><span style="color: #DD0000">"xn--tst-qla.de"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;Should&nbsp;never&nbsp;happen&nbsp;but&nbsp;to&nbsp;be&nbsp;sure...<br /></span><span style="color: #0000BB">$utf8&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">idn_to_utf8</span><span style="color: #007700">(</span><span style="color: #DD0000">"xn--tst-qla.de"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$errorcode</span><span style="color: #007700">);<br />if&nbsp;(</span><span style="color: #0000BB">$utf8&nbsp;</span><span style="color: #007700">===&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"Detected&nbsp;error&nbsp;%d:&nbsp;%s\n"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$errorcode</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">idn_strerror</span><span style="color: #007700">(</span><span style="color: #0000BB">$errorcode</span><span style="color: #007700">));<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents para"><p>The above example will output
+something similar to:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+täst.de
+</pre></div>
+    </div>
+   </div><p>
+  </p>
+ </div>
+
+
+ <a name="function.idn-to-utf8.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.utf8-decode.html" class="function" rel="rdfs-seeAlso">utf8_decode()</a> - Converts a string with ISO-8859-1 characters encoded with UTF-8
+   to single-byte ISO-8859-1</li>
+    <li class="member"><a href="function.idn-strerror.html" class="function" rel="rdfs-seeAlso">idn_strerror()</a> - Returns string describing the IDNA error code</li>
+    <li class="member"><a href="function.idn-to-ascii.html" class="function" rel="rdfs-seeAlso">idn_to_ascii()</a> - Convert UTF-8 encoded domain name to ASCII</li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.idn-to-ascii.html">idn_to_ascii</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="book.intl.html">intl</a></div>
+ <div class="up"><a href="ref.idn.html">Idn Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

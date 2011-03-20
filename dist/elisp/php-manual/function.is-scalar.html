@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Finds whether a variable is a scalar</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.is-resource.html">is_resource</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.is-string.html">is_string</a></div>
+ <div class="up"><a href="ref.var.html">Variable handling Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="function.is-scalar" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">is_scalar</h1>
+  <p class="verinfo">(PHP 4 &gt;= 4.0.5, PHP 5)</p><p class="refpurpose"><span class="refname">is_scalar</span> &mdash; <span class="dc-title">
+   Finds whether a variable is a scalar
+  </span></p>
+
+ </div>
+
+ <a name="function.is-scalar.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><b>is_scalar</b></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$var</tt></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Finds whether the given variable is a scalar.
+  </p>
+  <p class="para">
+   Scalar variables are those containing an <a href="language.types.integer.html" class="type integer">integer</a>, 
+   <a href="language.types.float.html" class="type float">float</a>, <a href="language.types.string.html" class="type string">string</a> or <a href="language.types.boolean.html" class="type boolean">boolean</a>.  
+   Types <a href="language.types.array.html" class="type array">array</a>, <a href="language.types.object.html" class="type object">object</a> and <a href="language.types.resource.html" class="type resource">resource</a> 
+   are not scalar.
+  </p>
+  <blockquote><p><b class="note">Note</b>: 
+   
+    <b>is_scalar()</b> does not consider <a href="language.types.resource.html" class="type resource">resource</a>
+    type values to be scalar as resources are abstract datatypes 
+    which are currently based on integers. This implementation detail should 
+    not be relied upon, as it may change.
+   <br />
+  </p></blockquote>
+ </div>
+
+
+ <a name="function.is-scalar.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">var</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The variable being evaluated.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="function.is-scalar.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Returns <b><tt class="constant">TRUE</tt></b> if <i><tt class="parameter">var</tt></i>
+ is a scalar <b><tt class="constant">FALSE</tt></b>
+   otherwise.
+  </p>
+ </div>
+
+
+ <a name="function.is-scalar.examples"></a><div class="refsect1 examples">
+  <h3 class="title">Examples</h3>
+  <p class="para">
+   </p><div class="example">
+    <p><b>Example #1 <b>is_scalar()</b> example</b></p>
+    <div class="example-contents programlisting">
+
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">show_var</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">)&nbsp;<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">is_scalar</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$var</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$var</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">$pi&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">3.1416</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$proteins&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"hemoglobin"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"cytochrome&nbsp;c&nbsp;oxidase"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"ferredoxin"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">show_var</span><span style="color: #007700">(</span><span style="color: #0000BB">$pi</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">show_var</span><span style="color: #007700">(</span><span style="color: #0000BB">$proteins</span><span style="color: #007700">)<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents para"><p>The above example will output:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+3.1416
+array(3) {
+  [0]=&gt;
+  string(10) &quot;hemoglobin&quot;
+  [1]=&gt;
+  string(20) &quot;cytochrome c oxidase&quot;
+  [2]=&gt;
+  string(10) &quot;ferredoxin&quot;
+}
+</pre></div>
+    </div>
+   </div><p>
+  </p>
+ </div>
+
+
+ <a name="function.is-scalar.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.is-float.html" class="function" rel="rdfs-seeAlso">is_float()</a> - Finds whether the type of a variable is float</li>
+    <li class="member"><a href="function.is-int.html" class="function" rel="rdfs-seeAlso">is_int()</a> - Find whether the type of a variable is integer</li>
+    <li class="member"><a href="function.is-numeric.html" class="function" rel="rdfs-seeAlso">is_numeric()</a> - Finds whether a variable is a number or a numeric string</li>
+    <li class="member"><a href="function.is-real.html" class="function" rel="rdfs-seeAlso">is_real()</a> - Alias of is_float</li>
+    <li class="member"><a href="function.is-string.html" class="function" rel="rdfs-seeAlso">is_string()</a> - Find whether the type of a variable is string</li>
+    <li class="member"><a href="function.is-bool.html" class="function" rel="rdfs-seeAlso">is_bool()</a> - Finds out whether a variable is a boolean</li>
+    <li class="member"><a href="function.is-object.html" class="function" rel="rdfs-seeAlso">is_object()</a> - Finds whether a variable is an object</li>
+    <li class="member"><a href="function.is-array.html" class="function" rel="rdfs-seeAlso">is_array()</a> - Finds whether a variable is an array</li>
+   </ul><p>
+  </p>
+ </div>
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.is-resource.html">is_resource</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.is-string.html">is_string</a></div>
+ <div class="up"><a href="ref.var.html">Variable handling Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

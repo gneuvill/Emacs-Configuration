@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Connecting to MySQL databases</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="ref.pdo-mysql.html">MySQL (PDO)</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.pdo-oci.html">Oracle (PDO)</a></div>
+ <div class="up"><a href="ref.pdo-mysql.html">MySQL (PDO)</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="ref.pdo-mysql.connection" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">PDO_MYSQL DSN</h1>
+    <p class="verinfo">(PECL PDO_MYSQL &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">PDO_MYSQL DSN</span> &mdash; <span class="dc-title">Connecting to MySQL databases</span></p>
+
+   </div>
+
+   <a name="ref.pdo-mysql.connection.description"></a><div class="refsect1 description">
+    <h3 class="title">Description</h3>
+    <p class="para">
+     The PDO_MYSQL Data Source Name (DSN) is composed of the following elements:
+     </p><dl>
+
+      <dt class="varlistentry">
+
+       <span class="term">DSN prefix</span>
+
+       </dt><dd class="listitem">
+
+        <p class="para">
+        The DSN prefix is <strong class="userinput"><code>mysql:</code></strong>
+.
+        </p>
+       </dd>
+
+      
+      <dt class="varlistentry">
+
+       <span class="term"><b><tt class="constant">host</tt></b></span>
+
+       </dt><dd class="listitem">
+
+        <p class="para">
+         The hostname on which the database server resides.
+        </p>
+       </dd>
+
+      
+      <dt class="varlistentry">
+
+       <span class="term"><b><tt class="constant">port</tt></b></span>
+
+       </dt><dd class="listitem">
+
+        <p class="para">
+         The port number where the database server is listening.
+        </p>
+       </dd>
+
+      
+      <dt class="varlistentry">
+
+       <span class="term"><b><tt class="constant">dbname</tt></b></span>
+
+       </dt><dd class="listitem">
+
+        <p class="para">
+         The name of the database.
+        </p>
+       </dd>
+
+      
+      <dt class="varlistentry">
+
+       <span class="term"><b><tt class="constant">unix_socket</tt></b></span>
+
+       </dt><dd class="listitem">
+
+        <p class="para">
+         The MySQL Unix socket (shouldn&#039;t be used with <i>host</i>
+         or <i>port</i>).
+        </p>
+       </dd>
+
+      
+     </dl>
+<p>
+    </p>
+   </div>
+
+   <a name="ref.pdo-mysql.connection.examples"></a><div class="refsect1 examples">
+    <h3 class="title">Examples</h3>
+    <p class="para">
+     </p><div class="example">
+      <p><b>Example #1 PDO_MYSQL DSN examples</b></p>
+      <div class="example-contents para"><p>
+       The following example shows a PDO_MYSQL DSN for connecting to
+       MySQL databases:
+       </p><div class="example-contents programlisting">
+<div class="cdata"><pre>
+mysql:host=localhost;dbname=testdb
+</pre></div>
+       </div>
+<p>
+       More complete examples:
+       </p><div class="example-contents programlisting">
+<div class="cdata"><pre>
+mysql:host=localhost;port=3307;dbname=testdb
+mysql:unix_socket=/tmp/mysql.sock;dbname=testdb
+</pre></div>
+       </div>
+<p>
+      </p></div>
+     </div><p>
+    </p>
+   </div>
+
+  </div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="ref.pdo-mysql.html">MySQL (PDO)</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.pdo-oci.html">Oracle (PDO)</a></div>
+ <div class="up"><a href="ref.pdo-mysql.html">MySQL (PDO)</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

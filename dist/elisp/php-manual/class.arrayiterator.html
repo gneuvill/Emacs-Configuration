@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The ArrayIterator class</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="spl.iterators.html">Iterators</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="arrayiterator.current.html">ArrayIterator::current</a></div>
+ <div class="up"><a href="spl.iterators.html">Iterators</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div>
+ <h1 class="title">The ArrayIterator class</h1>
+ 
+ 
+ <div class="partintro">
+ 
+
+  <div id="arrayiterator.intro" class="section">
+   <h2 class="title">Introduction</h2>
+   <p class="para">
+    This iterator allows to unset and modify values and keys while iterating
+    over Arrays and Objects.
+   </p>
+   <p class="para">
+    When you want to iterate over the same array multiple times you need to
+    instantiate ArrayObject and let it create ArrayIterator instances that
+    refer to it either by using <a href="control-structures.foreach.html" class="link">foreach</a> or by calling its getIterator()
+    method manually. 
+   </p>
+  </div>
+
+ 
+  <div id="arrayiterator.synopsis" class="section">
+   <h2 class="title">Class synopsis</h2>
+ 
+
+   <div class="classsynopsis">
+    <div class="ooclass"><b class="classname">ArrayIterator</b></div>
+ 
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+      <b class="classname">ArrayIterator</b>
+     </span>
+
+     <span class="oointerface">implements 
+      <a href="class.iterator.html" class="interfacename">Iterator</a>
+     </span>
+ 
+     <span class="oointerface">, 
+      <a href="class.traversable.html" class="interfacename">Traversable</a>
+     </span>
+ 
+     <span class="oointerface">, 
+      <a href="class.arrayaccess.html" class="interfacename">ArrayAccess</a>
+     </span>
+ 
+     <span class="oointerface">, 
+      <a href="class.seekableiterator.html" class="interfacename">SeekableIterator</a>
+     </span>
+ 
+     <span class="oointerface">, 
+      <a href="class.countable.html" class="interfacename">Countable</a>
+     </span>
+ 
+     {</div>
+
+ 
+    
+ 
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methods */</div>
+    <div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname"><a href="arrayiterator.current.html" class="function">current</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname"><a href="arrayiterator.key.html" class="function">key</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="arrayiterator.next.html" class="function">next</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="arrayiterator.rewind.html" class="function">rewind</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="arrayiterator.seek.html" class="function">seek</a></span>
+    ( <span class="methodparam"><span class="type">int</span> <tt class="parameter">$position</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="arrayiterator.valid.html" class="function">valid</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+   }</div>
+ 
+  </div>
+ 
+
+ 
+ </div>
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="arrayiterator.current.html">ArrayIterator::current</a> — Return current array entry</li><li><a href="arrayiterator.key.html">ArrayIterator::key</a> — Return current array key</li><li><a href="arrayiterator.next.html">ArrayIterator::next</a> — Move to next entry</li><li><a href="arrayiterator.rewind.html">ArrayIterator::rewind</a> — Rewind array back to the start</li><li><a href="arrayiterator.seek.html">ArrayIterator::seek</a> — Seek to position</li><li><a href="arrayiterator.valid.html">ArrayIterator::valid</a> — Check whether array contains more entries</li></ul>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="spl.iterators.html">Iterators</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="arrayiterator.current.html">ArrayIterator::current</a></div>
+ <div class="up"><a href="spl.iterators.html">Iterators</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

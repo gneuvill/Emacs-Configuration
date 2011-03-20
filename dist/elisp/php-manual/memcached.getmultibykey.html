@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Retrieve multiple items from a specific server</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="memcached.getmulti.html">Memcached::getMulti</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="memcached.getoption.html">Memcached::getOption</a></div>
+ <div class="up"><a href="class.memcached.html">Memcached</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="memcached.getmultibykey" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">Memcached::getMultiByKey</h1>
+  <p class="verinfo">(PECL memcached &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">Memcached::getMultiByKey</span> &mdash; <span class="dc-title">Retrieve multiple items from a specific server</span></p>
+
+ </div>
+
+ <a name="memcached.getmultibykey.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type"><span class="type void">void</span></span> <span class="methodname"><b>Memcached::getMultiByKey</b></span>
+    ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$server_key</tt></span>
+   , <span class="methodparam"><span class="type">array</span> <tt class="parameter">$keys</tt></span>
+   [, <span class="methodparam"><span class="type">string</span> <tt class="parameter reference">&amp;$cas_tokens</tt></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   <b>Memcached::getMultiByKey()</b> is functionally equivalent to
+    <span class="methodname"><a href="memcached.getmulti.html" class="function">Memcached::getMulti</a></span>, except that the free-form
+   <i><tt class="parameter">server_key</tt></i>
+ can be used to map the
+   <i><tt class="parameter">keys</tt></i>
+ to a specific server.
+  </p>
+ </div>
+
+
+ <a name="memcached.getmultibykey.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">server_key</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The key identifying the server to store the value on.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">keys</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       Array of keys to retrieve.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">cas_tokens</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The variable to store the CAS tokens for the found items.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="memcached.getmultibykey.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Returns the array of found items or <b><tt class="constant">FALSE</tt></b> on failure.
+   Use  <span class="methodname"><a href="memcached.getresultcode.html" class="function">Memcached::getResultCode</a></span> if necessary.
+  </p>
+ </div>
+
+
+ <a name="memcached.getmultibykey.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"> <span class="methodname"><a href="memcached.getmulti.html" class="function" rel="rdfs-seeAlso">Memcached::getMulti</a> - Retrieve multiple items</span></li>
+    <li class="member"> <span class="methodname"><a href="memcached.get.html" class="function" rel="rdfs-seeAlso">Memcached::get</a> - Retrieve an item</span></li>
+    <li class="member"> <span class="methodname"><a href="memcached.getdelayed.html" class="function" rel="rdfs-seeAlso">Memcached::getDelayed</a> - Request multiple items</span></li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="memcached.getmulti.html">Memcached::getMulti</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="memcached.getoption.html">Memcached::getOption</a></div>
+ <div class="up"><a href="class.memcached.html">Memcached</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Installation</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="dba.requirements.html">Requirements</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="dba.configuration.html">Runtime Configuration</a></div>
+ <div class="up"><a href="dba.setup.html">Installing/Configuring</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="dba.installation" class="section">
+ <h2 class="title">Installation</h2>
+ <p class="para">
+  By using the <span class="option">--enable-dba=shared</span>
+  configuration option you can build a dynamic loadable module to enable PHP
+  for basic support of dbm-style databases. You also have to add support
+  for at least one of the following handlers by specifying the
+  <span class="option">--with-XXXX</span> configure switch to your PHP
+  configure line.
+ </p>
+ <div class="warning"><b class="warning">Warning</b>
+  <p class="para">
+   After configuring and compiling PHP you must execute the following test
+   from commandline: <i>php run-tests.php ext/dba</i>. This shows
+   whether your combination of handlers works. Most problematic are 
+   <i>dbm</i> and <i>ndbm</i> which conflict with
+   many installations. The reason for this is that on several systems these
+   libraries are part of more than one other library. The configuration test
+   only prevents you from configuring malfunctioning single handlers but not 
+   combinations.
+  </p>
+ </div>
+ <p class="para">
+  </p><table class="doctable table">
+   <caption><b>Supported DBA handlers</b></caption>
+   
+    <thead valign="middle">
+     <tr valign="middle">
+      <th>Handler</th>
+      <th>Configure Switch</th>
+     </tr>
+
+    </thead>
+
+    <tbody valign="middle" class="tbody">
+     <tr valign="middle">
+      <td align="left"><i>dbm</i></td>
+      <td align="left">
+       <p class="para">
+       To enable support for dbm add
+       <span class="option">--with-dbm[=DIR]</span>.
+       </p><blockquote><p><b class="note">Note</b>: 
+        
+         dbm normally is a wrapper which often results in failures.
+         This means you should only use dbm if you are sure it works
+         and if you really need this format.
+        <br />
+       </p></blockquote><p>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr valign="middle">
+      <td align="left"><i>ndbm</i></td>
+      <td align="left">
+       <p class="para">
+       To enable support for ndbm add
+       <span class="option">--with-ndbm[=DIR]</span>.
+       </p><blockquote><p><b class="note">Note</b>: 
+        
+         ndbm normally is a wrapper which often results in failures.
+         This means you should only use ndbm if you are sure it works
+         and if you really need this format.
+        <br />
+       </p></blockquote><p>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr valign="middle">
+      <td align="left"><i>gdbm</i></td>
+      <td align="left">
+       To enable support for gdbm add
+       <span class="option">--with-gdbm[=DIR]</span>.
+      </td>
+     </tr>
+
+
+     <tr valign="middle">
+      <td align="left"><i>db2</i></td>
+      <td align="left">
+       <p class="para">
+       To enable support for db2 add
+       <span class="option">--with-db2[=DIR]</span>.
+       </p><blockquote><p><b class="note">Note</b>: 
+        
+         db2 conflicts with db3 and db4.
+        <br />
+       </p></blockquote><p>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr valign="middle">
+      <td align="left"><i>db3</i></td>
+      <td align="left">
+       <p class="para">
+       To enable support for db3 add
+       <span class="option">--with-db3[=DIR]</span>.
+       </p><blockquote><p><b class="note">Note</b>: 
+        
+         db3 conflicts with db2 and db4.
+        <br />
+       </p></blockquote><p>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr valign="middle">
+      <td align="left"><i>db4</i></td>
+      <td align="left">
+       <p class="para">
+       To enable support for db4 add
+       <span class="option">--with-db4[=DIR]</span>.
+       </p><blockquote><p><b class="note">Note</b>: 
+        
+         db4 conflicts with db2 and db3.
+        <br />
+       </p></blockquote><p>
+       </p><blockquote><p><b class="note">Note</b>: 
+        
+         This was added in PHP 4.3.2. In earlier versions of PHP you need to use
+         <span class="option">--with-db3=DIR</span> with DIR being the
+         path to db4 library. It is not possible to use db versions starting 
+         from 4.1 with PHP prior to version 4.3.0. Also, the db libraries with
+         versions 4.1 through 4.1.24 cannot be used in any PHP version.
+        <br />
+       </p></blockquote><p>
+      </p>
+      </td>
+     </tr>
+
+
+     <tr valign="middle">
+      <td align="left"><i>cdb</i></td>
+      <td align="left">
+       <p class="para">
+       To enable support for cdb add
+       <span class="option">--with-cdb[=DIR]</span>.
+       </p><blockquote><p><b class="note">Note</b>: 
+        
+         Since PHP 4.3.0 you can omit DIR to use the bundled cdb library 
+         that adds the cdb_make handler which allows creation of cdb files
+         and allows to access cdb files on the network using PHP&#039;s streams.
+        <br />
+       </p></blockquote><p>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr valign="middle">
+      <td align="left"><i>flatfile</i></td>
+      <td align="left">
+       <p class="para">
+       To enable support for flatfile add
+       <span class="option">--with-flatfile</span>.
+       </p><blockquote><p><b class="note">Note</b>: 
+        
+         This was added in PHP 4.3.0 to add compatibility with deprecated
+         <i>dbm</i> extension. Use this handler only
+         when you cannot install one of the libraries required by the other
+         handlers and when you cannot use bundled cdb handler.
+        <br />
+       </p></blockquote><p>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr valign="middle">
+      <td align="left"><i>inifile</i></td>
+      <td align="left">
+       <p class="para">
+       To enable support for inifile add
+       <span class="option">--with-inifile</span>.
+       </p><blockquote><p><b class="note">Note</b>: 
+        
+         This was added in PHP 5.0.0 and allows to read and set microsoft style
+         <var class="filename">.ini</var> files (like the <var class="filename">php.ini</var> file).
+        <br />
+       </p></blockquote><p>
+       </p>
+      </td>
+     </tr>
+
+
+     <tr valign="middle">
+      <td align="left"><i>qdbm</i></td>
+      <td align="left">
+       <p class="para">
+       To enable support for qdbm add
+       <span class="option">--with-qdbm[=DIR]</span>.
+       </p><blockquote><p><b class="note">Note</b>: 
+        
+         qdbm conflicts with dbm and gdbm.
+        <br />
+       </p></blockquote><p>
+       </p><blockquote><p><b class="note">Note</b>: 
+        
+         This was added in PHP 5.0.0. The qdbm library can be loaded from
+         <a href="http://qdbm.sourceforge.net" class="link external">&raquo; http://qdbm.sourceforge.net</a>.
+        <br />
+       </p></blockquote><p>
+       </p>
+      </td>
+     </tr>
+
+
+    </tbody>
+   
+  </table>
+<p>
+  </p><blockquote><p><b class="note">Note</b>: 
+   
+    Up to PHP 4.3.0 you are able to add both db2 and db3 handler but only one
+    of them can be used internally. That means that you cannot have both file 
+    formats. Starting with PHP 5.0.0 there is a configuration check avoid such
+    misconfigurations.
+   <br />
+  </p></blockquote><p>
+ </p>
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="dba.requirements.html">Requirements</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="dba.configuration.html">Runtime Configuration</a></div>
+ <div class="up"><a href="dba.setup.html">Installing/Configuring</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

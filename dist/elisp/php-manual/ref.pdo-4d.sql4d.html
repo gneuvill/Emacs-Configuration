@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>PDO and SQL 4D</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="pdo-4d.sqltypes.html">SQL types with PDO_4D and PHP</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="pdo-4d.examples.html">Examples with PDO_4D</a></div>
+ <div class="up"><a href="ref.pdo-4d.html">Driver 4D for PDO</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="ref.pdo-4d.sql4d" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">SQL acceptable by 4D</h1>
+  <p class="verinfo">(No version information available, might only be in CVS)</p><p class="refpurpose"><span class="refname">SQL acceptable by 4D</span> &mdash; <span class="dc-title">PDO and SQL 4D</span></p>
+
+ </div>
+
+ <a name="ref.pdo-4d.sql4d.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <p class="para">
+   4D implements strictly the ANSI 89 standard, and have it enforced.
+   It is highly recommended to read the 4D SQL documentation to learn
+   about the available commands. The URL of the manual is :
+   <a href="http://www.4d.fr/support/docs.html" class="link external">&raquo; http://www.4d.fr/support/docs.html</a>.
+   Below is a list of 4D SQL characteristics: it is not exhaustive,
+   but may serve as an introduction.
+  </p>
+  <p class="para">
+   </p><table class="doctable table">
+    <caption><b>Characteristics of 4D SQL</b></caption>
+     
+      <thead valign="middle">
+       <tr valign="middle">
+        <th>Ch
+        aracteristics</th>
+        <th>Alternative</th>
+        <th>Note</th>
+       </tr>
+
+      </thead>
+
+      <tbody valign="middle" class="tbody">
+       <tr valign="middle">
+        <td align="left">INTEGER</td>
+        <td align="left">INT is the supported integer type. Modify the SQL to use INT.</td>
+        <td class="empty">&nbsp;</td>
+       </tr>
+
+       <tr valign="middle">
+        <td align="left">UNION</td>
+        <td align="left">Unsupported. Make separate queries.</td>
+        <td class="empty">&nbsp;</td>
+       </tr>
+
+       <tr valign="middle">
+        <td align="left">LEFT JOIN</td>
+        <td align="left">Use the SQL 89 notation (see example #3 PDO_4D)</td>
+        <td class="empty">&nbsp;</td>
+       </tr>
+
+       <tr valign="middle">
+        <td align="left">SELECT 1 + 1;</td>
+        <td align="left">SELECT 1 + 1 FROM _USER_SCHEMAS;</td>
+        <td class="empty">&nbsp;</td>
+       </tr>
+
+       <tr valign="middle">
+        <td align="left">FLOAT</td>
+        <td align="left">Cast the FLOAT value with a SQL 4D function (ROUND, TRUNC or TRUNCATE)</td>
+        <td align="left">Unsupported in the driver PDO_4D v1.0</td>
+       </tr>
+
+       <tr valign="middle">
+        <td align="left">Strong typing : one must provide the right type that 4D expect. One can&#039;t insert &#039;1&#039; (as a string) in an INTEGER column.</td>
+        <td align="left">Modify your SQL query, or your PHP to adapt the type</td>
+        <td align="left">Unsupported</td>
+       </tr>
+
+       <tr valign="middle">
+        <td align="left"><b>PDO::execute($row)()</b> only works if all the table&#039;s column are of type <i>TEXT</i></td>
+        <td align="left">Use the prepared statements, and use the right types.</td>
+        <td align="left">The PDO extension cast all values through execute() as string, and expect the SQL database to parse the values.</td>
+       </tr>
+
+       <tr valign="middle">
+        <td align="left">SELECT NULL FROM TABLE</td>
+        <td align="left">It is not allowed to use the NULL constante in the select list</td>
+        <td align="left">Do not use NULL constants. Extract them from the table</td>
+       </tr>
+
+       <tr valign="middle">
+        <td align="left">SELECT * FROM TABLE WHERE 1</td>
+        <td align="left">A constant can&#039;t be used in a WHERE clause.</td>
+        <td align="left">Use <i>1 = 1</i></td>
+       </tr>
+
+       <tr valign="middle">
+        <td align="left">SHOW TABLES</td>
+        <td align="left">The list of tables, schemas, index, etc. are in 7 4D tables</td>
+        <td align="left">
+         Use <i>_USER_TABLES</i>,  <i>_USER_COLUMNS</i>,  
+         <i>_USER_INDEXES</i>,  <i>_USER_CONSTRAINTS</i>,  
+         <i>_USER_IND_COLUMNS</i>,  <i>_USER_CONS_COLUMNS</i>,
+         and <i>_USER_SCHEMAS</i>.
+        </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+<p>
+  </p>
+  <blockquote><p><b class="note">Note</b>: 
+   
+     In version 11.3 and below, it wasn&#039;t possible to use the SQL syntax
+     <i>id INT PRIMARY KEY</i> during the creation of a table.
+     This have been fixed in 4D 11.4 and up. It is recommended to use
+     at least version 11.4 with PDO_4D.
+   <br />
+  </p></blockquote>
+ </div>
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="pdo-4d.sqltypes.html">SQL types with PDO_4D and PHP</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="pdo-4d.examples.html">Examples with PDO_4D</a></div>
+ <div class="up"><a href="ref.pdo-4d.html">Driver 4D for PDO</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

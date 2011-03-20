@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Seeks to specific location in a stream</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="streamwrapper.stream-read.html">streamWrapper::stream_read</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="streamwrapper.stream-set-option.html">streamWrapper::stream_set_option</a></div>
+ <div class="up"><a href="class.streamwrapper.html">streamWrapper</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="streamwrapper.stream-seek" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">streamWrapper::stream_seek</h1>
+  <p class="verinfo">(PHP 4 &gt;= 4.3.2, PHP 5)</p><p class="refpurpose"><span class="refname">streamWrapper::stream_seek</span> &mdash; <span class="dc-title">Seeks to specific location in a stream</span></p>
+
+ </div>
+
+ <a name="streamwrapper.stream-seek.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><b>streamWrapper::stream_seek</b></span>
+    ( <span class="methodparam"><span class="type">int</span> <tt class="parameter">$offset</tt></span>
+   , <span class="methodparam"><span class="type">int</span> <tt class="parameter">$whence</tt> <span class="initializer">= SEEK_SET</span></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   This method is called in response to <a href="function.fseek.html" class="function">fseek()</a>.
+  </p>
+  <p class="para">
+   The read/write position of the stream should be updated according to the
+   <i><tt class="parameter">offset</tt></i>
+ and <i><tt class="parameter">whence</tt></i>
+.
+  </p>
+ </div>
+
+
+ <a name="streamwrapper.stream-seek.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">offset</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The stream offset to seek to.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">whence</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       Possible values:
+       </p><ul class="simplelist">
+        <li class="member"><b><tt class="constant">SEEK_SET</tt></b> - Set position equal to <i><tt class="parameter">offset</tt></i>
+ bytes.</li>
+        <li class="member"><b><tt class="constant">SEEK_CUR</tt></b> - Set position to current location plus <i><tt class="parameter">offset</tt></i>
+.</li>
+        <li class="member"><b><tt class="constant">SEEK_END</tt></b> - Set position to end-of-file plus <i><tt class="parameter">offset</tt></i>
+.</li>
+       </ul><p>
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="streamwrapper.stream-seek.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Return <b><tt class="constant">TRUE</tt></b> if the position was updated, <b><tt class="constant">FALSE</tt></b> otherwise.
+  </p>
+ </div>
+
+
+
+
+ <a name="streamwrapper.stream-seek.notes"></a><div class="refsect1 notes">
+  <h3 class="title">Notes</h3>
+  <blockquote><p><b class="note">Note</b>: 
+   
+    If not implemented, <b><tt class="constant">FALSE</tt></b> is assumed as the return value.
+   <br />
+  </p></blockquote>
+  <blockquote><p><b class="note">Note</b>: 
+   
+    Upon success, 
+     <span class="methodname"><a href="streamwrapper.stream-tell.html" class="function">streamWrapper::stream_tell</a></span> is called directly after
+    calling  <span class="methodname"><b>streamWrapper::stream_seek</b></span>. If
+     <span class="methodname"><a href="streamwrapper.stream-tell.html" class="function">streamWrapper::stream_tell</a></span> fails, the return
+    value to the caller function will be set to <b><tt class="constant">FALSE</tt></b>
+   <br />
+  </p></blockquote>
+ </div>
+
+
+ <a name="streamwrapper.stream-seek.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.fseek.html" class="function" rel="rdfs-seeAlso">fseek()</a> - Seeks on a file pointer</li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="streamwrapper.stream-read.html">streamWrapper::stream_read</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="streamwrapper.stream-set-option.html">streamWrapper::stream_set_option</a></div>
+ <div class="up"><a href="class.streamwrapper.html">streamWrapper</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

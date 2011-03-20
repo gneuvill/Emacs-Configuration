@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Quote meta characters</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.quoted-printable-encode.html">quoted_printable_encode</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.rtrim.html">rtrim</a></div>
+ <div class="up"><a href="ref.strings.html">String Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="function.quotemeta" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">quotemeta</h1>
+  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">quotemeta</span> &mdash; <span class="dc-title">Quote meta characters</span></p>
+
+ </div>
+ 
+ <a name="function.quotemeta.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><b>quotemeta</b></span>
+    ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$str</tt></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Returns a version of str with a backslash character (<i>\</i>)
+   before every character that is among these: 
+   <div class="example-contents screen">. \ + * ? [ ^ ] ( $ )</div>
+  </p>
+ </div>
+
+
+ <a name="function.quotemeta.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">str</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The input string.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="function.quotemeta.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Returns the string with meta characters quoted.
+  </p>
+ </div>
+
+
+ <a name="function.quotemeta.notes"></a><div class="refsect1 notes">
+  <h3 class="title">Notes</h3>
+  <blockquote><p><b class="note">Note</b>: <span class="simpara">This function is
+binary-safe.</span></p></blockquote>
+ </div>
+
+
+ <a name="function.quotemeta.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.addslashes.html" class="function" rel="rdfs-seeAlso">addslashes()</a> - Quote string with slashes</li>
+    <li class="member"><a href="function.addcslashes.html" class="function" rel="rdfs-seeAlso">addcslashes()</a> - Quote string with slashes in a C style</li>
+    <li class="member"><a href="function.htmlentities.html" class="function" rel="rdfs-seeAlso">htmlentities()</a> - Convert all applicable characters to HTML entities</li>
+    <li class="member"><a href="function.htmlspecialchars.html" class="function" rel="rdfs-seeAlso">htmlspecialchars()</a> - Convert special characters to HTML entities</li>
+    <li class="member"><a href="function.nl2br.html" class="function" rel="rdfs-seeAlso">nl2br()</a> - Inserts HTML line breaks before all newlines in a string</li>
+    <li class="member"><a href="function.stripslashes.html" class="function" rel="rdfs-seeAlso">stripslashes()</a> - Un-quotes a quoted string</li>
+    <li class="member"><a href="function.stripcslashes.html" class="function" rel="rdfs-seeAlso">stripcslashes()</a> - Un-quote string quoted with addcslashes</li>
+    <li class="member"><a href="function.preg-match.html" class="function" rel="rdfs-seeAlso">preg_match()</a> - Perform a regular expression match</li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.quoted-printable-encode.html">quoted_printable_encode</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.rtrim.html">rtrim</a></div>
+ <div class="up"><a href="ref.strings.html">String Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Connecting to Microsoft SQL Server and Sybase databases</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="ref.pdo-dblib.html">MS SQL Server (PDO)</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.pdo-firebird.html">Firebird/Interbase (PDO)</a></div>
+ <div class="up"><a href="ref.pdo-dblib.html">MS SQL Server (PDO)</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="ref.pdo-dblib.connection" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">PDO_DBLIB DSN</h1>
+    <p class="verinfo">(PECL PDO_DBLIB &gt;= 0.9.0)</p><p class="refpurpose"><span class="refname">PDO_DBLIB DSN</span> &mdash; <span class="dc-title">Connecting to Microsoft SQL Server and Sybase databases</span></p>
+
+   </div>
+
+   <a name="ref.pdo-dblib.connection.description"></a><div class="refsect1 description">
+    <h3 class="title">Description</h3>
+    <p class="para">
+     The PDO_DBLIB Data Source Name (DSN) is composed of the following elements:
+     </p><dl>
+
+      <dt class="varlistentry">
+
+       <span class="term">DSN prefix</span>
+
+       </dt><dd class="listitem">
+
+        <p class="para">
+        The DSN prefix is <strong class="userinput"><code>sybase:</code></strong>
+ if PDO_DBLIB was
+        linked against the FreeTDS libraries, <strong class="userinput"><code>mssql:</code></strong>
+
+        if PDO_DBLIB was linked against the Microsoft SQL Server libraries,
+        or <strong class="userinput"><code>dblib:</code></strong>
+ if linked against any other variety
+        of DB-lib.
+        </p>
+       </dd>
+
+      
+      <dt class="varlistentry">
+
+       <span class="term"><b><tt class="constant">host</tt></b></span>
+
+       </dt><dd class="listitem">
+
+        <p class="para">
+         The hostname on which the database server resides.
+        </p>
+       </dd>
+
+      
+      <dt class="varlistentry">
+
+       <span class="term"><b><tt class="constant">dbname</tt></b></span>
+
+       </dt><dd class="listitem">
+
+        <p class="para">
+         The name of the database.
+        </p>
+       </dd>
+
+      
+     </dl>
+<p>
+    </p>
+   </div>
+
+   <a name="ref.pdo-dblib.connection.examples"></a><div class="refsect1 examples">
+    <h3 class="title">Examples</h3>
+    <p class="para">
+     </p><div class="example">
+      <p><b>Example #1 PDO_DBLIB DSN examples</b></p>
+      <div class="example-contents para"><p>
+       The following examples show a PDO_DBLIB DSN for connecting to
+       Microsoft SQL Server and Sybase databases:
+       </p><div class="example-contents programlisting"><div class="cdata"><pre>
+mssql:host=localhost;dbname=testdb
+sybase:host=localhost;dbname=testdb
+dblib:host=localhost;dbname=testdb
+</pre></div>
+       </div>
+<p>
+      </p></div>
+     </div><p>
+    </p>
+   </div>
+
+  </div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="ref.pdo-dblib.html">MS SQL Server (PDO)</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.pdo-firebird.html">Firebird/Interbase (PDO)</a></div>
+ <div class="up"><a href="ref.pdo-dblib.html">MS SQL Server (PDO)</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

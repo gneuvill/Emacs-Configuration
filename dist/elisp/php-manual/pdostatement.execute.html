@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Executes a prepared statement</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="pdostatement.errorinfo.html">PDOStatement->errorInfo</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="pdostatement.fetch.html">PDOStatement->fetch</a></div>
+ <div class="up"><a href="class.pdostatement.html">PDOStatement</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="pdostatement.execute" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">PDOStatement-&gt;execute</h1>
+  <p class="verinfo">(PHP 5 &gt;= 5.1.0, PECL pdo &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">PDOStatement-&gt;execute</span> &mdash; <span class="dc-title">
+   Executes a prepared statement
+  </span></p>
+
+ </div>
+ <a name="pdostatement.execute.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><b>PDOStatement::execute</b></span>
+    ([ <span class="methodparam"><span class="type">array</span> <tt class="parameter">$input_parameters</tt><span class="initializer">= array()</span></span>
+  ] )</div>
+
+  <p class="para rdfs-comment">
+   Execute the prepared statement. If the prepared statement included
+   parameter markers, you must either:
+   </p><ul class="itemizedlist">
+    <li class="listitem"><p class="para">call <a href="pdostatement.bindparam.html" class="function">PDOStatement::bindParam()</a> to bind PHP variables
+    to the parameter markers: bound variables pass their value as input and receive the
+    output value, if any, of their associated parameter markers</p></li>
+    <li class="listitem"><p class="para">or pass an array of input-only parameter values</p></li>
+   </ul><p>
+  </p>
+ </div>
+
+
+ <a name="pdostatement.execute.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">input_parameters</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       An array of values with as many elements as there are bound
+       parameters in the SQL statement being executed.
+      </p>
+      <p class="para">
+       You cannot bind multiple values to a single parameter; for example,
+       you cannot bind two values to a single named parameter in an IN()
+       clause.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="pdostatement.execute.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Returns <b><tt class="constant">TRUE</tt></b> on success or <b><tt class="constant">FALSE</tt></b> on failure.
+  </p>
+ </div>
+
+
+ <a name="pdostatement.execute.examples"></a><div class="refsect1 examples">
+  <h3 class="title">Examples</h3>
+  <div class="example"><p><b>Example #1 Execute a prepared statement with bound variables</b></p>
+   <div class="example-contents programlisting">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Execute&nbsp;a&nbsp;prepared&nbsp;statement&nbsp;by&nbsp;binding&nbsp;PHP&nbsp;variables&nbsp;*/<br /></span><span style="color: #0000BB">$calories&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">150</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$colour&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'red'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$sth&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #DD0000">'SELECT&nbsp;name,&nbsp;colour,&nbsp;calories<br />&nbsp;&nbsp;&nbsp;&nbsp;FROM&nbsp;fruit<br />&nbsp;&nbsp;&nbsp;&nbsp;WHERE&nbsp;calories&nbsp;&lt;&nbsp;:calories&nbsp;AND&nbsp;colour&nbsp;=&nbsp;:colour'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$sth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #DD0000">':calories'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$calories</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">PARAM_INT</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$sth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #DD0000">':colour'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$colour</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">PARAM_STR</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">12</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$sth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  <div class="example"><p><b>Example #2 Execute a prepared statement with an array of insert values (named parameters)</b></p>
+   <div class="example-contents programlisting">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Execute&nbsp;a&nbsp;prepared&nbsp;statement&nbsp;by&nbsp;passing&nbsp;an&nbsp;array&nbsp;of&nbsp;insert&nbsp;values&nbsp;*/<br /></span><span style="color: #0000BB">$calories&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">150</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$colour&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'red'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$sth&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #DD0000">'SELECT&nbsp;name,&nbsp;colour,&nbsp;calories<br />&nbsp;&nbsp;&nbsp;&nbsp;FROM&nbsp;fruit<br />&nbsp;&nbsp;&nbsp;&nbsp;WHERE&nbsp;calories&nbsp;&lt;&nbsp;:calories&nbsp;AND&nbsp;colour&nbsp;=&nbsp;:colour'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$sth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">(array(</span><span style="color: #DD0000">':calories'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$calories</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">':colour'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$colour</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  <div class="example"><p><b>Example #3 Execute a prepared statement with an array of insert values (placeholders)</b></p>
+   <div class="example-contents programlisting">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Execute&nbsp;a&nbsp;prepared&nbsp;statement&nbsp;by&nbsp;passing&nbsp;an&nbsp;array&nbsp;of&nbsp;insert&nbsp;values&nbsp;*/<br /></span><span style="color: #0000BB">$calories&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">150</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$colour&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'red'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$sth&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #DD0000">'SELECT&nbsp;name,&nbsp;colour,&nbsp;calories<br />&nbsp;&nbsp;&nbsp;&nbsp;FROM&nbsp;fruit<br />&nbsp;&nbsp;&nbsp;&nbsp;WHERE&nbsp;calories&nbsp;&lt;&nbsp;?&nbsp;AND&nbsp;colour&nbsp;=&nbsp;?'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$sth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">(array(</span><span style="color: #0000BB">$calories</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$colour</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+
+  <div class="example"><p><b>Example #4 Execute a prepared statement with question mark placeholders</b></p>
+   <div class="example-contents programlisting">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;Execute&nbsp;a&nbsp;prepared&nbsp;statement&nbsp;by&nbsp;binding&nbsp;PHP&nbsp;variables&nbsp;*/<br /></span><span style="color: #0000BB">$calories&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">150</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$colour&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'red'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$sth&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dbh</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">prepare</span><span style="color: #007700">(</span><span style="color: #DD0000">'SELECT&nbsp;name,&nbsp;colour,&nbsp;calories<br />&nbsp;&nbsp;&nbsp;&nbsp;FROM&nbsp;fruit<br />&nbsp;&nbsp;&nbsp;&nbsp;WHERE&nbsp;calories&nbsp;&lt;&nbsp;?&nbsp;AND&nbsp;colour&nbsp;=&nbsp;?'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$sth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$calories</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">PARAM_INT</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$sth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">bindParam</span><span style="color: #007700">(</span><span style="color: #0000BB">2</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$colour</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">PDO</span><span style="color: #007700">::</span><span style="color: #0000BB">PARAM_STR</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">12</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$sth</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </div>
+
+
+ <a name="pdostatement.execute.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="pdo.prepare.html" class="function" rel="rdfs-seeAlso">PDO::prepare()</a> - Prepares a statement for execution and returns a statement object</li>
+    <li class="member"><a href="pdostatement.bindparam.html" class="function" rel="rdfs-seeAlso">PDOStatement::bindParam()</a> - Binds a parameter to the specified variable name</li>
+    <li class="member"><a href="pdostatement.fetch.html" class="function" rel="rdfs-seeAlso">PDOStatement::fetch()</a> - Fetches the next row from a result set</li>
+    <li class="member"><a href="pdostatement.fetchall.html" class="function" rel="rdfs-seeAlso">PDOStatement::fetchAll()</a> - Returns an array containing all of the result set rows</li>
+    <li class="member"><a href="pdostatement.fetchcolumn.html" class="function" rel="rdfs-seeAlso">PDOStatement::fetchColumn()</a> - Returns a single column from the next row of a result set</li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="pdostatement.errorinfo.html">PDOStatement->errorInfo</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="pdostatement.fetch.html">PDOStatement->fetch</a></div>
+ <div class="up"><a href="class.pdostatement.html">PDOStatement</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

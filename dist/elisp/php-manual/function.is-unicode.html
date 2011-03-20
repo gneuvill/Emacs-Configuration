@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Finds whether a variable is a unicode string</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.is-string.html">is_string</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.isset.html">isset</a></div>
+ <div class="up"><a href="ref.var.html">Variable handling Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="function.is-unicode" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">is_unicode</h1>
+  <p class="verinfo">(PHP 6 &gt;= 6.0.0)</p><p class="refpurpose"><span class="refname">is_unicode</span> &mdash; <span class="dc-title">Finds whether a variable is a unicode string</span></p>
+
+ </div>
+ 
+ <a name="function.is-unicode.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><b>is_unicode</b></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$var</tt></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Finds whether the given variable is a <span class="type unicode">unicode</span> string.
+  </p>
+ </div>
+
+ 
+ <a name="function.is-unicode.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">var</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The variable being evaluated.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+ 
+ <a name="function.is-unicode.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Returns <b><tt class="constant">TRUE</tt></b> if <i><tt class="parameter">var</tt></i>
+ is a <span class="type unicode">unicode</span>
+   string, <b><tt class="constant">FALSE</tt></b> otherwise.
+  </p>
+ </div>
+
+
+ <a name="function.is-unicode.examples"></a><div class="refsect1 examples">
+  <h3 class="title">Examples</h3>
+  <p class="para">
+   </p><div class="example">
+    <p><b>Example #1 <b>is_unicode()</b> example</b></p>
+    <div class="example-contents programlisting">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;Declare&nbsp;a&nbsp;unicode&nbsp;string<br /></span><span style="color: #0000BB">$unicode&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'This&nbsp;is&nbsp;a&nbsp;unicode&nbsp;string'</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;Declare&nbsp;a&nbsp;binary&nbsp;string<br /></span><span style="color: #0000BB">$binary&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">b'This&nbsp;is&nbsp;a&nbsp;binary&nbsp;string'</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">is_unicode</span><span style="color: #007700">(</span><span style="color: #0000BB">$unicode</span><span style="color: #007700">),&nbsp;</span><span style="color: #0000BB">is_unicode</span><span style="color: #007700">(</span><span style="color: #0000BB">$binary</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <div class="example-contents para"><p>The above example will output:</p></div>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+bool(true)
+bool(false)
+</pre></div>
+    </div>
+   </div><p>
+  </p>
+ </div>
+
+ 
+ <a name="function.is-unicode.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.is-binary.html" class="function" rel="rdfs-seeAlso">is_binary()</a> - Finds whether a variable is a native binary string</li>
+    <li class="member"><a href="function.is-buffer.html" class="function" rel="rdfs-seeAlso">is_buffer()</a> - Finds whether a variable is a native unicode or binary string</li>
+    <li class="member"><a href="function.is-string.html" class="function" rel="rdfs-seeAlso">is_string()</a> - Find whether the type of a variable is string</li>
+    <li class="member"><a href="function.unicode-encode.html" class="function" rel="rdfs-seeAlso">unicode_encode()</a> - Convert a unicode string in any encoding</li>
+   </ul><p>
+  </p>
+ </div>
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.is-string.html">is_string</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.isset.html">isset</a></div>
+ <div class="up"><a href="ref.var.html">Variable handling Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

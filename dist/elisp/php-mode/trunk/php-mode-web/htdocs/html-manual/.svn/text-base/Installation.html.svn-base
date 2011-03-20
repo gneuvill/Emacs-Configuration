@@ -1,0 +1,199 @@
+<html lang="en">
+<head>
+<title>Installation - PHP Mode Manual</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="PHP Mode Manual">
+<meta name="generator" content="makeinfo 4.11">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Introduction.html#Introduction" title="Introduction">
+<link rel="next" href="Electricity.html#Electricity" title="Electricity">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual documents PHP mode version 1.5.0 for
+use with GNU Emacs.
+
+Copyright (C) 2008  Aaron S. Hawley
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of the GNU Free Documentation License,
+     Version 1.2 or any later version published by the Free Software
+     Foundation; with no Invariant Sections, and no Cover Texts.  A
+     copy of the license is included in the section entitled ``Copying
+     This Manual.''
+
+     A copy of the license is also available from the Free Software
+     Foundation Web site at `http://www.gnu.org/licenses/fdl.html'.
+
+
+The document was typeset with
+GNU Texinfo (http://www.texinfo.org/).
+
+$Date: 2008-11-04 11:51:51 -0500 (Tue, 04 Nov 2008) $
+
+$Revision: 90 $
+
+
+
+-->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Installation"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Electricity.html#Electricity">Electricity</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Introduction.html#Introduction">Introduction</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="chapter">2 Installation</h2>
+
+<p><a name="index-installing-PHP-mode-10"></a><a name="index-PHP-mode_002c-installing-11"></a>PHP mode can be installed like any Emacs Lisp library.
+
+   <p><a name="index-downloading-PHP-mode-12"></a><a name="index-PHP-mode_002c-downloading-13"></a>Download a source archive of the file.  It is available from
+PHP mode's Web site.
+
+   <p><a name="index-PHP-mode-Web-site-14"></a><a name="index-Web-site_002c-PHP-mode-15"></a><a href="http://php-mode.sourceforge.net/">http://php-mode.sourceforge.net/</a>
+
+   <p><a name="index-GPG-signature-16"></a><a name="index-verifiy-PHP-mode-with-GPG-17"></a><a name="index-OpenPGP-18"></a><a name="index-GnuPG-19"></a>Download either the file
+<samp><span class="file">php-mode-1.5.0.tar.gz</span></samp> or
+<samp><span class="file">php-mode-1.5.0.zip</span></samp>.  Both source files have
+a respective GnuPG<a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a> signature file with
+a <var>.sig</var> file name extension.
+
+   <p>To verify the source archive you need the key of the
+maintainer.  The public key can be downloaded from the Web
+site and imported, or imported from a key server.
+
+<pre class="example">     $ gpg --recv-keys 8E372922
+     gpg: requesting key 8E372922 from hkp server keys.gnupg.net
+     gpg: key 8E372922: public key
+     "Aaron S. Hawley (SourceForge) &lt;ashawley@users.sourceforge.net&gt;"
+     imported
+</pre>
+   <p>The public key can also be imported from a file.
+
+<pre class="example">     $ gpg --import ashawley-sf-pubkey.asc
+     gpg: key 8E372922: public key
+     "Aaron S. Hawley (SourceForge) &lt;ashawley@users.sourceforge.net&gt;"
+     imported
+     gpg: Total number processed: 1
+     gpg:               imported: 1
+</pre>
+   <p>Assign the trust for the maintainer key.
+
+<pre class="example">     $ gpg --edit-key 8E372922
+     Command&gt; trust
+     pub  1024D/8E372922  created: 2008-01-25  expires: 2010-01-01  usage: SC
+                          trust: unknown       validity: unknown
+     sub  2048g/A4B44512  created: 2008-01-25  expires: 2010-01-01  usage: E
+     [ unknown] (1). Aaron S. Hawley (SourceForge)
+                     &lt;ashawley@users.sourceforge.net&gt;
+     
+     Please decide how far you trust this user to correctly
+     verify other users' keys (by looking at passports, checking
+     fingerprints from different sources, etc.)
+     
+       1 = I don't know or won't say
+       2 = I do NOT trust
+       3 = I trust marginally
+       4 = I trust fully
+       5 = I trust ultimately
+       m = back to the main menu
+     
+     Your decision? 1
+     
+     pub  1024D/8E372922  created: 2008-01-25  expires: 2010-01-01  usage: SC
+                          trust: undefined     validity: unknown
+     sub  2048g/A4B44512  created: 2008-01-25  expires: 2010-01-01  usage: E
+     [ unknown] (1). Aaron S. Hawley (SourceForge)
+                     &lt;ashawley@users.sourceforge.net&gt;
+     Command&gt; quit
+</pre>
+   <!-- The key has to be signed as well? - ASH 2008-10-22 -->
+   <p>Verify a source package by using the GPG verify command on
+the signature file with the source file located in the same
+directory.
+
+<pre class="example">     $ gpg --verify php-mode-1.4.0.tar.gz.sig
+     gpg: Signature made Fri 25 Jan 2008 01:30:24 PM EST
+     gpg: using DSA key ID 8E372922
+     gpg: Good signature from
+     "Aaron S. Hawley (SourceForge) &lt;ashawley@users.sourceforge.net&gt;"
+     Primary key fingerprint: B425 30C2 4F72 D4F1 FD01
+                              D07D 7087 6760 8E37 2922
+</pre>
+   <p><a name="index-PHP-mode_002c-unpacking-20"></a><a name="index-unpacking-PHP-mode-21"></a><a name="index-extracting-PHP-mode-22"></a>After the source package is verified, unpack the source
+archive.
+
+<pre class="example">     $ tar zxf php php-mode-1.5.0.tar.gz
+</pre>
+   <p><a name="index-PHP-mode-documentation-23"></a><a name="index-documentatino_002c-PHP-mode-24"></a>The files are extracted to the directory
+<samp><span class="file">php-mode-1.5.0</span></samp>.  Run <kbd>make</kbd> in the
+directory to build all the formats of the documentation &ndash;
+Info, HTML, PostScript and PDF.  Read the notes in the
+<samp><span class="file">Makefile</span></samp> to learn how to run <kbd>make</kbd> to compile
+the manual into a single particular format.
+
+   <p><a name="index-g_t_002eemacs_002c-load_002dpath-25"></a><a name="index-load_002dpath-26"></a>If you have a local directory where Emacs Lisp libraries are
+stored, for example <samp><span class="file">~/elisp</span></samp>, then put the following
+in your <samp><span class="file">.emacs</span></samp> file if you haven't already
+
+<pre class="lisp">     (add-to-list 'load-path "~/elisp")
+</pre>
+   <p><a name="index-php_002dmode_002eel_002c-installing-27"></a><a name="index-installing-php_002dmode_002eel-28"></a><a name="index-php_002dmode_002eel_002c-loading-29"></a><a name="index-loading-php_002dmode_002eel-30"></a><a name="index-php_002dmode-31"></a><a name="index-load_002dpath-32"></a>Then, put the file <samp><span class="file">php-model.el</span></samp> into your Emacs
+<code>load-path</code>, <samp><span class="file">~/elisp</span></samp>, and add <code>php-mode</code> to
+your <samp><span class="file">.emacs</span></samp> file.
+
+<pre class="lisp">     (load "php-mode")
+</pre>
+   <p><a name="index-PHP-file-name-extension-33"></a><a name="index-extension_002c-PHP-file-name-34"></a><a name="index-file-name-extension_002c-PHP-35"></a><a name="index-customize_002dvariable-36"></a><a name="index-M_002dx-customize_002dvariable-37"></a>From inside Emacs, run <kbd>M-x customize-variable RET
+php-file-patterns RET</kbd>.  This variable instructs Emacs what
+file names should be opened in PHP mode.  If the defaults
+are fine, then click or hit <kbd>RET</kbd> on &lsquo;<samp><span class="samp">Save for
+Future Sessions</span></samp>&rsquo;.
+
+   <p><a name="index-g_t_002eemacs_002c-auto_002dmode_002dalist-38"></a>Alternatively, put these lines in your <samp><span class="file">.emacs</span></samp> file.
+
+<pre class="lisp">     (add-to-list 'auto-mode-alist
+     	     '("\\.php[34]?\\'\\|\\.phtml\\'" . php-mode))
+</pre>
+   <p><a name="index-Drupal-39"></a><a name="index-g_t_002eemacs_002c-Drupal-40"></a>If you work on projects, like Drupal, that use other
+extension for PHP source file, you may need to add this to
+your <samp><span class="file">.emacs</span></samp>.
+
+<pre class="lisp">     (add-to-list 'auto-mode-alist '("\\.module\\'" . php-mode))
+     (add-to-list 'auto-mode-alist '("\\.inc\\'" . php-mode))
+</pre>
+   <!-- Consider canvasing your operating system or software -->
+<!-- distributor to include PHP mode as a package, or have it -->
+<!-- installed with the existing Emacs package. -->
+<!-- At some point, PHP mode should be included into Emacs. -->
+<!-- In 2008, PHP mode is not very stable.  Further, it is -->
+<!-- unclear whether php-mode should be absorbed into CC mode -->
+<!-- or not.  Further, it is not clear how Emacs is planning -->
+<!-- to support ``server page'' languages, where source code -->
+<!-- is mixed with other languages and markup. -->
+<!-- Explain how to install the info files in -->
+<!-- Info-directory-list? -->
+   <div class="footnote">
+<hr>
+<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> More information on GPG and
+OpenPGP at <a href="http://www.gnupg.org/">http://www.gnupg.org/</a></p>
+
+   <hr></div>
+
+   </body></html>
+

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Creates a pattern based on a shading</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.ps-setpolydash.html">ps_setpolydash</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.ps-shading.html">ps_shading</a></div>
+ <div class="up"><a href="ref.ps.html">PS Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="function.ps-shading-pattern" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">ps_shading_pattern</h1>
+  <p class="verinfo">(PECL ps &gt;= 1.3.0)</p><p class="refpurpose"><span class="refname">ps_shading_pattern</span> &mdash; <span class="dc-title">Creates a pattern based on a shading</span></p>
+
+ </div>
+
+ <a name="function.ps-shading-pattern.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname"><b>ps_shading_pattern</b></span>
+    ( <span class="methodparam"><span class="type">resource</span> <tt class="parameter">$psdoc</tt></span>
+   , <span class="methodparam"><span class="type">int</span> <tt class="parameter">$shadingid</tt></span>
+   , <span class="methodparam"><span class="type">string</span> <tt class="parameter">$optlist</tt></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Creates a pattern based on a shading, which has to be created before with
+   <a href="function.ps-shading.html" class="function">ps_shading()</a>. Shading patterns can be used like regular
+   patterns.
+  </p>
+ </div>
+
+
+ <a name="function.ps-shading-pattern.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">psdoc</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       Resource identifier of the postscript file
+       as returned by <a href="function.ps-new.html" class="function">ps_new()</a>.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">shadingid</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The identifier of a shading previously created with
+       <a href="function.ps-shading.html" class="function">ps_shading()</a>.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">optlist</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       This argument is not currently used.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="function.ps-shading-pattern.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   The identifier of the pattern or <b><tt class="constant">FALSE</tt></b> in case of an error.
+  </p>
+ </div>
+
+
+ <a name="function.ps-shading-pattern.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.ps-shading.html" class="function" rel="rdfs-seeAlso">ps_shading()</a> - Creates a shading for later use</li>
+    <li class="member"><a href="function.ps-shfill.html" class="function" rel="rdfs-seeAlso">ps_shfill()</a> - Fills an area with a shading</li>
+   </ul><p>
+  </p>
+ </div>
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.ps-setpolydash.html">ps_setpolydash</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.ps-shading.html">ps_shading</a></div>
+ <div class="up"><a href="ref.ps.html">PS Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

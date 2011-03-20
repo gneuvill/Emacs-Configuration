@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Installation</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mnogosearch.requirements.html">Requirements</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mnogosearch.configuration.html">Runtime Configuration</a></div>
+ <div class="up"><a href="mnogosearch.setup.html">Installing/Configuring</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="mnogosearch.installation" class="section">
+ <h2 class="title">Installation</h2>
+ <p class="para">
+  In order to have these functions available, you must compile PHP with
+  mnoGosearch support by using the
+  <span class="option">--with-mnogosearch</span> option. If
+  you use this option without specifying the path to mnoGosearch, PHP will
+  look for mnoGosearch under <var class="filename">/usr/local/mnogosearch</var>
+  path by default. If you installed mnoGosearch at a different location
+  you should specify it: <span class="option">--with-mnogosearch=DIR</span>.
+ </p>
+ <p class="para">
+  Information for installing this PECL extension may be
+found in the manual chapter titled <a href="install.pecl.html" class="link">Installation
+of PECL extensions</a>. Additional information such as new releases,
+downloads, source files, maintainer information, and a CHANGELOG, can be
+located here: 
+  <a href="http://pecl.php.net/package/mnogosearch" class="link external">&raquo; http://pecl.php.net/package/mnogosearch</a>.
+ </p>
+ <blockquote><p><b class="note">Note</b>: 
+  
+   PHP contains built-in MySQL access library, which can be used to
+   access MySQL. It is known that mnoGoSearch is not compatible with
+   this built-in library and can work only with generic MySQL
+   libraries. Thus, if you use mnoGoSearch with MySQL, during PHP
+   configuration you have to indicate the directory of your MySQL
+   installation, that was used during mnoGoSearch configuration, i.e. for
+   example:
+   <span class="option">--with-mnogosearch --with-mysql=/usr</span>.
+  <br />
+ </p></blockquote>
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="mnogosearch.requirements.html">Requirements</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="mnogosearch.configuration.html">Runtime Configuration</a></div>
+ <div class="up"><a href="mnogosearch.setup.html">Installing/Configuring</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

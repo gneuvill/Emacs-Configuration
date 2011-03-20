@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Set SAX handlers for a XSLT processor</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.xslt-set-object.html">xslt_set_object</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.xslt-set-sax-handlers.html">xslt_set_sax_handlers</a></div>
+ <div class="up"><a href="ref.xslt.html">XSLT (PHP4) Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="function.xslt-set-sax-handler" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">xslt_set_sax_handler</h1>
+  <p class="verinfo">(PHP 4 &gt;= 4.0.3)</p><p class="refpurpose"><span class="refname">xslt_set_sax_handler</span> &mdash; <span class="dc-title">Set SAX handlers for a XSLT processor</span></p>
+
+ </div>
+ 
+ <a name="function.xslt-set-sax-handler.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type"><span class="type void">void</span></span> <span class="methodname"><b>xslt_set_sax_handler</b></span>
+    ( <span class="methodparam"><span class="type">resource</span> <tt class="parameter">$xh</tt></span>
+   , <span class="methodparam"><span class="type">array</span> <tt class="parameter">$handlers</tt></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Set SAX handlers on the resource handle given by
+   <i><tt class="parameter">xh</tt></i>
+. 
+  </p>
+ </div>
+
+
+ <a name="function.xslt-set-sax-handler.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">xh</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The XSLT processor link identifier, created with
+       <a href="function.xslt-create.html" class="function">xslt_create()</a>.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">handlers</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       SAX handlers should be a two dimensional array
+          with the format (all top level elements are optional):
+          </p><div class="informalexample">
+           <div class="example-contents programlisting">
+<div class="phpcode"><code><span style="color: #000000">
+array(<br />[document]&nbsp;=&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start&nbsp;document&nbsp;handler,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;document&nbsp;handler<br />&nbsp;&nbsp;&nbsp;&nbsp;),<br />[element]&nbsp;=&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start&nbsp;element&nbsp;handler,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;element&nbsp;handler<br />&nbsp;&nbsp;&nbsp;&nbsp;),<br />[namespace]&nbsp;=&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;array(<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start&nbsp;namespace&nbsp;handler,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;namespace&nbsp;handler<br />&nbsp;&nbsp;&nbsp;&nbsp;),<br />[comment]&nbsp;=&gt;&nbsp;comment&nbsp;handler,<br />[pi]&nbsp;=&gt;&nbsp;processing&nbsp;instruction&nbsp;handler,<br />[character]&nbsp;=&gt;&nbsp;character&nbsp;data&nbsp;handler<br />)</span>
+</code></div>
+           </div>
+
+          </div><p>
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="function.xslt-set-sax-handler.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   No value is returned.
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.xslt-set-object.html">xslt_set_object</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.xslt-set-sax-handlers.html">xslt_set_sax_handlers</a></div>
+ <div class="up"><a href="ref.xslt.html">XSLT (PHP4) Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Read from stream</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="streamwrapper.stream-open.html">streamWrapper::stream_open</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="streamwrapper.stream-seek.html">streamWrapper::stream_seek</a></div>
+ <div class="up"><a href="class.streamwrapper.html">streamWrapper</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="streamwrapper.stream-read" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">streamWrapper::stream_read</h1>
+  <p class="verinfo">(PHP 4 &gt;= 4.3.2, PHP 5)</p><p class="refpurpose"><span class="refname">streamWrapper::stream_read</span> &mdash; <span class="dc-title">Read from stream</span></p>
+
+ </div>
+
+ <a name="streamwrapper.stream-read.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><b>streamWrapper::stream_read</b></span>
+    ( <span class="methodparam"><span class="type">int</span> <tt class="parameter">$count</tt></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   This method is called in response to <a href="function.fread.html" class="function">fread()</a>
+   and <a href="function.fgets.html" class="function">fgets()</a>.
+  </p>
+  <blockquote><p><b class="note">Note</b>: 
+   
+    Remember to update the read/write position of the stream (by the number of
+    bytes that were successfully read).
+   <br />
+  </p></blockquote>
+
+ </div>
+
+
+ <a name="streamwrapper.stream-read.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">count</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       How many bytes of data from the current position should be returned.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="streamwrapper.stream-read.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   If there are less than <i><tt class="parameter">count</tt></i>
+
+   bytes available, return as many as are available.  If no
+   more data is available, return either <b><tt class="constant">FALSE</tt></b> or an
+   empty string.
+  </p>
+ </div>
+
+
+ <a name="streamwrapper.stream-read.errors"></a><div class="refsect1 errors">
+  <h3 class="title">Errors/Exceptions</h3>
+  <p class="para">Emits
+<b><tt class="constant">E_WARNING</tt></b> if call to this method fails
+(i.e. not implemented).</p>
+  <blockquote><p><b class="note">Note</b>: 
+   
+    If the return value is longer then <i><tt class="parameter">count</tt></i>
+ an
+    <b><tt class="constant">E_WARNING</tt></b> error will be emitted, and excess data will be
+    lost.
+   <br />
+  </p></blockquote>
+ </div>
+
+ 
+
+
+
+ <a name="streamwrapper.stream-read.notes"></a><div class="refsect1 notes">
+  <h3 class="title">Notes</h3>
+  <blockquote><p><b class="note">Note</b>: 
+   
+     <span class="methodname"><a href="streamwrapper.stream-eof.html" class="function">streamWrapper::stream_eof</a></span> is called directly after
+    calling  <span class="methodname"><b>streamWrapper::stream_read</b></span> to check if
+    <acronym title="End Of File">EOF</acronym> has been reached. If not implemented,
+    <acronym title="End Of File">EOF</acronym> is assumed.
+   <br />
+  </p></blockquote>
+ </div>
+
+ 
+ <a name="streamwrapper.stream-read.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.fread.html" class="function" rel="rdfs-seeAlso">fread()</a> - Binary-safe file read</li>
+    <li class="member"><a href="function.fgets.html" class="function" rel="rdfs-seeAlso">fgets()</a> - Gets line from file pointer</li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="streamwrapper.stream-open.html">streamWrapper::stream_open</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="streamwrapper.stream-seek.html">streamWrapper::stream_seek</a></div>
+ <div class="up"><a href="class.streamwrapper.html">streamWrapper</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Installation</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="ssh2.requirements.html">Requirements</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ssh2.configuration.html">Runtime Configuration</a></div>
+ <div class="up"><a href="ssh2.setup.html">Installing/Configuring</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="ssh2.installation" class="section">
+ <h2 class="title">Installation</h2>
+ <p class="simpara">
+  <em class="emphasis">Windows</em> binaries may be found at
+  <a href="http://snaps.php.net/" class="link external">&raquo; http://snaps.php.net/</a>.
+  To install, download <var class="filename">php_ssh2.dll</var> to the folder specified
+  by your php.ini file&#039;s <i>extension_dir</i> directive.
+  Enable it by adding <i>extension=php_ssh2.dll</i>
+  to your php.ini and restarting your web server.
+ </p>
+
+ <div class="example-contents screen">
+<div class="cdata"><pre>
+extension_dir=c:/php5/exts/
+extension=php_ssh2.dll
+</pre></div>
+ </div>
+
+ <p class="simpara">
+  <em class="emphasis">Linux, BSD, and other *nix variants</em>
+  can be compiled using the following steps:
+ </p>
+
+ <ul class="itemizedlist">
+  <li class="listitem">
+   <span class="simpara">
+    Download and install <a href="http://www.openssl.org/" class="link external">&raquo; OpenSSL</a>.
+    If you install OpenSSL via your distribution&#039;s packaging system
+    be sure to install the development libraries as well.
+    This will typically be a package named <i>openssl-dev</i>,
+    <i>openssl_devel</i>, or some variation thereof.
+   </span>
+  </li>
+
+  <li class="listitem">
+   <span class="simpara">
+    Download and install <a href="http://sourceforge.net/projects/libssh2/" class="link external">&raquo; libssh2</a>.
+    Typically this means executing the following command from
+    the libssh2 source tree. <i>./configure &amp;&amp; make all install</i>.
+   </span>
+  </li>
+
+  <li class="listitem">
+   <span class="simpara">
+    Run the pecl installer for PECL/ssh2: <i>pecl install ssh2</i>
+   </span>
+  </li>
+
+  <li class="listitem">
+   <span class="simpara">
+    Copy <var class="filename">ssh2.so</var> from the directory indicated by the
+    build process to the location specified in your php.ini file under
+    <i>extension_dir</i>.
+   </span>
+  </li>
+
+  <li class="listitem">
+   <span class="simpara">
+    Add <i>extension=ssh2.so</i> to your php.ini
+   </span>
+  </li>
+
+  <li class="listitem">
+   <span class="simpara">
+    Restart your web server to reload your php.ini settings.
+   </span>
+  </li>
+
+ </ul>
+
+ <blockquote><p><b class="note">Note</b>: 
+  <b>Development Versions</b><br />
+  <span class="simpara">
+   There are currently no <i>stable</i> versions of PECL/ssh2,
+   to force installation of the <i>beta</i> version of PECL/ssh2
+   execute: <i>pecl install ssh2-</i><em class="emphasis">beta</em>
+  </span>
+ </p></blockquote>
+
+ <div class="tip"><b class="tip">Tip</b>
+  <h1 class="title">Compiling PECL/ssh2 without using the PECL command</h1>
+  <p class="simpara">
+   Rather than using <i>pecl install ssh2</i> to automatically
+   download and install PECL/ssh2, you may download the tarball from
+   <a href="http://pecl.php.net/package/ssh2" class="link external">&raquo; PECL</a>.
+   From the root of the unpacked tarball, run:
+   <i>phpize &amp;&amp; ./configure --with-ssh2 &amp;&amp; make</i>
+   to generate <var class="filename">ssh2.so</var>.
+   Once built, continue the installation from step 4 above.
+  </p>
+ </div>
+
+ <p class="simpara">
+  Information for installing this PECL extension may be
+found in the manual chapter titled <a href="install.pecl.html" class="link">Installation
+of PECL extensions</a>. Additional information such as new releases,
+downloads, source files, maintainer information, and a CHANGELOG, can be
+located here: 
+  <a href="http://pecl.php.net/package/ssh2" class="link external">&raquo; http://pecl.php.net/package/ssh2</a>.
+ </p>
+ <blockquote><p><b class="note">Note</b>: 
+  <span class="simpara">
+   You will need version 0.4 or greater of the libssh2 library
+   (possibly higher, see release notes).
+  </span>
+ </p></blockquote>
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="ssh2.requirements.html">Requirements</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ssh2.configuration.html">Runtime Configuration</a></div>
+ <div class="up"><a href="ssh2.setup.html">Installing/Configuring</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

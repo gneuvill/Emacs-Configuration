@@ -1,0 +1,852 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Predefined Constants</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="oci8.resources.html">Resource Types</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="oci8.examples.html">Examples</a></div>
+ <div class="up"><a href="book.oci8.html">OCI8</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div>
+ <h1>Predefined Constants</h1>
+
+ <p class="simpara">
+The constants below are defined by this extension, and
+will only be available when the extension has either
+been compiled into PHP or dynamically loaded at runtime.
+</p>
+ <dl>
+
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_DEFAULT</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Statement execution mode. Statement is not committed
+     automatically when using this mode.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_DESCRIBE_ONLY</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Statement execution mode. Use this mode if you don&#039;t want 
+     to execute the query, but get the select-list&#039;s description.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_COMMIT_ON_SUCCESS</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Statement execution mode. Statement is automatically committed after
+     <a href="function.oci-execute.html" class="function">oci_execute()</a> call.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_EXACT_FETCH</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Statement fetch mode. Used when the application knows 
+     in advance exactly how many rows it will be fetching. 
+     This mode turns prefetching off for Oracle release 8 
+     or later mode. Cursor is cancelled after the desired 
+     rows are fetched and may result in reduced server-side 
+     resource usage.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_SYSDATE</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_B_BFILE</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-by-name.html" class="function">oci_bind_by_name()</a> when 
+     binding BFILEs.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_B_CFILEE</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-by-name.html" class="function">oci_bind_by_name()</a> when 
+     binding CFILEs.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_B_CLOB</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-by-name.html" class="function">oci_bind_by_name()</a> when 
+     binding CLOBs.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_B_BLOB</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-by-name.html" class="function">oci_bind_by_name()</a> when 
+     binding BLOBs.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_B_ROWID</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-by-name.html" class="function">oci_bind_by_name()</a> when 
+     binding ROWIDs.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_B_CURSOR</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-by-name.html" class="function">oci_bind_by_name()</a> when 
+     binding cursors, previously allocated with <a href="function.oci-new-descriptor.html" class="function">oci_new_descriptor()</a>.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_B_NTY</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-by-name.html" class="function">oci_bind_by_name()</a> when 
+     binding named data types. Note: in PHP &lt; 5.0 it was called
+     <b><tt class="constant">OCI_B_SQLT_NTY</tt></b>.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_B_BIN</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_BFILEE</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     The same as <b><tt class="constant">OCI_B_BFILE</tt></b>.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_CFILEE</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     The same as <b><tt class="constant">OCI_B_CFILEE</tt></b>.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_CLOB</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     The same as <b><tt class="constant">OCI_B_CLOB</tt></b>.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_BLOB</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     The same as <b><tt class="constant">OCI_B_BLOB</tt></b>.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_RDD</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     The same as <b><tt class="constant">OCI_B_ROWID</tt></b>.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_NTY</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     The same as <b><tt class="constant">OCI_B_NTY</tt></b>.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_LNG</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-by-name.html" class="function">oci_bind_by_name()</a> to bind LONG values.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_LBI</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-by-name.html" class="function">oci_bind_by_name()</a> to bind LONG RAW values.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_BIN</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-by-name.html" class="function">oci_bind_by_name()</a> to bind RAW values.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_NUM</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-array-by-name.html" class="function">oci_bind_array_by_name()</a> to bind arrays of
+     NUMBER.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_INT</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-array-by-name.html" class="function">oci_bind_array_by_name()</a> to bind arrays of
+     INTEGER.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_AFC</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-array-by-name.html" class="function">oci_bind_array_by_name()</a> to bind arrays of
+     CHAR.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_CHR</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-array-by-name.html" class="function">oci_bind_array_by_name()</a> to bind arrays of
+     VARCHAR2.
+     Also used with <a href="function.oci-bind-by-name.html" class="function">oci_bind_by_name()</a>.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_VCS</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-array-by-name.html" class="function">oci_bind_array_by_name()</a> to bind arrays of
+     VARCHAR.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_AVC</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-array-by-name.html" class="function">oci_bind_array_by_name()</a> to bind arrays of
+     CHARZ.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_STR</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-array-by-name.html" class="function">oci_bind_array_by_name()</a> to bind arrays of
+     STRING.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_LVC</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-array-by-name.html" class="function">oci_bind_array_by_name()</a> to bind arrays of
+     LONG VARCHAR.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_FLT</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-array-by-name.html" class="function">oci_bind_array_by_name()</a> to bind arrays of
+     FLOAT.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_ODT</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-bind-array-by-name.html" class="function">oci_bind_array_by_name()</a> to bind arrays of
+     LONG.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_BDOUBLE</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">SQLT_BFLOAT</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_FETCHSTATEMENT_BY_COLUMN</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Default mode of <a href="function.oci-fetch-all.html" class="function">oci_fetch_all()</a>. 
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_FETCHSTATEMENT_BY_ROW</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Alternative mode of <a href="function.oci-fetch-all.html" class="function">oci_fetch_all()</a>.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_ASSOC</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-fetch-all.html" class="function">oci_fetch_all()</a> and
+     <a href="function.oci-fetch-array.html" class="function">oci_fetch_array()</a> to get an associative 
+     array as a result.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_NUM</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-fetch-all.html" class="function">oci_fetch_all()</a> and 
+     <a href="function.oci-fetch-array.html" class="function">oci_fetch_array()</a> to get an enumerated 
+     array as a result.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_BOTH</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-fetch-all.html" class="function">oci_fetch_all()</a> and 
+     <a href="function.oci-fetch-array.html" class="function">oci_fetch_array()</a> to get an array with
+     both associative and number indices.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_RETURN_NULLS</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-fetch-array.html" class="function">oci_fetch_array()</a> to get
+     empty array elements if field&#039;s value is <b><tt class="constant">NULL</tt></b>.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_RETURN_LOBS</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-fetch-array.html" class="function">oci_fetch_array()</a> to get
+     value of LOB instead of the descriptor.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_DTYPE_FILE</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     This flag tells <a href="function.oci-new-descriptor.html" class="function">oci_new_descriptor()</a> to
+     initialize new FILE descriptor.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_DTYPE_LOB</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     This flag tells <a href="function.oci-new-descriptor.html" class="function">oci_new_descriptor()</a> to
+     initialize new LOB descriptor.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_DTYPE_ROWID</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     This flag tells <a href="function.oci-new-descriptor.html" class="function">oci_new_descriptor()</a> to
+     initialize new ROWID descriptor.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_D_FILE</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     The same as <b><tt class="constant">OCI_DTYPE_FILE</tt></b>.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_D_LOB</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     The same as <b><tt class="constant">OCI_DTYPE_LOB</tt></b>.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_D_ROWID</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     The same as <b><tt class="constant">OCI_DTYPE_ROWID</tt></b>.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_SYSOPER</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-connect.html" class="function">oci_connect()</a> to connect as SYSOPER
+     using external credentials (<a href="oci8.configuration.html#ini.oci8.privileged-connect" class="link">oci8.privileged_connect</a>
+     should be enabled for this).
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_SYSDBA</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-connect.html" class="function">oci_connect()</a> to connect as SYSDBA
+     using external credentials (<a href="oci8.configuration.html#ini.oci8.privileged-connect" class="link">oci8.privileged_connect</a>
+     should be enabled for this).
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_LOB_BUFFER_FREE</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-lob-flush.html" class="xref">OCI-Lob->flush</a> to free buffers used.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_TEMP_CLOB</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-lob-writetemporary.html" class="xref">OCI-Lob->writeTemporary</a> to indicate
+     explicilty that temporary CLOB should be created.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">OCI_TEMP_BLOB</tt></b> 
+    (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Used with <a href="function.oci-lob-writetemporary.html" class="xref">OCI-Lob->writeTemporary</a> to indicate
+     explicilty that temporary BLOB should be created.
+    </span>
+   </dd>
+
+  
+ </dl>
+
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="oci8.resources.html">Resource Types</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="oci8.examples.html">Examples</a></div>
+ <div class="up"><a href="book.oci8.html">OCI8</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

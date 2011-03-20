@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Apache 2.0.x on Microsoft Windows</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="install.windows.apache1.html">Apache 1.3.x on Microsoft Windows</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="install.windows.sun.html">Sun, iPlanet and Netscape servers on Microsoft Windows</a></div>
+ <div class="up"><a href="install.windows.html">Installation on Windows systems</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="install.windows.apache2" class="sect1">
+    <h2 class="title">Apache 2.0.x on Microsoft Windows</h2>
+    <p class="para">
+     This section contains notes and hints specific to Apache 2.0.x installs
+     of PHP on Microsoft Windows systems. We also
+     have <a href="install.windows.apache1.html" class="link">instructions and notes
+     for Apache 1.3.x users on a separate page</a>.
+    </p>
+    <blockquote><p><b class="note">Note</b>: 
+     
+      You should read the <a href="install.windows.manual.html" class="link">manual
+       installation steps</a> first!
+     <br />
+    </p></blockquote>
+    <blockquote><p><b class="note">Note</b>: 
+     <b>Apache 2.2.x Support</b><br />
+     
+      Users of Apache 2.2.x may use the documentation below except the
+      appropriate DLL file is named 
+      <var class="filename">php5apache2_2.dll</var> and it only exists as of PHP 5.2.0.
+      See also <a href="http://snaps.php.net/" class="link external">&raquo; http://snaps.php.net/</a>
+     <br />
+    </p></blockquote>
+    
+    <div class="warning"><b class="warning">Warning</b><p class="para">We do not recommend using a
+threaded MPM in production with Apache 2. Use the prefork MPM instead, or use
+Apache 1. For information on why, read the related FAQ entry on using
+<a href="faq.installation.html#faq.installation.apache2" class="link">Apache2 with a threaded MPM</a></p></div>
+    
+    <p class="para">
+     You are highly encouraged to take a look at the
+     <a href="http://httpd.apache.org/docs/2.0/" class="link external">&raquo; Apache Documentation</a> to get
+     a basic understanding of the Apache 2.0.x Server. Also consider to
+     read the <a href="http://httpd.apache.org/docs/2.0/platform/windows.html" class="link external">&raquo; Windows specific
+     notes</a> for Apache 2.0.x before reading on here.
+    </p>
+    
+    
+
+    <blockquote><p><b class="note">Note</b>: 
+     <b>PHP and Apache 2.0.x compatibility notes</b><br />
+     
+      The following versions of PHP are known to work with the most recent
+      version of Apache 2.0.x:
+      </p><ul class="itemizedlist">
+       <li class="listitem">
+        <span class="simpara">
+         PHP 4.3.0 or later available at
+         <a href="http://www.php.net/downloads.php" class="link external">&raquo; http://www.php.net/downloads.php</a>.
+        </span>
+       </li>
+       <li class="listitem">
+        <span class="simpara">
+         the latest stable development version.
+         Get the source code <a href="http://snaps.php.net/php5-latest.tar.gz" class="link external">&raquo; 
+         http://snaps.php.net/php5-latest.tar.gz</a> or download binaries
+         for Windows <a href="http://snaps.php.net/win32/php5-win32-latest.zip" class="link external">&raquo; 
+         http://snaps.php.net/win32/php5-win32-latest.zip</a>.
+        </span>
+       </li>
+       <li class="listitem">
+        <span class="simpara">
+         a prerelease version downloadable from
+         <a href="http://qa.php.net/" class="link external">&raquo; http://qa.php.net/</a>.
+        </span>
+       </li>
+       <li class="listitem">
+        <span class="simpara">
+         you have always the option to obtain PHP through
+         <a href="http://www.php.net/anoncvs.php" class="link external">&raquo; anonymous CVS</a>.
+        </span>
+       </li>
+      </ul><p>
+      These versions of PHP are compatible to Apache 2.0.40 and later.
+     <br />
+     
+      Apache 2.0 <i>SAPI</i>-support started with PHP 4.2.0.
+      PHP 4.2.3 works with Apache 2.0.39, don&#039;t use any other version of Apache with
+      PHP 4.2.3. However, the recommended setup is to use PHP 4.3.0 or later with
+      the most recent version of Apache2.
+     <br />
+     
+      All mentioned versions of PHP will work still with
+      Apache 1.3.x.
+     <br />
+    </p></blockquote>
+
+
+
+
+    <div class="warning"><b class="warning">Warning</b>
+     <p class="para">
+      Apache 2.0.x is designed to run on Windows NT 4.0, Windows 2000 or
+      Windows XP. At this time, support for Windows 9x is incomplete.
+      Apache 2.0.x is not expected to work on those platforms at this time.
+     </p>
+    </div>
+    <p class="para">
+     Download the most recent version of <a href="http://www.apache.org/" class="link external">&raquo; 
+     Apache 2.0.x</a> and a fitting PHP version.
+     Follow the <a href="install.windows.manual.html" class="link">Manual Installation
+     Steps</a> and come back to go on with the integration of PHP and Apache.
+    </p>
+    <p class="para">
+     There are two ways to set up PHP to work with Apache 2.0.x on Windows.
+     One is to use the CGI binary the other is to use the Apache module DLL.
+     In either case you need to edit your <var class="filename">httpd.conf</var> to configure Apache
+     to work with PHP and then restart the server.
+    </p>
+    
+    <blockquote><p><b class="note">Note</b>: <span class="simpara">Remember that when adding
+path values in the Apache configuration files on Windows, all backslashes
+such as <var class="filename">c:\directory\file.ext</var> must be converted to
+forward slashes: <var class="filename">c:/directory/file.ext</var>. A trailing
+slash may also be necessary for directories.</span></p></blockquote>
+    
+    <div id="install.windows.apache2.cgi" class="sect2">
+     <h3 class="title">Installing as a CGI binary</h3>
+    
+     <p class="para">
+      You need to insert these three lines to your Apache <var class="filename">httpd.conf</var>
+      configuration file to set up the CGI binary:
+      </p><div class="example">
+       <p><b>Example #1 PHP and Apache 2.0 as CGI</b></p>
+        <div class="example-contents programlisting">
+<div class="apache-confcode"><pre class="apache-confcode">ScriptAlias /php/ &quot;c:/php/&quot;
+AddType application/x-httpd-php .php
+
+# For PHP 4
+Action application/x-httpd-php &quot;/php/php.exe&quot;
+
+# For PHP 5
+Action application/x-httpd-php &quot;/php/php-cgi.exe&quot;</pre>
+</div>
+       </div>
+
+      </div><p>
+     </p>
+     <div class="warning"><b class="warning">Warning</b><p class="para">A server deployed in CGI mode is open
+to several possible vulnerabilities. Please read our
+<a href="security.cgi-bin.html" class="link">CGI security section</a> to learn how to
+defend yourself from such attacks.</p></div>
+    </div>
+    
+    <div id="install.windows.apache2.module" class="sect2">
+     <h3 class="title">Installing as an Apache module</h3>
+     <p class="para">
+      You need to insert these two lines to your
+      Apache <var class="filename">httpd.conf</var> configuration file to set up the
+      PHP module for Apache 2.0:
+      </p><div class="example">
+       <p><b>Example #2 PHP and Apache 2.0 as Module</b></p>
+        <div class="example-contents programlisting">
+<div class="apache-confcode"><pre class="apache-confcode"># For PHP 4 do something like this:
+LoadModule php4_module &quot;c:/php/php4apache2.dll&quot;
+# Don&#039;t forget to copy the php4apache2.dll file from the sapi directory!
+AddType application/x-httpd-php .php
+
+# For PHP 5 do something like this:
+LoadModule php5_module &quot;c:/php/php5apache2.dll&quot;
+AddType application/x-httpd-php .php
+
+# configure the path to php.ini
+PHPIniDir &quot;C:/php&quot;</pre>
+</div>
+       </div>
+
+      </div><p>
+     </p>
+     <blockquote><p><b class="note">Note</b>: 
+      <span class="simpara">
+       Remember to substitute your actual path to PHP for the
+       <var class="filename">c:/php/</var> in the above examples. Take care to use
+       either <var class="filename">php4apache2.dll</var> or 
+       <var class="filename">php5apache2.dll</var> in your LoadModule directive and
+       <em class="emphasis">not</em> <var class="filename">php4apache.dll</var> or 
+       <var class="filename">php5apache.dll</var> as the latter ones are designed to
+       run with <a href="install.windows.apache1.html" class="link">Apache 1.3.x</a>.
+      </span>
+     </p></blockquote>
+     <blockquote><p><b class="note">Note</b>: 
+      
+       If you want to use content negotiation, read
+       <a href="faq.installation.html#faq.installation.apache.multiviews" class="link">related FAQ</a>.
+      <br />
+     </p></blockquote>
+     <div class="warning"><b class="warning">Warning</b>
+      <p class="simpara">
+       Don&#039;t mix up your installation with DLL files from
+       <em class="emphasis">different PHP versions</em>. You have the only choice
+       to use the DLL&#039;s and extensions that ship with your downloaded PHP version.
+      </p>
+     </div>
+    </div>
+   </div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="install.windows.apache1.html">Apache 1.3.x on Microsoft Windows</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="install.windows.sun.html">Sun, iPlanet and Netscape servers on Microsoft Windows</a></div>
+ <div class="up"><a href="install.windows.html">Installation on Windows systems</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

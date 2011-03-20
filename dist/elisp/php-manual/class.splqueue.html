@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The SplQueue class</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="splstack.setiteratormode.html">SplStack::setIteratorMode</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="splqueue.construct.html">SplQueue::__construct</a></div>
+ <div class="up"><a href="spl.datastructures.html">Datastructures</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div>
+ <h1 class="title">The SplQueue class</h1>
+ 
+ 
+ <div class="partintro">
+ 
+
+  <div id="splqueue.intro" class="section">
+   <h2 class="title">Introduction</h2>
+   <p class="para">
+    The SplQueue class provides the main functionalities of a queue implemented using a doubly linked list.
+   </p>
+  </div>
+
+ 
+  <div id="splqueue.synopsis" class="section">
+   <h2 class="title">Class synopsis</h2>
+ 
+
+   <div class="classsynopsis">
+    <div class="ooclass"><b class="classname">SplQueue</b></div>
+ 
+
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+      <b class="classname">SplQueue</b>
+     </span>
+
+     <span class="ooclass">
+      <span class="modifier">extends</span>
+      <a href="class.spldoublylinkedlist.html" class="classname">SplDoublyLinkedList</a>
+     </span>
+
+     <span class="oointerface">implements 
+      <a href="class.iterator.html" class="interfacename">Iterator</a>
+     </span>
+
+     <span class="oointerface">, 
+      <a href="class.arrayaccess.html" class="interfacename">ArrayAccess</a>
+     </span>
+ 
+     <span class="oointerface">, 
+      <a href="class.countable.html" class="interfacename">Countable</a>
+     </span>
+ 
+     {</div>
+
+ 
+    
+ 
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methods */</div>
+    <div class="constructorsynopsis dc-description">
+    <span class="methodname"><a href="splqueue.construct.html" class="function">__construct</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+    <div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname"><a href="splqueue.dequeue.html" class="function">dequeue</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="splqueue.enqueue.html" class="function">enqueue</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$value</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="splqueue.setiteratormode.html" class="function">setIteratorMode</a></span>
+    ( <span class="methodparam"><span class="type">int</span> <tt class="parameter">$mode</tt></span>
+   )</div>
+
+
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Inherited methods */</div>
+    <div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname"><a href="spldoublylinkedlist.bottom.html" class="function">SplDoublyLinkedList::bottom</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname"><a href="spldoublylinkedlist.count.html" class="function">SplDoublyLinkedList::count</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname"><a href="spldoublylinkedlist.current.html" class="function">SplDoublyLinkedList::current</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname"><a href="spldoublylinkedlist.getiteratormode.html" class="function">SplDoublyLinkedList::getIteratorMode</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="spldoublylinkedlist.isempty.html" class="function">SplDoublyLinkedList::isEmpty</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname"><a href="spldoublylinkedlist.key.html" class="function">SplDoublyLinkedList::key</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="spldoublylinkedlist.next.html" class="function">SplDoublyLinkedList::next</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="spldoublylinkedlist.offsetexists.html" class="function">SplDoublyLinkedList::offsetExists</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$index</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname"><a href="spldoublylinkedlist.offsetget.html" class="function">SplDoublyLinkedList::offsetGet</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$index</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="spldoublylinkedlist.offsetset.html" class="function">SplDoublyLinkedList::offsetSet</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$index</tt></span>
+   , <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$newval</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="spldoublylinkedlist.offsetunset.html" class="function">SplDoublyLinkedList::offsetUnset</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$index</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname"><a href="spldoublylinkedlist.pop.html" class="function">SplDoublyLinkedList::pop</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="spldoublylinkedlist.push.html" class="function">SplDoublyLinkedList::push</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$value</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="spldoublylinkedlist.rewind.html" class="function">SplDoublyLinkedList::rewind</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="spldoublylinkedlist.setiteratormode.html" class="function">SplDoublyLinkedList::setIteratorMode</a></span>
+    ( <span class="methodparam"><span class="type">int</span> <tt class="parameter">$mode</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname"><a href="spldoublylinkedlist.shift.html" class="function">SplDoublyLinkedList::shift</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">mixed</span> <span class="methodname"><a href="spldoublylinkedlist.top.html" class="function">SplDoublyLinkedList::top</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="spldoublylinkedlist.unshift.html" class="function">SplDoublyLinkedList::unshift</a></span>
+    ( <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <tt class="parameter">$value</tt></span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="spldoublylinkedlist.valid.html" class="function">SplDoublyLinkedList::valid</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+   }</div>
+ 
+  </div>
+
+
+
+ 
+ </div>
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="splqueue.construct.html">SplQueue::__construct</a> — Constructs a new queue implemented using a doubly linked list</li><li><a href="splqueue.dequeue.html">SplQueue::dequeue</a> — Dequeues a node from the queue</li><li><a href="splqueue.enqueue.html">SplQueue::enqueue</a> — Adds an element to the queue.</li><li><a href="splqueue.setiteratormode.html">SplQueue::setIteratorMode</a> — Sets the mode of iteration</li></ul>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="splstack.setiteratormode.html">SplStack::setIteratorMode</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="splqueue.construct.html">SplQueue::__construct</a></div>
+ <div class="up"><a href="spl.datastructures.html">Datastructures</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+<title>Indentation - PHP Mode Manual</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="PHP Mode Manual">
+<meta name="generator" content="makeinfo 4.11">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Motion.html#Motion" title="Motion">
+<link rel="next" href="Editing.html#Editing" title="Editing">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+This manual documents PHP mode version 1.5.0 for
+use with GNU Emacs.
+
+Copyright (C) 2008  Aaron S. Hawley
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of the GNU Free Documentation License,
+     Version 1.2 or any later version published by the Free Software
+     Foundation; with no Invariant Sections, and no Cover Texts.  A
+     copy of the license is included in the section entitled ``Copying
+     This Manual.''
+
+     A copy of the license is also available from the Free Software
+     Foundation Web site at `http://www.gnu.org/licenses/fdl.html'.
+
+
+The document was typeset with
+GNU Texinfo (http://www.texinfo.org/).
+
+$Date: 2008-11-04 11:51:51 -0500 (Tue, 04 Nov 2008) $
+
+$Revision: 90 $
+
+
+
+-->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Indentation"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Editing.html#Editing">Editing</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Motion.html#Motion">Motion</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr>
+</div>
+
+<h2 class="chapter">5 Indentation</h2>
+
+<!-- It's important to explain when a feature is really a -->
+<!-- subset of a feature of Emacs or C Mode, and take the -->
+<!-- opportunity to create a cross-reference to those free -->
+<!-- manuals. -->
+<p><a name="index-indentation_002c-rules-for-101"></a><a name="index-C-mode_002c-indentation-rules-102"></a>PHP mode's indentation settings inherit the defaults set by
+Emacs C mode, or the rules customized for C
+mode.<a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a>
+
+   <p><a name="index-PEAR_002c-indentation-103"></a><a name="index-spaces-104"></a><a name="index-tabs-105"></a>PHP mode provides indentation settings that follow the PHP
+PEAR &ldquo;Coding
+Standards&rdquo;<a rel="footnote" href="#fn-2" name="fnd-2"><sup>2</sup></a>. 
+It has the consequence in PHP mode of making the indentation
+commands use four spaces, and not tabs.  This setting is
+turned on whenever the file name associated with a buffer
+includes the string &ldquo;PEAR&rdquo;, case insensitive and the file
+ends in &ldquo;.php&rdquo;.
+
+   <p><a name="index-indentation_002c-force-PEAR-rules-106"></a><a name="index-php_002dmode_002dforce_002dpear-107"></a><a name="index-customize_002dvariable-108"></a><a name="index-M_002dx-customize_002dvariable-109"></a><a name="index-g_t_002eemacs_002c-php_002dmode_002dforce_002dpear-110"></a>You can force the use of this setting for
+all files edited with PHP mode by setting
+<code>php-mode-force-pear</code> to non-nil.  Configure the
+variable with either <kbd>M-x customize-variable RET
+php-mode-force-pear RET</kbd>, or by setting its value in your
+Emacs initialization file (<samp><span class="file">~/.emacs</span></samp>).
+
+   <p><a name="index-HTML-111"></a>PHP does not appropriately indent HTML tags.  See <a href="Embedded-HTML.html#Embedded-HTML">Embedded HTML</a>.
+
+   <p>To customize PHP mode's indentation rules, change the
+following variables.
+
+<!-- There are probably other variables that are safe for -->
+<!-- users to change and are worth mentioning.  Ones from C -->
+<!-- mode come to mind, like indentation-style.  Some day it -->
+<!-- would also be useful to support a variety of PHP -->
+<!-- programming styles. -->
+<!-- Perhaps the indentation commands should be featured -->
+<!-- before customization.  They could have separate sections. -->
+     
+<a name="index-indentation_002c-level-of-112"></a>
+<a name="index-c_002dbasic_002doffset-113"></a>
+<dl><dt><code>c-basic-offset</code><dd>This style variable of C mode controls how many columns in
+the level of indentation.  By default this is 4 spaces in
+PHP mode (and in C mode). 
+<a name="index-indent_002dtabs_002dmode-114"></a><br><dt><code>indent-tabs-mode</code><dd>Variable of Emacs that determines whether indentation
+commands should insert the tab character or insert the
+equivalent number of space characters.  In PHP mode, this is
+set to to nil by default. 
+<a name="index-tab_002dwidth-115"></a><br><dt><code>tab-width</code><dd>This variable of Emacs determines how &ldquo;wide&rdquo; a tab in the
+buffer should be considered.  This is also traditionally
+described as setting the distance between &ldquo;tab stops&rdquo;.  By
+default, PHP mode does not insert tabs for indentation. 
+<br><dt><code>php-mode-force-pear</code><dd>Use the indentation rules of PHP PEAR for all files opened
+in PHP mode.  See above.
+
+   </dl>
+
+   <p><a name="index-indentation_002c-commands-for-116"></a><a name="index-C-mode_002c-indentation-rules-117"></a><a name="index-C-mode_002c-indentation-commands-118"></a>The usual commands for indenting in
+Emacs<a rel="footnote" href="#fn-3" name="fnd-3"><sup>3</sup></a>
+and Emacs's C mode<a rel="footnote" href="#fn-4" name="fnd-4"><sup>4</sup></a>: are supported in PHP mode, following the
+indentation rules of PHP.
+
+     
+<a name="index-tab-119"></a>
+<a name="index-indent-line-120"></a>
+<a name="index-line_002c-indent-121"></a>
+<a name="index-c_002dindent_002dcommand-122"></a>
+<a name="index-TAB-123"></a>
+<dl><dt><kbd>TAB</kbd><dd>Properly indent current line, even from the middle of the
+line (<code>c-indent-command</code>). 
+<!-- provide examples? - ash 2007-12-29 -->
+<a name="index-newline-124"></a><a name="index-indent-newline-125"></a><a name="index-indent-newline-126"></a><a name="index-newline_002dand_002dindent-127"></a><a name="index-C_002dj-128"></a><br><dt><kbd>C-j</kbd><dd>Insert text after point to a newline, and properly indent
+the newline (<code>c-indent-command</code>). 
+<a name="index-indent-region-129"></a><a name="index-region_002c-indent-130"></a><a name="index-indent_002dregion-131"></a><a name="index-C_002dM_002d_005c-132"></a><br><dt><kbd>C-M-\</kbd><dd>Properly indent each line of region (<code>indent-region</code>). 
+<!-- I'm not going to bother mentioning C-x TAB, -->
+<!-- M-x indent-rigidly. - ash 2007-12-29 -->
+<a name="index-function_002c-indent-133"></a><a name="index-indent-function-134"></a><a name="index-class_002c-indent-135"></a><a name="index-indent-class-136"></a><a name="index-c_002dindent_002ddefun-137"></a><a name="index-C_002dc-C_002dq-138"></a><br><dt><kbd>C-c C-q</kbd><dd>Properly indent each line of current top-level function or
+top-level class (<code>c-indent-defun</code>). 
+</dl>
+
+   <div class="footnote">
+<hr>
+<h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> See <a href="http://cc-mode.sourceforge.net/html-manual/Customizing-Indentation.html#Customizing-Indentation">Customizing Indentation</a>.</p>
+
+   <p class="footnote"><small>[<a name="fn-2" href="#fnd-2">2</a>]</small> <a href="http://pear.php.net/manual/en/standards.php">http://pear.php.net/manual/en/standards.php</a></p>
+
+   <p class="footnote"><small>[<a name="fn-3" href="#fnd-3">3</a>]</small> See <a href="http://emacswiki.org/cgi-bin/info-ref?find=Indentation-Commands.html#Indentation-Commands">Indentation Commands</a>.</p>
+
+   <p class="footnote"><small>[<a name="fn-4" href="#fnd-4">4</a>]</small> See <a href="http://cc-mode.sourceforge.net/html-manual/Indentation-Commands.html#Indentation-Commands">Indentation Commands</a>.</p>
+
+   <hr></div>
+
+   </body></html>
+

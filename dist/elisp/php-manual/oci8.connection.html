@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Connecting Handling</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="oci8.examples-basic.html">Basic query</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="oci8.datatypes.html">Supported Datatypes</a></div>
+ <div class="up"><a href="book.oci8.html">OCI8</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div>
+ <h1>Connecting Handling</h1>
+
+ <p class="para">
+  The oci8 extension provides you with 3 different functions for
+  connecting to Oracle.  It is up to you to use the most appropriate
+  function for your application, and the information in this section is
+  intended to help you make an informed choice.
+ </p>
+ <p class="para">
+  Connecting to an Oracle server is a reasonably expensive operation, in
+  terms of the time that it takes to complete.  The <a href="function.oci-pconnect.html" class="function">oci_pconnect()</a>
+  function uses a persistent cache of connections that can be re-used
+  across different script requests.  This means that you will typically
+  only incur the connection overhead once per php process (or apache child).
+ </p>
+ <p class="para">
+  If your application connects to Oracle using a different set of
+  credentials for each web user, the persistent cache employed by
+  <a href="function.oci-pconnect.html" class="function">oci_pconnect()</a> will become less useful as the
+  number of concurrent users increases, to the point where it may
+  start to adversely affect the overall performance of your Oracle
+  server due to maintaining too many idle connections. If your
+  application is structured in this way, it is recommended that
+  you either tune your application using the <a href="oci8.configuration.html#ini.oci8.max-persistent" class="link">oci8.max_persistent</a> and <a href="oci8.configuration.html#ini.oci8.persistent-timeout" class="link">oci8.persistent_timeout</a>
+  configuration settings (these will give you control over the
+  persistent connection cache size and lifetime) or use
+  <a href="function.oci-connect.html" class="function">oci_connect()</a> instead.
+ </p>
+ <p class="para">
+  Both <a href="function.oci-connect.html" class="function">oci_connect()</a> and <a href="function.oci-pconnect.html" class="function">oci_pconnect()</a>
+  employ a connection cache; if you make multiple calls to
+  <a href="function.oci-connect.html" class="function">oci_connect()</a>, using the same parameters, in a
+  given script, the second and subsequent calls return the existing
+  connection handle.  The cache used by <a href="function.oci-connect.html" class="function">oci_connect()</a>
+  is cleaned up at the end of the script run, or when you explicitly close
+  the connection handle. <a href="function.oci-pconnect.html" class="function">oci_pconnect()</a> has similar
+  behaviour, although its cache is maintained separately and survives
+  between requests.
+ </p>
+ <p class="para">
+  This caching feature is important to remember, because it gives the
+  appearance that the two handles are not transactionally isolated (they
+  are in fact the same connection handle, so there is no isolation of any
+  kind).  If your application needs two separate, transactionally isolated
+  connections, you should use <a href="function.oci-new-connect.html" class="function">oci_new_connect()</a>.
+ </p>
+ <p class="para">
+  <a href="function.oci-new-connect.html" class="function">oci_new_connect()</a> always creates a new connection to
+  the Oracle server, regardless of what other connections might already exist.
+  High traffic web applications should try to avoid using
+  <a href="function.oci-new-connect.html" class="function">oci_new_connect()</a>, especially in the busiest sections of
+  the application.
+ </p>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="oci8.examples-basic.html">Basic query</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="oci8.datatypes.html">Supported Datatypes</a></div>
+ <div class="up"><a href="book.oci8.html">OCI8</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

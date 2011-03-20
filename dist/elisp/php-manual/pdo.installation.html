@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Installation</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="pdo.requirements.html">Requirements</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="pdo.configuration.html">Runtime Configuration</a></div>
+ <div class="up"><a href="pdo.setup.html">Installing/Configuring</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="pdo.installation" class="section">
+ <h2 class="title">Installation</h2>
+ <div class="procedure">
+  <b class="title">PHP 5.1 and up on Unix systems</b>
+  <ol type="1"><li>
+   <p class="para">
+    If you&#039;re running a PHP 5.1 release, PDO and <a href="ref.pdo-sqlite.html" class="link">PDO_SQLITE</a> is included in the distribution;
+    it will be automatically enabled when you run configure.  It is
+    recommended that you build PDO as a shared extension, as this will allow
+    you to take advantage of updates that are made available via PECL.  The
+    recommended configure line for building PHP with PDO support should
+    enable zlib support (for the pecl installer) as well.  You may also need
+    to enable the PDO driver for your database of choice; consult the
+    documentation for  <a href="pdo.drivers.html" class="link">database-specific
+    PDO drivers</a> to find out more about that, but note that if you
+    build PDO as a shared extension, you must build the PDO drivers as
+    shared extensions.
+    SQLite extension depends on PDO so if PDO is built as a shared extension,
+    SQLite needs to be built the same way.
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+./configure --with-zlib --enable-pdo=shared --with-pdo-sqlite=shared --with-sqlite=shared
+</pre></div>
+    </div>
+   </p>
+  </li>
+  <li>
+   <p class="para">
+    After installing PDO as a shared module, you must edit your php.ini file
+    so that the PDO extension will be loaded automatically when PHP runs.
+    You will also need to enable any database specific drivers there too;
+    make sure that they are listed after the pdo.so line, as PDO must be
+    initialized before the database-specific extensions can be loaded.
+    If you built PDO and the database-specific extensions statically, you
+    can skip this step.
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+extension=pdo.so
+</pre></div>
+    </div>
+   </p>
+  </li>
+  <li>
+   <p class="para">
+    Having PDO as a shared module will allow you to run <strong class="command">pecl
+    upgrade pdo</strong> as new versions of PDO are published, without
+    forcing you to rebuild the whole of PHP.  Note that if you do this, you
+    also need to upgrade your database specific PDO drivers at the same
+    time.
+   </p>
+  </li>
+ </ol></div>
+ <div class="procedure">
+  <b class="title">PHP 5.0.0 and up on Unix systems</b>
+  <ol type="1"><li>
+   <p class="para">
+    PDO is available as a PECL extension from
+    <a href="http://pecl.php.net/package/pdo" class="link external">&raquo; http://pecl.php.net/package/pdo</a>.
+    Installation can be performed via the <strong class="command">pecl</strong> tool; this
+    is enabled by default when you configure PHP.  You should ensure that
+    PHP was configured --with-zlib in order for
+    <strong class="command">pecl</strong> to be able to handle the compressed package
+    files.
+   </p>
+  </li>
+  <li>
+   <p class="para">
+    Run the following command to download, build, and install the
+    latest stable version of PDO:
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+pecl install pdo
+</pre></div>
+    </div>
+   </p>
+  </li>
+  <li>
+   <p class="para">
+    The <strong class="command">pecl</strong> command automatically installs the
+    PDO module into your PHP extensions directory. To enable the
+    PDO extension on Linux or Unix operating systems, you must add
+    the following line to <var class="filename">php.ini</var>:
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+extension=pdo.so
+</pre></div>
+    </div>
+   </p>
+   <p class="para">
+    For more information about building PECL packages, consult the
+    <a href="install.pecl.html" class="link">PECL installation</a> section of the manual.
+   </p>
+  </li>
+ </ol></div>
+ <div class="procedure">
+  <b class="title">Windows users running PHP 5.1.0 and up</b>
+  <ol type="1"><li>
+   <p class="para">
+    PDO and all the major drivers ship with PHP as shared extensions, and
+    simply need to be activated by editing the <var class="filename">php.ini</var> file:
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+extension=php_pdo.dll
+</pre></div>
+    </div>
+   </p>
+  </li>
+  <li>
+   <p class="para">
+    Next, choose the other database-specific DLL files and either use 
+    <a href="function.dl.html" class="function">dl()</a> to load them at runtime, or enable them in
+    <var class="filename">php.ini</var> below <var class="filename">php_pdo.dll</var>. For example:
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+extension=php_pdo.dll
+extension=php_pdo_firebird.dll
+extension=php_pdo_informix.dll
+extension=php_pdo_mssql.dll
+extension=php_pdo_mysql.dll
+extension=php_pdo_oci.dll
+extension=php_pdo_oci8.dll
+extension=php_pdo_odbc.dll
+extension=php_pdo_pgsql.dll
+extension=php_pdo_sqlite.dll  
+</pre></div>
+    </div>
+   </p>
+   <p class="para">
+    These DLLs should exist in the system&#039;s 
+    <a href="ini.core.html#ini.extension-dir" class="link">extension_dir</a>.
+    Note that <a href="ref.pdo-informix.html" class="link">PDO_INFORMIX</a>
+    is only available as a PECL extension.
+   </p>
+  </li>
+ </ol></div>
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="pdo.requirements.html">Requirements</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="pdo.configuration.html">Runtime Configuration</a></div>
+ <div class="up"><a href="pdo.setup.html">Installing/Configuring</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

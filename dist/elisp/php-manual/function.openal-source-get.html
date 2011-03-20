@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Retrieve an OpenAL source property</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.openal-source-destroy.html">openal_source_destroy</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.openal-source-pause.html">openal_source_pause</a></div>
+ <div class="up"><a href="ref.openal.html">OpenAL Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="function.openal-source-get" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">openal_source_get</h1>
+  <p class="verinfo">(PECL openal &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">openal_source_get</span> &mdash; <span class="dc-title">
+   Retrieve an OpenAL source property
+  </span></p>
+
+ </div>
+ <a name="function.openal-source-get.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type"><a href="language.pseudo-types.html#language.types.mixed" class="type mixed">mixed</a></span> <span class="methodname"><b>openal_source_get</b></span>
+    ( <span class="methodparam"><span class="type">resource</span> <tt class="parameter">$source</tt></span>
+   , <span class="methodparam"><span class="type">int</span> <tt class="parameter">$property</tt></span>
+   )</div>
+
+ </div>
+
+ <a name="function.openal-source-get.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <dl>
+
+   <dt class="varlistentry">
+
+    <span class="term"><i><tt class="parameter">source</tt></i>
+</span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      An <a href="openal.resources.html" class="link">Open AL(Source)</a> resource
+      (previously created by <a href="function.openal-source-create.html" class="function">openal_source_create()</a>).
+     </p>
+    </dd>
+
+   
+   <dt class="varlistentry">
+
+    <span class="term"><i><tt class="parameter">property</tt></i>
+</span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Property to get, one of:
+      <b><tt class="constant">AL_SOURCE_RELATIVE</tt></b> (int),
+      <b><tt class="constant">AL_SOURCE_STATE</tt></b> (int),
+      <b><tt class="constant">AL_PITCH</tt></b> (float),
+      <b><tt class="constant">AL_GAIN</tt></b> (float),
+      <b><tt class="constant">AL_MIN_GAIN</tt></b> (float),
+      <b><tt class="constant">AL_MAX_GAIN</tt></b> (float),
+      <b><tt class="constant">AL_MAX_DISTANCE</tt></b> (float),
+      <b><tt class="constant">AL_ROLLOFF_FACTOR</tt></b> (float),
+      <b><tt class="constant">AL_CONE_OUTER_GAIN</tt></b> (float),
+      <b><tt class="constant">AL_CONE_INNER_ANGLE</tt></b> (float),
+      <b><tt class="constant">AL_CONE_OUTER_ANGLE</tt></b> (float),
+      <b><tt class="constant">AL_REFERENCE_DISTANCE</tt></b> (float),
+      <b><tt class="constant">AL_POSITION</tt></b> (array(float,float,float)),
+      <b><tt class="constant">AL_VELOCITY</tt></b> (array(float,float,float)),
+      <b><tt class="constant">AL_DIRECTION</tt></b> (array(float,float,float)).
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+ <a name="function.openal-source-get.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Returns the type associated with the property being retrieved
+   or <b><tt class="constant">FALSE</tt></b> on failure.
+  </p>
+ </div>
+
+ <a name="function.openal-source-get.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.openal-source-create.html" class="function" rel="rdfs-seeAlso">openal_source_create()</a> - Generate a source resource</li>
+    <li class="member"><a href="function.openal-source-set.html" class="function" rel="rdfs-seeAlso">openal_source_set()</a> - Set source property</li>
+    <li class="member"><a href="function.openal-source-play.html" class="function" rel="rdfs-seeAlso">openal_source_play()</a> - Start playing the source</li>
+   </ul><p>
+  </p>
+ </div>
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.openal-source-destroy.html">openal_source_destroy</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.openal-source-pause.html">openal_source_pause</a></div>
+ <div class="up"><a href="ref.openal.html">OpenAL Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

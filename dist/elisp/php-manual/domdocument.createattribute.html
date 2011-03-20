@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Create new attribute</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="domdocument.construct.html">DOMDocument::__construct</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="domdocument.createattributens.html">DOMDocument::createAttributeNS</a></div>
+ <div class="up"><a href="class.domdocument.html">DOMDocument</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="domdocument.createattribute" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">DOMDocument::createAttribute</h1>
+  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">DOMDocument::createAttribute</span> &mdash; <span class="dc-title">Create new attribute</span></p>
+
+ </div>
+ <a name="domdocument.createattribute.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type"><a href="class.domattr.html" class="type DOMAttr">DOMAttr</a></span> <span class="methodname"><b>DOMDocument::createAttribute</b></span>
+    ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$name</tt></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   This function creates a new instance of class <a href="class.domattr.html" class="classname">DOMAttr</a>. 
+   This node will not show up in the document unless
+it is inserted with (e.g.) <a href="domnode.appendchild.html" class="link">DOMNode-&gt;appendChild()</a>.
+  </p>
+ </div>
+
+ <a name="domdocument.createattribute.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">name</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The name of the attribute.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+ <a name="domdocument.createattribute.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   The new <a href="class.domattr.html" class="classname">DOMAttr</a> or <b><tt class="constant">FALSE</tt></b> if an error occured.
+  </p>
+ </div>
+
+ <a name="domdocument.createattribute.errors"></a><div class="refsect1 errors">
+  <h3 class="title">Errors/Exceptions</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><b><tt class="constant">DOM_INVALID_CHARACTER_ERR</tt></b></span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       Raised if <i><tt class="parameter">name</tt></i>
+ contains an invalid character.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+ <a name="domdocument.createattribute.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="domnode.appendchild.html" class="xref">DOMNode::appendChild</a></li>
+    <li class="member"><a href="domdocument.createattributens.html" class="xref">DOMDocument::createAttributeNS</a></li>
+    <li class="member"><a href="domdocument.createcdatasection.html" class="xref">DOMDocument::createCDATASection</a></li>
+    <li class="member"><a href="domdocument.createcomment.html" class="xref">DOMDocument::createComment</a></li>
+    <li class="member"><a href="domdocument.createdocumentfragment.html" class="xref">DOMDocument::createDocumentFragment</a></li>
+    <li class="member"><a href="domdocument.createelement.html" class="xref">DOMDocument::createElement</a></li>
+    <li class="member"><a href="domdocument.createelementns.html" class="xref">DOMDocument::createElementNS</a></li>
+    <li class="member"><a href="domdocument.createentityreference.html" class="xref">DOMDocument::createEntityReference</a></li>
+    <li class="member"><a href="domdocument.createprocessinginstruction.html" class="xref">DOMDocument::createProcessingInstruction</a></li>
+    <li class="member"><a href="domdocument.createtextnode.html" class="xref">DOMDocument::createTextNode</a></li>
+   </ul><p>
+  </p>
+ </div>
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="domdocument.construct.html">DOMDocument::__construct</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="domdocument.createattributens.html">DOMDocument::createAttributeNS</a></div>
+ <div class="up"><a href="class.domdocument.html">DOMDocument</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

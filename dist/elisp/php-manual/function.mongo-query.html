@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Performs a basic database query</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.mongo-next.html">mongo_next</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.mongo-remove.html">mongo_remove</a></div>
+ <div class="up"><a href="ref.mongo.html">Mongo Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="function.mongo-query" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">mongo_query</h1>
+  <p class="verinfo">(PECL mongo &gt;= 0.8.0)</p><p class="refpurpose"><span class="refname">mongo_query</span> &mdash; <span class="dc-title">Performs a basic database query</span></p>
+
+ </div>
+
+ <a name="function.mongo-query.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">resource</span> <span class="methodname"><b>mongo_query</b></span>
+    ( <span class="methodparam"><span class="type">resource</span> <tt class="parameter">$connection</tt></span>
+   , <span class="methodparam"><span class="type">string</span> <tt class="parameter">$ns</tt></span>
+   , <span class="methodparam"><span class="type">array</span> <tt class="parameter">$query</tt></span>
+   , <span class="methodparam"><span class="type">int</span> <tt class="parameter">$skip</tt></span>
+   , <span class="methodparam"><span class="type">int</span> <tt class="parameter">$limit</tt></span>
+   , <span class="methodparam"><span class="type">array</span> <tt class="parameter">$sort</tt></span>
+   , <span class="methodparam"><span class="type">array</span> <tt class="parameter">$fields</tt></span>
+   , <span class="methodparam"><span class="type">array</span> <tt class="parameter">$hint</tt></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Performs a database query, returning a database cursor that
+   can be passed to mongo_has_next or mongo_next.  It is highly 
+   suggested that users use MongoCollection&#039;s find() function 
+   instead, as it is basically a wrapper for this function that
+   handles of the extensive parameter list for the user.
+  </p>
+ </div>
+
+
+ <a name="function.mongo-query.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">connection</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The database connection to use.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">ns</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The database and collection name
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">query</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The query to execute.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">skip</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The number of documents to skip.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">limit</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The maximum number of documents to return.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">sort</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       An array of fields and directions on which to sort.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">fields</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       An array of the fields of each document to return.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">hint</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       An array giving the database a query hint.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="function.mongo-query.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Returns a cursor to the resulting documents.
+  </p>
+ </div>
+
+
+ <a name="function.mongo-query.examples"></a><div class="refsect1 examples">
+  <h3 class="title">Examples</h3>
+  <p class="para">
+   </p><div class="example">
+    <p><b>Example #1 <b>mongo_query()</b> example</b></p>
+    <div class="example-contents para"><p>
+     This example shows how to use a query to get a page of 
+     search results from the database.
+    </p></div>
+    <div class="example-contents programlisting">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$searchterm&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"pandas"</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$pagenum&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$resultsPerPage&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mongo_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"localhost"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$conn</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect."</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">$cursor&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mongo_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"zoo.animals"</span><span style="color: #007700">,&nbsp;array(</span><span style="color: #DD0000">"name"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$searchterm</span><span style="color: #007700">),&nbsp;(</span><span style="color: #0000BB">$pagenum</span><span style="color: #007700">-</span><span style="color: #0000BB">1</span><span style="color: #007700">)*</span><span style="color: #0000BB">$resultsPerPage</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$resultsPerPage</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">null</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents para"><p>
+     This returns results 11-20 of objects in the zoo.animals collection with the name field &quot;panda&quot;.
+    </p></div>
+   </div><p>
+  </p>
+ </div>
+
+
+ <a name="function.mongo-query.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.mongo-has-next.html" class="function" rel="rdfs-seeAlso">mongo_has_next()</a> - Checks if a cursor has any more documents to return</li>
+    <li class="member"><a href="function.mongo-next.html" class="function" rel="rdfs-seeAlso">mongo_next()</a> - Fetches the next document returned by a query</li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.mongo-next.html">mongo_next</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.mongo-remove.html">mongo_remove</a></div>
+ <div class="up"><a href="ref.mongo.html">Mongo Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

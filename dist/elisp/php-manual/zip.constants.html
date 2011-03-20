@@ -1,0 +1,707 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Predefined Constants</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="zip.resources.html">Resource Types</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="zip.examples.html">Examples</a></div>
+ <div class="up"><a href="book.zip.html">Zip</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div>
+ <h1>Predefined Constants</h1>
+
+ <p class="simpara">
+The constants below are defined by this extension, and
+will only be available when the extension has either
+been compiled into PHP or dynamically loaded at runtime.
+</p>
+
+  <p class="para">
+   <a href="class.ziparchive.html" class="classname">ZipArchive</a> uses class constants. 
+   There are three types of constants : 
+   Flags (prefixed with <i>FL_</i>),
+   errors (prefixed with <i>ER_</i>) and
+   mode (no prefix).
+  </p>
+
+ <dl>
+
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::CREATE</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Create the archive if it does not exist.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::OVERWRITE</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Always start a new archive, this mode will overwrite the file if
+     it already exists.
+    </span>
+   </dd>
+
+  
+
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::EXCL</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Error if archive already exists.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::CHECKCONS</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Perform additional consistency checks on the archive, and error if they fail.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::FL_NOCASE</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Ignore case on name lookup
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::FL_NODIR</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Ignore directory component
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::FL_COMPRESSED</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Read compressed data
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::FL_UNCHANGED</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Use original data, ignoring changes.
+    </span>
+   </dd>
+
+  
+
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::CM_DEFAULT</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     better of deflate or store.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::CM_STORE</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     stored (uncompressed).
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::CM_SHRINK</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     shrunk
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::CM_REDUCE_1</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     reduced with factor 1
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::CM_REDUCE_2</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     reduced with factor 2
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::CM_REDUCE_3</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     reduced with factor 3
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::CM_REDUCE_4</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     reduced with factor 4
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::CM_IMPLODE</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     imploded
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::CM_DEFLATE</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     deflated
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::CM_DEFLATE64</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     deflate64
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::CM_PKWARE_IMPLODE</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     PKWARE imploding
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::CM_BZIP2</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     BZIP2 algorithm
+    </span>
+   </dd>
+
+  
+
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_OK</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     No error.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_MULTIDISK</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Multi-disk zip archives not supported.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_RENAME</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Renaming temporary file failed.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_CLOSE</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Closing zip archive failed
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_SEEK</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+      Seek error
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_READ</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Read error
+    </span>
+   </dd>
+
+  
+
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_WRITE</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Write error
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_CRC</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     CRC error
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_ZIPCLOSED</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Containing zip archive was closed
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_NOENT</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     No such file.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_EXISTS</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     File already exists
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_OPEN</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Can&#039;t open file
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_TMPOPEN</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Failure to create temporary file.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_ZLIB</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Zlib error
+    </span>
+   </dd>
+
+  
+
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_MEMORY</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Memory allocation failure
+    </span>
+   </dd>
+
+  
+
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_CHANGED</tt></b>
+     (<a href="language.types.string.html" class="type string">string</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Entry has been changed
+    </span>
+   </dd>
+
+  
+
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_COMPNOTSUPP</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Compression method not supported.
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_EOF</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Premature EOF
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_INVAL</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Invalid argument
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_NOZIP</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Not a zip archive
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_INTERNAL</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Internal error
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_INCONS</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Zip archive inconsistent
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_REMOVE</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Can&#039;t remove file
+    </span>
+   </dd>
+
+  
+  <dt class="varlistentry">
+
+   <span class="term">
+    <b><tt class="constant">ZIPARCHIVE::ER_DELETED</tt></b>
+     (<a href="language.types.integer.html" class="type integer">integer</a>)
+   </span>
+
+   </dt><dd class="listitem">
+
+    <span class="simpara">
+     Entry has been deleted
+    </span>
+   </dd>
+
+  
+ </dl>
+
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="zip.resources.html">Resource Types</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="zip.examples.html">Examples</a></div>
+ <div class="up"><a href="book.zip.html">Zip</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

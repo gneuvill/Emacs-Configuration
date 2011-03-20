@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Installation</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="radius.requirements.html">Requirements</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="radius.configuration.html">Runtime Configuration</a></div>
+ <div class="up"><a href="radius.setup.html">Installing/Configuring</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="radius.installation" class="section">
+ <h2 class="title">Installation</h2>
+ <p class="para">
+  Howto install the package?
+  </p><ul class="itemizedlist">
+   <li class="listitem"><span class="simpara">untar the package (usually into php4/ext)</span></li>
+   <li class="listitem"><span class="simpara">rename radius-x.x to radius</span></li>
+   <li class="listitem"><span class="simpara">run <strong class="command">./buildconf</strong> in php4</span></li>
+   <li class="listitem"><span class="simpara">run <strong class="command">./configure --enable-radius</strong></span></li> 
+   <li class="listitem"><span class="simpara"><strong class="command">make; make install</strong></span></li>
+  </ul><p>
+  or if you would like to have it as <var class="filename">.so</var>:
+  </p><ul class="itemizedlist">
+   <li class="listitem"><span class="simpara">untar the package </span></li>
+   <li class="listitem"><span class="simpara">run <strong class="command">phpize</strong> in the radius-x.x directory</span></li>
+   <li class="listitem"><span class="simpara">run <strong class="command">./configure</strong> in the radius-x.x directory</span></li> 
+   <li class="listitem"><span class="simpara"><strong class="command">make; make install</strong></span></li>
+  </ul><p>
+ </p>
+ <p class="para">
+  For Windows I recommend to use the
+  <var class="filename">php_radius.dll</var> from
+  <a href="http://snaps.php.net/" class="link external">&raquo; http://snaps.php.net/</a>.
+  A <acronym title="Dynamic Link Library">DLL</acronym> for this
+<acronym title="PHP Extension and Application Repository">PECL</acronym> extension is currently unavailable. See also the
+<a href="install.windows.building.html" class="link">building on Windows</a>
+section.
+ </p>
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="radius.requirements.html">Requirements</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="radius.configuration.html">Runtime Configuration</a></div>
+ <div class="up"><a href="radius.setup.html">Installing/Configuring</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

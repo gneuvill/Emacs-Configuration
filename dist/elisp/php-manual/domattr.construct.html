@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Creates a new DOMAttr object</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="class.domattr.html">DOMAttr</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="domattr.isid.html">DOMAttr::isId</a></div>
+ <div class="up"><a href="class.domattr.html">DOMAttr</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="domattr.construct" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">DOMAttr::__construct</h1>
+  <p class="verinfo">(PHP 5)</p><p class="refpurpose"><span class="refname">DOMAttr::__construct</span> &mdash; <span class="dc-title">Creates a new <a href="class.domattr.html" class="classname">DOMAttr</a> object</span></p>
+
+ </div>
+ <a name="domattr.construct.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+    <span class="methodname"><b>DOMAttr::__construct</b></span>
+    ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$name</tt></span>
+   [, <span class="methodparam"><span class="type">string</span> <tt class="parameter">$value</tt></span>
+  ] )</div>
+ 
+  <p class="para rdfs-comment">
+   Creates a new DOMAttr object. This object is read only. 
+   It may be appended to a document, but additional nodes may not be appended to this node until 
+   the node is associated with a document. To create a writable node, use 
+   <a href="domdocument.createattribute.html" class="xref">DOMDocument::createAttribute</a>.
+  </p>
+ </div>
+
+ <a name="domattr.construct.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">name</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The tag name of the attribute.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">value</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The value of the attribute.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+ <a name="domattr.construct.examples"></a><div class="refsect1 examples">
+  <h3 class="title">Examples</h3>
+  <p class="para">
+   </p><div class="example">
+    <p><b>Example #1 Creating a new DOMAttr</b></p>
+    <div class="example-contents programlisting">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$dom&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DOMDocument</span><span style="color: #007700">(</span><span style="color: #DD0000">'1.0'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'iso-8859-1'</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$element&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dom</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">appendChild</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">DOMElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'root'</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">$attr&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$element</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setAttributeNode</span><span style="color: #007700">(new&nbsp;</span><span style="color: #0000BB">DOMAttr</span><span style="color: #007700">(</span><span style="color: #DD0000">'attr'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'attrvalue'</span><span style="color: #007700">));<br />echo&nbsp;</span><span style="color: #0000BB">$dom</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">saveXML</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">/*&nbsp;&lt;?xml&nbsp;version="1.0"&nbsp;encoding="iso-8859-1"?&gt;&lt;root&nbsp;attr="attrvalue"&nbsp;/&gt;&nbsp;*/<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div><p>
+  </p>
+ </div>
+
+ <a name="domattr.construct.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="domdocument.createattribute.html" class="xref">DOMDocument::createAttribute</a></li>
+   </ul><p>
+  </p>
+ </div>
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="class.domattr.html">DOMAttr</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="domattr.isid.html">DOMAttr::isId</a></div>
+ <div class="up"><a href="class.domattr.html">DOMAttr</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

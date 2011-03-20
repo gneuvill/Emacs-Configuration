@@ -1,0 +1,324 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The DirectoryIterator class</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="cachingiterator.valid.html">CachingIterator::valid</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="directoryiterator.construct.html">DirectoryIterator::__construct</a></div>
+ <div class="up"><a href="spl.iterators.html">Iterators</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div>
+ <h1 class="title">The DirectoryIterator class</h1>
+ 
+ 
+ <div class="partintro">
+ 
+
+  <div id="directoryiterator.intro" class="section">
+   <h2 class="title">Introduction</h2>
+   <p class="para">
+    The DirectoryIterator class provides a simple interface for viewing
+    the contents of filesystem directories.
+   </p>
+  </div>
+
+ 
+  <div id="directoryiterator.synopsis" class="section">
+   <h2 class="title">Class synopsis</h2>
+ 
+
+   <div class="classsynopsis">
+    <div class="ooclass"><b class="classname">DirectoryIterator</b></div>
+ 
+
+    <div class="classsynopsisinfo">
+     <span class="ooclass">
+      <b class="classname">DirectoryIterator</b>
+     </span>
+
+     <span class="ooclass">
+      <span class="modifier">extends</span>
+      <a href="class.splfileinfo.html" class="classname">SplFileInfo</a>
+     </span>
+
+     <span class="oointerface">implements 
+      <a href="class.iterator.html" class="interfacename">Iterator</a>
+     </span>
+ 
+     <span class="oointerface">, 
+      <a href="class.traversable.html" class="interfacename">Traversable</a>
+     </span>
+ 
+     {</div>
+
+ 
+    
+ 
+    <div class="classsynopsisinfo classsynopsisinfo_comment">/* Methods */</div>
+    <div class="constructorsynopsis dc-description">
+    <span class="methodname"><a href="directoryiterator.construct.html" class="function">__construct</a></span>
+    ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$path</tt></span>
+   )</div>
+
+    <div class="methodsynopsis dc-description">
+   <span class="type">DirectoryIterator</span> <span class="methodname"><a href="directoryiterator.current.html" class="function">current</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname"><a href="directoryiterator.getatime.html" class="function">getATime</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname"><a href="directoryiterator.getctime.html" class="function">getCTime</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><a href="directoryiterator.getfilename.html" class="function">getFilename</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname"><a href="directoryiterator.getgroup.html" class="function">getGroup</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname"><a href="directoryiterator.getinode.html" class="function">getInode</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname"><a href="directoryiterator.getmtime.html" class="function">getMTime</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname"><a href="directoryiterator.getowner.html" class="function">getOwner</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><a href="directoryiterator.getpath.html" class="function">getPath</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><a href="directoryiterator.getpathname.html" class="function">getPathname</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname"><a href="directoryiterator.getperms.html" class="function">getPerms</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">int</span> <span class="methodname"><a href="directoryiterator.getsize.html" class="function">getSize</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><a href="directoryiterator.gettype.html" class="function">getType</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="directoryiterator.isdir.html" class="function">isDir</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="directoryiterator.isdot.html" class="function">isDot</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="directoryiterator.isexecutable.html" class="function">isExecutable</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="directoryiterator.isfile.html" class="function">isFile</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="directoryiterator.islink.html" class="function">isLink</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="directoryiterator.isreadable.html" class="function">isReadable</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><a href="directoryiterator.iswritable.html" class="function">isWritable</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><a href="directoryiterator.key.html" class="function">key</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="directoryiterator.next.html" class="function">next</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">void</span> <span class="methodname"><a href="directoryiterator.rewind.html" class="function">rewind</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+<div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><a href="directoryiterator.valid.html" class="function">valid</a></span>
+    ( <span class="methodparam">void</span>
+   )</div>
+
+   }</div>
+ 
+  </div>
+ 
+
+ 
+ </div>
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<h2>Table of Contents</h2><ul class="chunklist chunklist_reference"><li><a href="directoryiterator.construct.html">DirectoryIterator::__construct</a> — Constructs a new dir iterator from a path</li><li><a href="directoryiterator.current.html">DirectoryIterator::current</a> — Return this (needed for Iterator interface)</li><li><a href="directoryiterator.getatime.html">DirectoryIterator::getATime</a> — Get last access time of file</li><li><a href="directoryiterator.getctime.html">DirectoryIterator::getCTime</a> — Get inode modification time of file</li><li><a href="directoryiterator.getfilename.html">DirectoryIterator::getFilename</a> — Return filename of current dir entry</li><li><a href="directoryiterator.getgroup.html">DirectoryIterator::getGroup</a> — Get file group</li><li><a href="directoryiterator.getinode.html">DirectoryIterator::getInode</a> — Get file inode</li><li><a href="directoryiterator.getmtime.html">DirectoryIterator::getMTime</a> — Get last modification time of file</li><li><a href="directoryiterator.getowner.html">DirectoryIterator::getOwner</a> — Get file owner</li><li><a href="directoryiterator.getpath.html">DirectoryIterator::getPath</a> — Return directory path</li><li><a href="directoryiterator.getpathname.html">DirectoryIterator::getPathname</a> — Return path and filename of current dir entry</li><li><a href="directoryiterator.getperms.html">DirectoryIterator::getPerms</a> — Get file permissions</li><li><a href="directoryiterator.getsize.html">DirectoryIterator::getSize</a> — Get file size</li><li><a href="directoryiterator.gettype.html">DirectoryIterator::getType</a> — Get file type</li><li><a href="directoryiterator.isdir.html">DirectoryIterator::isDir</a> — Returns true if file is directory</li><li><a href="directoryiterator.isdot.html">DirectoryIterator::isDot</a> — Returns true if current entry is '.' or '..'</li><li><a href="directoryiterator.isexecutable.html">DirectoryIterator::isExecutable</a> — Returns true if file is executable</li><li><a href="directoryiterator.isfile.html">DirectoryIterator::isFile</a> — Returns true if file is a regular file</li><li><a href="directoryiterator.islink.html">DirectoryIterator::isLink</a> — Returns true if file is symbolic link</li><li><a href="directoryiterator.isreadable.html">DirectoryIterator::isReadable</a> — Returns true if file can be read</li><li><a href="directoryiterator.iswritable.html">DirectoryIterator::isWritable</a> — Returns true if file can be written</li><li><a href="directoryiterator.key.html">DirectoryIterator::key</a> — Return current dir entry</li><li><a href="directoryiterator.next.html">DirectoryIterator::next</a> — Move to next entry</li><li><a href="directoryiterator.rewind.html">DirectoryIterator::rewind</a> — Rewind dir back to the start</li><li><a href="directoryiterator.valid.html">DirectoryIterator::valid</a> — Check whether dir contains more entries</li></ul>
+</div>
+<hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="cachingiterator.valid.html">CachingIterator::valid</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="directoryiterator.construct.html">DirectoryIterator::__construct</a></div>
+ <div class="up"><a href="spl.iterators.html">Iterators</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

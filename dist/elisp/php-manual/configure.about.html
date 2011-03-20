@@ -1,0 +1,818 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>List of core configure options</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="configure.html">Configure options</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ini.html">php.ini directives</a></div>
+ <div class="up"><a href="configure.html">Configure options</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="configure.about" class="sect1">
+  <h2 class="title">List of core configure options</h2>
+  <p class="para">
+   Below is a partial list of configure options used by the PHP
+   <var class="filename">configure</var> scripts when compiling in Unix-like
+   environments. Most configure options are listed in their appropriate
+   locations on the extension reference pages and not here. For a complete
+   up-to-date list of configure options, run <strong class="command">./configure --help</strong>
+   in your PHP source directory after running <strong class="command">autoconf</strong>
+   (see also the <a href="install.html" class="link">Installation chapter</a>).
+   You may also be interested in reading the
+   <a href="http://www.airs.com/ian/configure/" class="link external">&raquo; GNU configure</a> documentation for
+   information on additional <strong class="command">configure</strong> options such as
+   <i>--prefix=PREFIX</i>.
+  </p>
+  
+  <blockquote><p><b class="note">Note</b>: 
+   
+    These are only used at compile time. If you want to alter PHP&#039;s
+    runtime configuration, please see the chapter on <a href="configuration.html" class="link">Runtime Configuration</a>.
+   <br />
+  </p></blockquote>
+
+  <ul class="itemizedlist">
+   <li class="listitem">
+    <p class="para">
+     <a href="configure.about.html#configure.options.misc" class="link">Miscellaneous</a>
+    </p>
+   </li>
+   <li class="listitem">
+    <p class="para">
+     <a href="configure.about.html#configure.options.php" class="link">PHP Behaviour</a>
+    </p>
+   </li>
+   <li class="listitem">
+    <p class="para">
+     <a href="configure.about.html#configure.options.servers" class="link">Server</a>
+    </p>
+   </li>
+  </ul>
+
+  <div id="configure.options" class="sect2">
+   <h3 class="title">Configure Options in PHP</h3>
+   <blockquote><p><b class="note">Note</b>: 
+    
+     These options are only used in PHP as of PHP 4.1.0, although some are
+     available in older versions too. If you want to compile an older
+     version, some options will probably not be available.
+    <br />
+   </p></blockquote>
+   
+
+ <div id="configure.options.misc" class="sect3">
+  <h4 class="title">Misc options</h4>
+  <dl>
+
+   <dt id="configure.enable-debug" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-debug</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Compile with debugging symbols.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-layout" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-layout=TYPE</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Sets how installed files will be laid out. Type is one of PHP (default) 
+or GNU.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-pear" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-pear=DIR</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Install PEAR in DIR (default PREFIX/lib/php).
+     </p>
+    </dd>
+
+   
+   <dt id="configure.without-pear" class="varlistentry">
+    <span class="term">
+     <span class="option">--without-pear</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Do not install PEAR.
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.enable-sigchild" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-sigchild</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Enable PHP&#039;s own SIGCHLD handler.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.disable-rpath" class="varlistentry">
+    <span class="term">
+     <span class="option">--disable-rpath</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Disable passing additional runtime library search paths.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.enable-libgcc" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-libgcc</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Enable explicitly linking against libgcc.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.enable-php-streams" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-php-streams</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Include experimental PHP streams. Do not use unless you are testing the 
+code!
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-zlib-dir" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-zlib-dir[=DIR]</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Define the location of zlib install directory.
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.enable-trans-sid" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-trans-sid</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Enable transparent session id propagation. Only valid for PHP 4.1.2 or
+      less. From PHP 4.2.0, trans-sid feature is always compiled.
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.with-tsrm-pthreads" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-tsrm-pthreads</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Use POSIX threads (default).
+     </p>
+    </dd>
+
+   
+   <dt id="configure.enable-shared" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-shared[=PKGS]</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build shared libraries [default=yes].
+     </p>
+    </dd>
+
+   
+   <dt id="configure.enable-static" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-static[=PKGS]</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build static libraries [default=yes].
+     </p>
+    </dd>
+
+   
+   <dt id="configure.enable-fast-install" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-fast-install[=PKGS]</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Optimize for fast installation [default=yes].
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-gnu-ld" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-gnu-ld</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Assume the C compiler uses GNU ld [default=no].
+     </p>
+    </dd>
+
+   
+   <dt id="configure.disable-libtool-lock" class="varlistentry">
+    <span class="term">
+     <span class="option">--disable-libtool-lock</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Avoid locking (might break parallel builds).
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-pic" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-pic</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Try to use only PIC/non-PIC objects [default=use both].
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.enable-memory-limit" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-memory-limit</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Compile with memory limit support.
+      (not available since PHP 5.2.1 - always enabled)
+     </p>
+    </dd>
+
+   
+   <dt id="configure.disable-url-fopen-wrapper" class="varlistentry">
+    <span class="term">
+     <span class="option">--disable-url-fopen-wrapper</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Disable the URL-aware fopen wrapper that allows
+      accessing files via HTTP or FTP.
+      (not available since PHP 5.2.5)
+     </p>
+    </dd>
+
+   
+   <dt id="configure.enable-versioning.php4" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-versioning</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Export only required symbols.
+      See INSTALL for more information.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+
+   
+
+ <div id="configure.options.php" class="sect3">
+  <h4 class="title">PHP options</h4>
+  <dl>
+
+   <dt id="configure.enable-maintainer-mode" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-maintainer-mode</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Enable make rules and dependencies not useful (and sometimes confusing) 
+      to the casual installer.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-config-file-path" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-config-file-path=PATH</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Sets the path in which to look for <var class="filename">php.ini</var>, defaults to <i>PREFIX/lib</i>.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.enable-safe-mode" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-safe-mode</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Enable safe mode by default.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-exec-dir" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-exec-dir[=DIR]</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Only allow executables in DIR when in safe mode defaults to <i>/usr/local/php/bin</i>.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.enable-magic-quotes" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-magic-quotes</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Enable magic quotes by default.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.disable-short-tags" class="varlistentry">
+    <span class="term">
+     <span class="option">--disable-short-tags</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Disable the short-form &lt;? start tag by default.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+
+   
+
+ <div id="configure.options.servers" class="sect3">
+  <h4 class="title">SAPI options</h4>
+  <p class="para">
+   The following list contains the available SAPI&amp;s (<i>Server
+   Application Programming Interface</i>) for PHP.
+  </p>
+  <dl>
+
+   <dt id="configure.with-aolserver" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-aolserver=DIR</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Specify path to the installed AOLserver.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-apxs" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-apxs[=FILE]</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build shared Apache module. FILE is the optional pathname to the Apache
+      apxs tool; defaults to apxs. Make sure you specify the version of apxs that
+      is actually installed on your system and NOT the one that is in the apache
+      source tarball.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-apache" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-apache[=DIR]</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build a static Apache module. DIR is the top-level Apache build directory,
+      defaults to <var class="filename">/usr/local/apache</var>.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-mod-charset" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-mod_charset</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Enable transfer tables for mod_charset (Russian Apache).
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-apxs2" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-apxs2[=FILE]</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build shared Apache 2.0 module. FILE is the optional pathname to the Apache
+      apxs tool; defaults to apxs.
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.with-caudium" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-caudium=DIR</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build PHP as a Pike module for use with Caudium. DIR is the Caudium server
+      dir, with the default value <var class="filename">/usr/local/caudium/server</var>.
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.disable-cli" class="varlistentry">
+    <span class="term">
+     <span class="option">--disable-cli</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Available with PHP 4.3.0. Disable building the CLI version of PHP (this
+      forces <a href="configure.about.html#configure.without-pear" class="link">--without-pear</a>).
+      More information is available in the section about
+      <a href="features.commandline.html" class="link">Using PHP from the command line</a>.
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.enable-embed" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-embed[=TYPE]</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Enable building of the embedded SAPI library. TYPE is either
+      <i>shared</i> or <i>static</i>, which
+      defaults to <i>shared</i>. Available with PHP 4.3.0.
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.with-fhttpd" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-fhttpd[=DIR]</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build fhttpd module. DIR is the fhttpd sources directory, defaults to
+      <var class="filename">/usr/local/src/fhttpd</var>. No longer available as of PHP
+      4.3.0.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-isapi" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-isapi=DIR</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build PHP as an ISAPI module for use with Zeus.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-nsapi" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-nsapi=DIR</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Specify path to the installed Netscape/iPlanet/SunONE Webserver.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-phttpd" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-phttpd=DIR</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      No information yet.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-pi3web" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-pi3web=DIR</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build PHP as a module for use with Pi3Web.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-roxen" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-roxen=DIR</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build PHP as a Pike module. DIR is the base Roxen directory, normally
+      <var class="filename">/usr/local/roxen/server</var>.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.enable-roxen-zts" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-roxen-zts</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build the Roxen module using Zend Thread Safety.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-servlet" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-servlet[=DIR]</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Include servlet support. DIR is the base install directory for the JSDK.
+      This SAPI requires the java extension must be built as a shared dl.
+     </p>
+    </dd>
+
+   
+   <dt id="configure.with-thttpd" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-thttpd=SRCDIR</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build PHP as thttpd module.
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.with-tux" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-tux=MODULEDIR</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build PHP as a TUX module (Linux only).
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.with-webjames" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-webjames=SRCDIR</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build PHP as a WebJames module (RISC OS only)
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.disable-cgi" class="varlistentry">
+    <span class="term">
+     <span class="option">--disable-cgi</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Disable building CGI version of PHP. Available with PHP 4.3.0.
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.enable-force-cgi-redirect" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-force-cgi-redirect</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Enable the security check for internal server redirects. You should use
+      this if you are running the CGI version with Apache.
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.enable-discard-path" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-discard-path</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      If this is enabled, the PHP CGI binary can safely be placed outside of
+      the web tree and people will not be able to circumvent <var class="filename">.htaccess</var>
+      security.
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.with-fastcgi" class="varlistentry">
+    <span class="term">
+     <span class="option">--with-fastcgi</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      Build PHP as FastCGI application. No longer available as of PHP 4.3.0,
+      instead you should use <span class="option">--enable-fastcgi</span>.
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.enable-fastcgi" class="varlistentry">
+    <span class="term">
+     <span class="option">--enable-fastcgi</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      If this is enabled, the CGI module will be built with support for FastCGI
+      also. Available since PHP 4.3.0
+     </p>
+    </dd>
+
+   
+
+   <dt id="configure.disable-path-info-check" class="varlistentry">
+    <span class="term">
+     <span class="option">--disable-path-info-check</span>
+    </span>
+
+    </dt><dd class="listitem">
+
+     <p class="para">
+      If this is disabled, paths such as <var class="filename">/info.php/test?a=b</var>
+      will fail to work. Available since PHP 4.3.0.
+      For more information see the
+      <a href="http://httpd.apache.org/docs/2.0/en/mod/core.html#acceptpathinfo" class="link external">&raquo; Apache Manual</a>.
+     </p>
+    </dd>
+
+   
+  </dl>
+
+ </div>
+
+
+
+  </div>
+ </div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="configure.html">Configure options</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ini.html">php.ini directives</a></div>
+ <div class="up"><a href="configure.html">Configure options</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Retrieve information about a file</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="streamwrapper.unlink.html">streamWrapper::unlink</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.stream.html">Stream Functions</a></div>
+ <div class="up"><a href="class.streamwrapper.html">streamWrapper</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="streamwrapper.url-stat" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">streamWrapper::url_stat</h1>
+  <p class="verinfo">(PHP 4 &gt;= 4.3.2, PHP 5)</p><p class="refpurpose"><span class="refname">streamWrapper::url_stat</span> &mdash; <span class="dc-title">Retrieve information about a file</span></p>
+
+ </div>
+
+ <a name="streamwrapper.url-stat.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">array</span> <span class="methodname"><b>streamWrapper::url_stat</b></span>
+    ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$path</tt></span>
+   , <span class="methodparam"><span class="type">int</span> <tt class="parameter">$flags</tt></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   This method is called in response to all <a href="function.stat.html" class="function">stat()</a> related
+   functions, such as:
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.chmod.html" class="function">chmod()</a> (only when <a href="ini.sect.safe-mode.html#ini.safe-mode" class="link">safe_mode</a> is enabled)</li>
+    <li class="member"><a href="function.copy.html" class="function">copy()</a></li>
+    <li class="member"><a href="function.fileperms.html" class="function">fileperms()</a></li>
+    <li class="member"><a href="function.fileinode.html" class="function">fileinode()</a></li>
+    <li class="member"><a href="function.filesize.html" class="function">filesize()</a></li>
+    <li class="member"><a href="function.fileowner.html" class="function">fileowner()</a></li>
+    <li class="member"><a href="function.filegroup.html" class="function">filegroup()</a></li>
+    <li class="member"><a href="function.fileatime.html" class="function">fileatime()</a></li>
+    <li class="member"><a href="function.filemtime.html" class="function">filemtime()</a></li>
+    <li class="member"><a href="function.filectime.html" class="function">filectime()</a></li>
+    <li class="member"><a href="function.filetype.html" class="function">filetype()</a></li>
+    <li class="member"><a href="function.is-writable.html" class="function">is_writable()</a></li>
+    <li class="member"><a href="function.is-readable.html" class="function">is_readable()</a></li>
+    <li class="member"><a href="function.is-executable.html" class="function">is_executable()</a></li>
+    <li class="member"><a href="function.is-file.html" class="function">is_file()</a></li>
+    <li class="member"><a href="function.is-dir.html" class="function">is_dir()</a></li>
+    <li class="member"><a href="function.is-link.html" class="function">is_link()</a></li>
+    <li class="member"><a href="function.file-exists.html" class="function">file_exists()</a></li>
+    <li class="member"><a href="function.lstat.html" class="function">lstat()</a></li>
+    <li class="member"><a href="function.stat.html" class="function">stat()</a></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.getperms.html" class="function">SplFileInfo::getPerms</a></span></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.getinode.html" class="function">SplFileInfo::getInode</a></span></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.getsize.html" class="function">SplFileInfo::getSize</a></span></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.getowner.html" class="function">SplFileInfo::getOwner</a></span></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.getgroup.html" class="function">SplFileInfo::getGroup</a></span></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.getatime.html" class="function">SplFileInfo::getATime</a></span></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.getmtime.html" class="function">SplFileInfo::getMTime</a></span></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.getctime.html" class="function">SplFileInfo::getCTime</a></span></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.gettype.html" class="function">SplFileInfo::getType</a></span></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.iswritable.html" class="function">SplFileInfo::isWritable</a></span></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.isreadable.html" class="function">SplFileInfo::isReadable</a></span></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.isexecutable.html" class="function">SplFileInfo::isExecutable</a></span></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.isfile.html" class="function">SplFileInfo::isFile</a></span></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.isdir.html" class="function">SplFileInfo::isDir</a></span></li>
+    <li class="member"> <span class="methodname"><a href="splfileinfo.islink.html" class="function">SplFileInfo::isLink</a></span></li>
+    <li class="member"> <span class="methodname"><a href="recursivedirectoryiterator.haschildren.html" class="function">RecursiveDirectoryIterator::hasChildren</a></span></li>
+   </ul><p>
+  </p>
+ </div>
+
+
+ <a name="streamwrapper.url-stat.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">path</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The file URL which should retrieve information about.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">flags</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       Holds additional flags set by the streams API. It can hold one or more
+       of the following values OR&#039;d together.
+       </p><table class="doctable informaltable">
+        
+         <thead valign="middle">
+          <tr valign="middle">
+           <th>Flag</th>
+           <th>Description</th>
+          </tr>
+
+         </thead>
+
+         <tbody valign="middle" class="tbody">
+          <tr valign="middle">
+           <td align="left">STREAM_URL_STAT_LINK</td>
+           <td align="left">
+            For resources with the ability to link to other resource
+            (such as an HTTP Location: forward, or a filesystem
+            symlink).  This flag specified that only information
+            about the link itself should be returned, not the
+            resource pointed to by the link.  This flag is set in
+            response to calls to <a href="function.lstat.html" class="function">lstat()</a>,
+            <a href="function.is-link.html" class="function">is_link()</a>, or <a href="function.filetype.html" class="function">filetype()</a>.
+           </td>
+          </tr>
+
+          <tr valign="middle">
+           <td align="left">STREAM_URL_STAT_QUIET</td>
+           <td align="left">If this flag is set, your wrapper should not raise any
+            errors.  If this flag is not set, you are responsible for
+            reporting errors using the <a href="function.trigger-error.html" class="function">trigger_error()</a>
+            function during stating of the path.
+           </td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+<p>
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="streamwrapper.url-stat.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Should return as many elements as <a href="function.stat.html" class="function">stat()</a> does.
+   Unknown or unavailable values should be set to a rational value
+   (usually <b><tt class="constant">0</tt></b>).
+  </p>
+ </div>
+
+
+ <a name="streamwrapper.url-stat.errors"></a><div class="refsect1 errors">
+  <h3 class="title">Errors/Exceptions</h3>
+  <p class="para">Emits
+<b><tt class="constant">E_WARNING</tt></b> if call to this method fails
+(i.e. not implemented).</p>
+ </div>
+
+ 
+ 
+
+ <a name="streamwrapper.url-stat.notes"></a><div class="refsect1 notes">
+  <h3 class="title">Notes</h3>
+  <blockquote><p><b class="note">Note</b>: The
+<var class="varname">streamWrapper->context</var>
+property is updated if a valid context is passed to the caller function.<br /></p></blockquote>
+ </div>
+
+ 
+ <a name="streamwrapper.url-stat.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.stat.html" class="function" rel="rdfs-seeAlso">stat()</a> - Gives information about a file</li>
+    <li class="member"> <span class="methodname"><a href="streamwrapper.stream-stat.html" class="function" rel="rdfs-seeAlso">streamwrapper::stream_stat</a> - Retrieve information about a file resource</span></li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="streamwrapper.unlink.html">streamWrapper::unlink</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="ref.stream.html">Stream Functions</a></div>
+ <div class="up"><a href="class.streamwrapper.html">streamWrapper</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

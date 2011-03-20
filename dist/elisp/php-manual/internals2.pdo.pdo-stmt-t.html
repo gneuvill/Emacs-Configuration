@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>pdo_stmt_t definition</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="internals2.pdo.pdo-dbh-t.html">pdo_dbh_t definition</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="internals2.pdo.constants.html">Constants</a></div>
+ <div class="up"><a href="internals2.pdo.html">PDO Driver How-To</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="internals2.pdo.pdo-stmt-t" class="sect1">
+ <h2 class="title">pdo_stmt_t definition</h2>
+ <p class="para">
+  All fields should be treated as read-only unless explicitly stated
+  otherwise.
+ </p>
+ <div class="figure">
+  <h1 class="title">pdo_stmt_t</h1>
+  <div class="example-contents programlisting"><br />
+/* represents a prepared statement */<br />
+struct _pdo_stmt_t {<br />
+    /* driver specifics */<br />
+    struct pdo_stmt_methods *methods;   <a name="internals2.pdo.stmt.co.methods" id="internals2.pdo.stmt.co.methods">*</a><br />
+    void *driver_data;                  <a name="internals2.pdo.stmt.co.driver-data" id="internals2.pdo.stmt.co.driver-data">**</a><br />
+<br />
+    /* if true, we&#039;ve already successfully executed this statement at least<br />
+     * once */<br />
+    unsigned executed:1;                <a name="internals2.pdo.stmt.co.executed" id="internals2.pdo.stmt.co.executed">***</a><br />
+    /* if true, the statement supports placeholders and can implement<br />
+     * bindParam() for its prepared statements, if false, PDO should<br />
+     * emulate prepare and bind on its behalf */<br />
+    unsigned supports_placeholders:2;   <a name="internals2.pdo.stmt.co.holder" id="internals2.pdo.stmt.co.holder">****</a><br />
+<br />
+    /* the number of columns in the result set; not valid until after<br />
+     * the statement has been executed at least once.  In some cases, might<br />
+     * not be valid until fetch (at the driver level) has been called at least once.<br />
+     * */<br />
+    int column_count;                   <a name="internals2.pdo.stmt.co.colcount" id="internals2.pdo.stmt.co.colcount">*****</a><br />
+    struct pdo_column_data *columns;    <a name="internals2.pdo.stmt.co.cols" id="internals2.pdo.stmt.co.cols">******</a><br />
+<br />
+    /* points at the dbh that this statement was prepared on */<br />
+    pdo_dbh_t *dbh;<br />
+<br />
+    /* keep track of bound input parameters.  Some drivers support<br />
+     * input/output parameters, but you can&#039;t rely on that working */<br />
+    HashTable *bound_params;<br />
+    /* When rewriting from named to positional, this maps positions to names */<br />
+    HashTable *bound_param_map; <br />
+    /* keep track of PHP variables bound to named (or positional) columns<br />
+     * in the result set */<br />
+    HashTable *bound_columns;<br />
+<br />
+    /* not always meaningful */<br />
+    long row_count;<br />
+<br />
+    /* used to hold the statement&#039;s current query */<br />
+    char *query_string;<br />
+    int query_stringlen;<br />
+<br />
+    /* the copy of the query with expanded binds ONLY for emulated-prepare drivers */<br />
+    char *active_query_string;<br />
+    int active_query_stringlen;<br />
+<br />
+    /* the cursor specific error code. */<br />
+    pdo_error_type error_code;<br />
+<br />
+    /* used by the query parser for driver specific<br />
+     * parameter naming (see pgsql driver for example) */<br />
+    const char *named_rewrite_template;<br />
+};<br />
+  </div>
+
+ </div>
+ <table class="callout">
+  <tr><td><a href="#internals2.pdo.stmt.co.methods">*</a></td><td>
+   <p class="para">
+    The driver <em class="emphasis">must</em> set this during
+    <b>SKEL_handle_preparer()</b>.
+   </p>
+  </td></tr>
+
+  <tr><td><a href="#internals2.pdo.stmt.co.driver-data">**</a></td><td>
+   <p class="para">
+    This item is for use by the driver; the intended usage is to store a
+    pointer (during <b>SKEL_handle_factory()</b>) 
+    to whatever instance data is required to maintain a connection to
+    the database.
+   </p>
+  </td></tr>
+
+  <tr><td><a href="#internals2.pdo.stmt.co.executed">***</a></td><td>
+   <p class="para">
+    This is set by PDO after the statement has been executed for the first
+    time.  Your driver can inspect this value to determine if it can skip
+    one-time actions as an optimization.
+   </p>
+  </td></tr>
+
+  <tr><td><a href="#internals2.pdo.stmt.co.holder">****</a></td><td>
+   <p class="para">
+    Discussed in more detail in <a href="internals2.pdo.implementing.html" class="xref">Fleshing out your skeleton</a>.
+   </p>
+  </td></tr>
+
+  <tr><td><a href="#internals2.pdo.stmt.co.colcount">*****</a></td><td>
+   <p class="para">
+    Your driver is responsible for setting this field to the number of
+    columns available in a result set.  This is usually set during
+    <b>SKEL_stmt_execute()</b> but with some database
+    implementations, the column count may not be available until
+    <b>SKEL_stmt_fetch()</b> has been called at least once.
+    Drivers that implement <b>SKEL_stmt_next_rowset()</b> should
+    update the column count when a new rowset is available.
+   </p>
+  </td></tr>
+
+  <tr><td><a href="#internals2.pdo.stmt.co.cols">******</a></td><td>
+   <p class="para">
+    PDO will allocate this field based on the value that you set for the
+    column count.  You are responsible for populating each column during
+    <b>SKEL_stmt_describe()</b>.  You must set the
+    <i><tt class="parameter">precision</tt></i>
+, <i><tt class="parameter">maxlen</tt></i>
+,
+    <i><tt class="parameter">name</tt></i>
+, <i><tt class="parameter">namelen</tt></i>
+ and
+    <i><tt class="parameter">param_type</tt></i>
+ members for each column.
+    The <i><tt class="parameter">name</tt></i>
+ is expected to be allocated using
+    <b>emalloc()</b>; PDO will call <b>efree()</b> at
+    the appropriate time.
+   </p>
+  </td></tr>
+
+ </table>
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="internals2.pdo.pdo-dbh-t.html">pdo_dbh_t definition</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="internals2.pdo.constants.html">Constants</a></div>
+ <div class="up"><a href="internals2.pdo.html">PDO Driver How-To</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

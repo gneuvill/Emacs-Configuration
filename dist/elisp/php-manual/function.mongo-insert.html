@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Inserts an array into a database collection</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.mongo-has-next.html">mongo_has_next</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.mongo-next.html">mongo_next</a></div>
+ <div class="up"><a href="ref.mongo.html">Mongo Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="function.mongo-insert" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">mongo_insert</h1>
+  <p class="verinfo">(PECL mongo &gt;= 0.8.0)</p><p class="refpurpose"><span class="refname">mongo_insert</span> &mdash; <span class="dc-title">Inserts an array into a database collection</span></p>
+
+ </div>
+
+ <a name="function.mongo-insert.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="type">bool</span> <span class="methodname"><b>mongo_insert</b></span>
+    ( <span class="methodparam"><span class="type">resource</span> <tt class="parameter">$connection</tt></span>
+   , <span class="methodparam"><span class="type">string</span> <tt class="parameter">$ns</tt></span>
+   , <span class="methodparam"><span class="type">array</span> <tt class="parameter">$query</tt></span>
+   )</div>
+
+  <p class="para rdfs-comment">
+   Inserts an array into a database collection.
+  </p>
+ </div>
+
+
+ <a name="function.mongo-insert.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">connection</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The database connection to use.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">ns</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The database and collection name
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">obj</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The array to insert.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="function.mongo-insert.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Whether the item was successfully inserted or not.
+  </p>
+ </div>
+
+
+ <a name="function.mongo-insert.examples"></a><div class="refsect1 examples">
+  <h3 class="title">Examples</h3>
+  <p class="para">
+   </p><div class="example">
+    <p><b>Example #1 <b>mongo_insert()</b> example</b></p>
+    <div class="example-contents para"><p>
+     This example shows how to insert an array into a database collection.
+    </p></div>
+    <div class="example-contents programlisting">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$obj&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"x"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"y"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"z"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">2.4</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$conn&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mongo_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"localhost"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br />if&nbsp;(!</span><span style="color: #0000BB">$conn</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;die(</span><span style="color: #DD0000">"Could&nbsp;not&nbsp;connect."</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">mongo_insert</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"foo.bar"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$obj</span><span style="color: #007700">);<br />if(&nbsp;</span><span style="color: #0000BB">$ok&nbsp;</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"inserted"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents para"><p>The above example will output
+something similar to:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+inserted
+</pre></div>
+    </div>
+   </div><p>
+  </p>
+ </div>
+
+
+ <a name="function.mongo-insert.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.mongo-update.html" class="function" rel="rdfs-seeAlso">mongo_update()</a> - Updates objects in a database collection</li>
+    <li class="member"><a href="function.mongo-remove.html" class="function" rel="rdfs-seeAlso">mongo_remove()</a> - Removes documents from a database collection</li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="function.mongo-has-next.html">mongo_has_next</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="function.mongo-next.html">mongo_next</a></div>
+ <div class="up"><a href="ref.mongo.html">Mongo Functions</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Request multiple items from a specific server</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="memcached.getdelayed.html">Memcached::getDelayed</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="memcached.getmulti.html">Memcached::getMulti</a></div>
+ <div class="up"><a href="class.memcached.html">Memcached</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="memcached.getdelayedbykey" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">Memcached::getDelayedByKey</h1>
+  <p class="verinfo">(PECL memcached &gt;= 0.1.0)</p><p class="refpurpose"><span class="refname">Memcached::getDelayedByKey</span> &mdash; <span class="dc-title">Request multiple items from a specific server</span></p>
+
+ </div>
+
+ <a name="memcached.getdelayedbykey.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">bool</span> <span class="methodname"><b>Memcached::getDelayedByKey</b></span>
+    ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$server_key</tt></span>
+   , <span class="methodparam"><span class="type">array</span> <tt class="parameter">$keys</tt></span>
+   [, <span class="methodparam"><span class="type">bool</span> <tt class="parameter">$with_cas</tt></span>
+   [, <span class="methodparam"><span class="type"><a href="language.pseudo-types.html#language.types.callback" class="type callback">callback</a></span> <tt class="parameter">$value_cb</tt></span>
+  ]] )</div>
+
+  <p class="para rdfs-comment">
+   <b>Memcached::getDelayedByKey()</b> is functionally equivalent to
+    <span class="methodname"><a href="memcached.getdelayed.html" class="function">Memcached::getDelayed</a></span>, except that the free-form
+   <i><tt class="parameter">server_key</tt></i>
+ can be used to map the
+   <i><tt class="parameter">keys</tt></i>
+ to a specific server.
+  </p>
+ </div>
+
+
+ <a name="memcached.getdelayedbykey.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">server_key</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The key identifying the server to store the value on.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">keys</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       Array of keys to request.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">with_cas</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       Whether to request CAS token values also.
+      </p>
+     </dd>
+
+    
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">value_cb</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       The result callback or <b><tt class="constant">NULL</tt></b>.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+
+ <a name="memcached.getdelayedbykey.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Returns <b><tt class="constant">TRUE</tt></b> on success or <b><tt class="constant">FALSE</tt></b> on failure.
+   Use  <span class="methodname"><a href="memcached.getresultcode.html" class="function">Memcached::getResultCode</a></span> if necessary.
+  </p>
+ </div>
+
+
+ <a name="memcached.getdelayedbykey.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"> <span class="methodname"><a href="memcached.getdelayed.html" class="function" rel="rdfs-seeAlso">Memcached::getDelayed</a> - Request multiple items</span></li>
+    <li class="member"> <span class="methodname"><a href="memcached.fetch.html" class="function" rel="rdfs-seeAlso">Memcached::fetch</a> - Fetch the next result</span></li>
+    <li class="member"> <span class="methodname"><a href="memcached.fetchall.html" class="function" rel="rdfs-seeAlso">Memcached::fetchAll</a> - Fetch all the remaining results</span></li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="memcached.getdelayed.html">Memcached::getDelayed</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="memcached.getmulti.html">Memcached::getMulti</a></div>
+ <div class="up"><a href="class.memcached.html">Memcached</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>

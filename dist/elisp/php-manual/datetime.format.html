@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Returns date formatted according to given format</title>
+ </head>
+ <body><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="datetime.diff.html">DateTime::diff</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="datetime.getlasterrors.html">DateTime::getLastErrors</a></div>
+ <div class="up"><a href="class.datetime.html">DateTime</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div><hr /><div id="datetime.format" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">DateTime::format</h1>
+  <p class="verinfo">(PHP 5 &gt;= 5.2.0)</p><p class="refpurpose"><span class="refname">DateTime::format</span> &mdash; <span class="dc-title">Returns date formatted according to given format</span></p>
+
+ </div>
+ 
+ <a name="datetime.format.description"></a><div class="refsect1 description">
+  <h3 class="title">Description</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="modifier">public</span> <span class="type">string</span> <span class="methodname"><b>DateTime::format</b></span>
+    ( <span class="methodparam"><span class="type">string</span> <tt class="parameter">$format</tt></span>
+   )</div>
+
+  <div class="methodsynopsis dc-description">
+   <span class="type">string</span> <span class="methodname"><a href="function.date-format.html" class="function">date_format</a></span>
+    ( <span class="methodparam"><span class="type"><a href="class.datetime.html" class="type DateTime">DateTime</a></span> <tt class="parameter">$object</tt></span>
+   , <span class="methodparam"><span class="type">string</span> <tt class="parameter">$format</tt></span>
+   )</div>
+
+ </div>
+
+
+ <a name="datetime.format.parameters"></a><div class="refsect1 parameters">
+  <h3 class="title">Parameters</h3>
+  <p class="para">
+   </p><dl>
+
+    <dt class="varlistentry">
+<span class="term"><i><tt class="parameter">object</tt></i>
+</span>
+
+</dt><dd class="listitem">
+<p class="para">Procedural style only: A <a href="class.datetime.html" class="classname">DateTime</a> object
+returned by <a href="function.date-create.html" class="function">date_create()</a></p></dd>
+
+    <dt class="varlistentry">
+
+     <span class="term"><i><tt class="parameter">format</tt></i>
+</span>
+
+     </dt><dd class="listitem">
+
+      <p class="para">
+       Format accepted by <a href="function.date.html" class="function">date()</a>.
+      </p>
+     </dd>
+
+    
+   </dl>
+<p>
+  </p>
+ </div>
+
+ 
+ <a name="datetime.format.returnvalues"></a><div class="refsect1 returnvalues">
+  <h3 class="title">Return Values</h3>
+  <p class="para">
+   Returns formatted date on success or <b><tt class="constant">FALSE</tt></b> on failure.
+  </p>
+ </div>
+
+
+ <a name="datetime.format.examples"></a><div class="refsect1 examples">
+  <h3 class="title">Examples</h3>
+  <p class="para">
+   </p><div class="example">
+    <p><b>Example #1 Displaying the date and time using the procedural form</b></p>
+    <div class="example-contents programlisting">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />date_default_timezone_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'Europe/London'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$datetime&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">date_create</span><span style="color: #007700">(</span><span style="color: #DD0000">'2008-08-03&nbsp;14:52:10'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">date_format</span><span style="color: #007700">(</span><span style="color: #0000BB">$datetime</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'jS,&nbsp;F&nbsp;Y'</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">date_format</span><span style="color: #007700">(</span><span style="color: #0000BB">$datetime</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">DATE_ATOM</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div><p>
+  </p>
+  <p class="para">
+   </p><div class="example">
+    <p><b>Example #2 Displaying the date and time using the object oriented form</b></p>
+    <div class="example-contents programlisting">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />date_default_timezone_set</span><span style="color: #007700">(</span><span style="color: #DD0000">'Europe/London'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$datetime&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">DateTime</span><span style="color: #007700">(</span><span style="color: #DD0000">'2008-08-03&nbsp;14:52:10'</span><span style="color: #007700">);<br />echo&nbsp;</span><span style="color: #0000BB">$datetime</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #DD0000">'jS,&nbsp;F&nbsp;Y'</span><span style="color: #007700">)&nbsp;.&nbsp;</span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #0000BB">$datetime</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">format</span><span style="color: #007700">(</span><span style="color: #0000BB">DATE_ATOM</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;<br /></span>?&gt;</span>
+</code></div>
+    </div>
+
+    <div class="example-contents para"><p>The above example will output:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+3rd, August 2008
+2008-08-03T14:52:10+01:00
+</pre></div>
+    </div>
+   </div><p>
+  </p>
+ </div>
+
+
+ <a name="datetime.format.seealso"></a><div class="refsect1 seealso">
+  <h3 class="title">See Also</h3>
+  <p class="para">
+   </p><ul class="simplelist">
+    <li class="member"><a href="function.date.html" class="function" rel="rdfs-seeAlso">date()</a> - Format a local time/date</li>
+   </ul><p>
+  </p>
+ </div>
+
+
+</div><hr /><div class="manualnavbar" style="text-align: center;">
+ <div class="prev" style="text-align: left; float: left;"><a href="datetime.diff.html">DateTime::diff</a></div>
+ <div class="next" style="text-align: right; float: right;"><a href="datetime.getlasterrors.html">DateTime::getLastErrors</a></div>
+ <div class="up"><a href="class.datetime.html">DateTime</a></div>
+ <div class="home"><a href="index.html">PHP Manual</a></div>
+</div></body></html>
