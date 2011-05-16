@@ -1,3 +1,6 @@
 [submodule "dist/elisp/git-emacs"]
 	path = dist/elisp/git-emacs
 	url = https://github.com/tsgates/git-emacs.git
+[submodule "dist/elisp/ensime-git"]
+	path = dist/elisp/ensime-git
+	url = git://github.com/aemoncannon/ensime.git
