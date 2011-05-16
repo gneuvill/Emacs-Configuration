@@ -2,8 +2,9 @@
 (add-to-list 'default-frame-alist '(background-color . "light gray"))
 ;; police noire
 (add-to-list 'default-frame-alist '(foreground-color . "black"))
-;; taille de police
-(set-face-attribute 'default nil :height 80)
+;; taille (hauteur en fait => déformation) de police
+;; (set-face-attribute 'default nil :height 90)
 ;; police
-(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono"))
+;; (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono")
+(add-to-list 'default-frame-alist '(font . "Inconsolata"))
 

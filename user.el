@@ -81,7 +81,7 @@
 (define-key global-map "\C-cr" 'org-remember)
 
 ;; git-emacs (https://github.com/tsgates/git-emacs)
-(require 'git-emacs)
+;; (require 'git-emacs)
 
 ;; Uniquify (for buffers with identical names
 (require 'uniquify)
@@ -149,11 +149,11 @@
 ;; (add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
 
 ;; Scala
-(require 'scala-mode-auto)
+;; (require 'scala-mode-auto)
 
 ;; Ensime for Scala
-(require 'ensime)
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+;; (require 'ensime)
+;; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 ;;JKB-MODE (édition m3u)
 (autoload 'jkb-mode "jkb-mode" "" t)
