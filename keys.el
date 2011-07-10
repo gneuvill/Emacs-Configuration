@@ -25,3 +25,18 @@
 (global-set-key "\C-ca" 'org-agenda)
 ;; reload file = refresh buffer (called revert-buffer in emacs)
 (global-set-key "x" (quote revert-buffer))
+;; from http://www.emacswiki.org/emacs/GlobalTextScaleMode
+;; see my-functions
+;; doesn't work : text-scale-mode-amount must be set through user interaction
+;; (global-set-key (kbd "M-0")
+;;                 '(lambda () (interactive)
+;;                    (global-text-scale-adjust (- text-scale-mode-amount))
+;;                    (global-text-scale-mode -1)))
+(global-set-key (kbd "M-+")
+                '(lambda () (interactive) (global-text-scale-adjust 1)))
+(global-set-key (kbd "M--")
+                '(lambda () (interactive) (global-text-scale-adjust -1)))
+;; in plantuml-mode only
+(setq plantuml-mode-map (make-keymap))
+(eval-after-load 'plantuml-mode
+  '(define-key plantuml-mode-map (kbd "TAB") 'plantuml-complete-symbol))

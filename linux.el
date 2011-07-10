@@ -9,6 +9,6 @@
 ;; BBDB
 (add-to-list 'load-path (concat grail-dist-elisp "bbdb/lisp"))
 ;; Scala
-;; (add-to-list 'load-path (concat grail-dist-elisp "scala"))
+(add-to-list 'load-path (concat grail-dist-elisp "scala"))
 ;; Ensime (for Scala)
-;; (add-to-list 'load-path (concat grail-dist-elisp "ensime/elisp/"))
+(add-to-list 'load-path (concat grail-dist-elisp "ensime/elisp/"))
