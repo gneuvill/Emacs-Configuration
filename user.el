@@ -92,7 +92,7 @@
 ;; Bitlbee
 (require 'bitlbee)
 
-                                        ; PSVN (now shipped with emacs ?)
+;; PSVN (now shipped with emacs ?)
 ;; (require 'psvn)
 
 ;; NickNotify pour ERC
@@ -106,6 +106,11 @@
 (setq auto-mode-alist
       (append '(("\\.\\(xml\\|xsd\\|rng\\|xmap\\|xsl\\|xbl\\|xhtml\\)\\'" . nxml-mode))
               auto-mode-alist))
+;; rnc-mode (http://www.pantor.com/download.html)
+(require 'rnc-mode)
+(autoload 'rnc-mode "rnc-mode")
+(setq auto-mode-alist       
+      (cons '("\\.rnc\\'" . rnc-mode) auto-mode-alist))
 
 ;; php-mode
 ;; on vérifie la syntaxe php à la frappe avec flymake
@@ -181,4 +186,7 @@
 			    (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
 			    (local-set-key "\C-cl" 'js-load-file-and-go)
 			    ))
+
+;; plantuml
+(require 'plantuml-mode)
 
