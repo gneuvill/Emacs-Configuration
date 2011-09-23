@@ -1,0 +1,8 @@
+(cond 
+ ;; loading grail for emacs 23
+ ((string-match "23\\..*" emacs-version)
+  (load-file "~/emacs/grail.el"))
+ ;; loading grail for emacs 24 (snapshot) 
+ ((string-match "24\\..*" emacs-version)
+  (load-file "~/emacs-snapshot/grail.el")))
+
