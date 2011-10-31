@@ -4,3 +4,9 @@
 [submodule "dist/elisp/ensime-git"]
 	path = dist/elisp/ensime-git
 	url = git://github.com/aemoncannon/ensime.git
+[submodule "dist/elisp/ecb-git"]
+	path = dist/elisp/ecb-git
+	url = https://github.com/emacsmirror/ecb.git
+[submodule "dist/elisp/emacs-w3m"]
+	path = dist/elisp/emacs-w3m
+	url = https://github.com/emacsmirror/w3m.git

@@ -132,9 +132,10 @@
 ;; (global-ede-mode 1)                      ; Enable the Project management system
 ;; (semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion
 ;; (semantic-load-enable-gaudy-code-helpers) ;; intellisense mode, decoration mode, and stickyfunc mode (plus regular code helpers)
-(global-ede-mode 1)
-(require 'semantic/sb)
-(semantic-mode 1)
+;; Do we really need the following ?
+;; (global-ede-mode 1)
+;; (require 'semantic/sb)
+;; (semantic-mode 1)
 
 ;; ECB (CVS version of ECB works with emacs 23.2 builtin CEDET)
 (require 'ecb)
@@ -162,6 +163,20 @@
 ;; Ensime for Scala
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+;; ensime semantic highlighting
+(setq ensime-sem-high-faces
+      '(
+        (var . (:foreground "#df8600"))
+        (val . (:foreground "#784000"))
+        (varField . (:foreground "#df8600"))
+        (valField . (:foreground "#784000"))
+        (functionCall . (:foreground "#4400b1"))
+        (param . (:foreground "#c3a500"))
+        (class . (:foreground "#009100"))
+        (trait . (:foreground "#002f00"))
+        (object . (:foreground "#00c800"))
+        (package . font-lock-preprocessor-face)
+        ))
 
 ;;JKB-MODE (édition m3u)
 (autoload 'jkb-mode "jkb-mode" "" t)
@@ -190,3 +205,9 @@
 ;; plantuml
 (require 'plantuml-mode)
 
+;; w3m (not installed through apt but from sources fetched from github)
+(require 'w3m-load)
+(setq browse-url-browser-function 'w3m-browse-url)
+(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+ ;; optional keyboard short-cut : should find another one 'cause \C-xm seems to be bound to mail
+ ;; (global-set-key "\C-xm" 'browse-url-at-point)
