@@ -4,3 +4,11 @@ dist/elisp/ecb-snap
 dist/elisp/ensime/*
 dist/elisp/ensime-git/*
 dist/elisp/malabar-mode-src
+dist/elisp/emacs-w3m/Makefile
+dist/elisp/emacs-w3m/autom4te.cache
+dist/elisp/emacs-w3m/config.log
+dist/elisp/emacs-w3m/config.status
+dist/elisp/emacs-w3m/configure
+dist/elisp/emacs-w3m/doc
+dist/elisp/emacs-w3m/*.elc
+
