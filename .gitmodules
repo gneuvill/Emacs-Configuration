@@ -10,3 +10,5 @@
 [submodule "dist/elisp/emacs-w3m"]
 	path = dist/elisp/emacs-w3m
 	url = https://github.com/emacsmirror/w3m.git
+        ignore = untracked
+
