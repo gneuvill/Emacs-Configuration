@@ -32,7 +32,7 @@
   "Major mode for editing plantuml file."
   :group 'languages)
 
-(defvar plantuml-jar-path (expand-file-name "~/plantuml.jar"))
+(defvar plantuml-jar-path custom-plantuml-jar-path)
 
 (defvar plantuml-mode-hook nil "Standard hook for plantuml-mode.")
 

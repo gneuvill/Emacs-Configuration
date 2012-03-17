@@ -12,3 +12,6 @@
 	url = https://github.com/emacsmirror/w3m.git
         ignore = untracked
 
+[submodule "dist/elisp/grail"]
+	path = dist/elisp/grail
+	url = git://github.com/codermattie/Grail.git

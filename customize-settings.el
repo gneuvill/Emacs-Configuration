@@ -27,7 +27,7 @@
  '(ecb-non-semantic-parsing-function (quote ((php-mode . speedbar-fetch-dynamic-etags) (scala-mode . speedbar-fetch-dynamic-etags))))
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
- '(ecb-source-path (quote (("/home/neuville/emacs/" "emacs-conf") ("/usr/local/src/organichart" "organichart") ("/home/neuville/emacs/dist/elisp/ensime-git" "ensime"))))
+ '(ecb-source-path (quote (("/home/neuville/emacs/" "emacs-conf") ("/usr/local/src/organichart" "organichart") ("/home/neuville/emacs/dist/elisp/ensime-git" "ensime") ("/usr/local/src/reactive-web" "reactive-web") ("/usr/local/src/reactive-web-fork" "reactive-web-fork") ("/usr/local/src/osworkflow-cvs" "osworkflow-cvs") ("/home/neuville/workspace-java/ori-oai-workflow" "ori-oai-workflow"))))
  '(ecb-tip-of-the-day nil)
  '(ecb-tree-indent 2)
  '(erc-autoaway-mode t)

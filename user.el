@@ -36,7 +36,7 @@
 
 ;; eshell
 ;; set environment variables
-(setenv "JAVA_HOME" "/usr/lib/jvm/java-1.6.0-openjdk")
+(setenv "JAVA_HOME" "/usr/lib/jvm/java-6-openjdk")
 (setenv "M2_HOME" "/usr/local/share/maven")
 (setenv "ANT_HOME" "/usr/local/share/ant")
 (setenv "SCALA_HOME" "/usr/local/scala")
@@ -66,8 +66,13 @@
    (setq
     eshell-visual-commands
     (append
-     '("mutt" "vim" "tail" "lftp" "telnet")
+     '("mutt" "vim" "tail" "lftp" "telnet" "pacman" "yaourt")
      eshell-visual-commands))))
+
+(add-hook
+ 'eshell-mode-hook
+ (lambda ()
+   (call-interactively 'my-rename-buf)))
 
 ;; tramp : sudo on a remote server
 (set-default 'tramp-default-proxies-alist (quote (("mylevain" nil "/ssh:gneuvill@levain:"))))
@@ -93,7 +98,7 @@
 (require 'bitlbee)
 
 ;; PSVN (now shipped with emacs ?)
-;; (require 'psvn)
+(require 'psvn)
 
 ;; NickNotify pour ERC
 (require 'erc-nick-notify)
@@ -122,7 +127,7 @@
 
 ;;répertoire de snippets supplémentaires à ceux fournis par yasnippet-bundle
 ;;(ce dernier installé dans avec ELPA)
-(yas/load-directory (concat grail-dist-elisp "my-snippets"))
+;; (yas/load-directory (concat grail-dist-elisp "my-snippets"))
 
 ;; GEBEN (http://code.google.com/p/geben-on-emacs/)
 (autoload 'geben "geben" "Remote Debugger on Emacs" t)
@@ -203,6 +208,7 @@
 			    ))
 
 ;; plantuml
+(setq custom-plantuml-jar-path "/opt/plantuml/plantuml.jar")
 (require 'plantuml-mode)
 
 ;; w3m (not installed through apt but from sources fetched from github)
