@@ -1,4 +1,3 @@
-;; Edited on github !
 (cond 
  ;; loading grail for emacs 23
  ((string-match "23\\..*" emacs-version)
