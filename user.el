@@ -78,6 +78,9 @@
 (set-default 'tramp-default-proxies-alist (quote (("mylevain" nil "/ssh:gneuvill@levain:"))))
 (add-to-list 'tramp-default-proxies-alist '("myvmjavatest1" nil "/ssh:gneuvill@vmjavatest1:"))
 
+;; a supplementary package archive
+;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+
 ;; OrgMode
 ;; => remember mode
 (org-remember-insinuate)
