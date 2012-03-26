@@ -88,10 +88,6 @@
 ;;(setq org-default-notes-file (concat org-directory "ori-oai-ao.org"))
 (define-key global-map "\C-cr" 'org-remember)
 
-;; Slime-style navigation for Emacs Lisp (https://github.com/purcell/elisp-slime-nav)
-(require 'elisp-slime-nav)
-(add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
-
 ;; our functions
 (require 'my-functions)
 
