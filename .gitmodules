@@ -15,3 +15,6 @@
 [submodule "dist/elisp/grail"]
 	path = dist/elisp/grail
 	url = git://github.com/codermattie/Grail.git
+[submodule "dist/elisp/my-ensime-git"]
+	path = dist/elisp/my-ensime-git
+	url = git@github.com:gneuvill/ensime.git
