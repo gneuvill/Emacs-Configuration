@@ -11,7 +11,12 @@
 	path = dist/elisp/emacs-w3m
 	url = https://github.com/emacsmirror/w3m.git
         ignore = untracked
-
 [submodule "schemas/xslt"]
 	path = schemas/xslt
 	url = git://github.com/ndw/xslt-relax-ng.git
+[submodule "dist/elisp/grail"]
+	path = dist/elisp/grail
+	url = git://github.com/codermattie/Grail.git
+[submodule "dist/elisp/my-ensime-git"]
+	path = dist/elisp/my-ensime-git
+	url = git@github.com:gneuvill/ensime.git

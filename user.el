@@ -67,8 +67,13 @@
    (setq
     eshell-visual-commands
     (append
-     '("mutt" "vim" "tail" "lftp" "telnet")
+     '("mutt" "vim" "tail" "lftp" "telnet" "pacman" "yaourt")
      eshell-visual-commands))))
+
+(add-hook
+ 'eshell-mode-hook
+ (lambda ()
+   (call-interactively 'my-rename-buf)))
 
 ;; tramp : sudo on a remote server
 ;; alias (ex: mylevain) must NOT equals hostname (ex: levain) (otherwise bug)
@@ -76,12 +81,19 @@
 (add-to-list 'tramp-default-proxies-alist '("myvmjavatest1" nil "/ssh:gneuvill@vmjavatest1:"))
 (add-to-list 'tramp-default-proxies-alist '("mychene2" nil "/ssh:gneuvill@chene2:"))
 
+;; a supplementary package archive
+;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+
 ;; OrgMode
 ;; => remember mode
 (org-remember-insinuate)
 ;;(setq org-directory "/home/sf1staff/gneuvill/ori/")
 ;;(setq org-default-notes-file (concat org-directory "ori-oai-ao.org"))
 (define-key global-map "\C-cr" 'org-remember)
+ 
+;; Slime-style navigation for Emacs Lisp (https://github.com/purcell/elisp-slime-nav)
+(require 'elisp-slime-nav)
+(add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
 
 ;; our functions
 (require 'my-functions)
@@ -96,7 +108,7 @@
 (require 'bitlbee)
 
 ;; PSVN (now shipped with emacs ?)
-;; (require 'psvn)
+(require 'psvn)
 
 ;; NickNotify pour ERC
 (require 'erc-nick-notify)
@@ -125,7 +137,7 @@
 
 ;;répertoire de snippets supplémentaires à ceux fournis par yasnippet-bundle
 ;;(ce dernier installé dans avec ELPA)
-(yas/load-directory (concat grail-dist-elisp "my-snippets"))
+;; (yas/load-directory (concat grail-dist-elisp "my-snippets"))
 
 ;; GEBEN (http://code.google.com/p/geben-on-emacs/)
 (autoload 'geben "geben" "Remote Debugger on Emacs" t)
@@ -206,6 +218,7 @@
 			    ))
 
 ;; plantuml
+(setq custom-plantuml-jar-path "/opt/plantuml/plantuml.jar")
 (require 'plantuml-mode)
 
 ;; w3m (not installed through apt but from sources fetched from github)
