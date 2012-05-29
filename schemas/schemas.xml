@@ -1,0 +1,12 @@
+<locatingRules xmlns="http://thaiopensource.com/ns/locating-rules/1.0">
+  <transformURI fromPattern="*.xml" toPattern="*.rnc"/>
+
+  <uri pattern="*.xsl" typeId="XSLT-2"/>
+
+  <namespace ns="http://www.w3.org/1999/XSL/Transform" typeId="XSLT-2"/>
+
+  <documentElement localName="stylesheet" typeId="XSLT-2"/>
+  <documentElement prefix="xsl" localName="transform" typeId="XSLT-2"/>
+
+  <typeId id="XSLT-2" uri="xslt/xslt20.rnc"/>
+</locatingRules>

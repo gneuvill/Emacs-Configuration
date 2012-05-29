@@ -12,3 +12,6 @@
 	url = https://github.com/emacsmirror/w3m.git
         ignore = untracked
 
+[submodule "schemas/xslt"]
+	path = schemas/xslt
+	url = git://github.com/ndw/xslt-relax-ng.git

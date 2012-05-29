@@ -36,7 +36,7 @@
 
 ;; eshell
 ;; set environment variables
-(setenv "JAVA_HOME" "/usr/lib/jvm/java-1.6.0-openjdk")
+(setenv "JAVA_HOME" "/usr/lib/jvm/default-java")
 (setenv "M2_HOME" "/usr/local/share/maven")
 (setenv "ANT_HOME" "/usr/local/share/ant")
 (setenv "SCALA_HOME" "/usr/local/scala")
@@ -50,6 +50,7 @@
          (getenv "PATH"))) ; inherited from OS
 (setq exec-path
       (append exec-path
+              (list "/usr/sbin")
               (list (concat (getenv "HOME") "/bin"))
               (list (concat (getenv "JAVA_HOME") "/bin"))
               (list (concat (getenv "M2_HOME") "/bin"))
@@ -70,8 +71,10 @@
      eshell-visual-commands))))
 
 ;; tramp : sudo on a remote server
+;; alias (ex: mylevain) must NOT equals hostname (ex: levain) (otherwise bug)
 (set-default 'tramp-default-proxies-alist (quote (("mylevain" nil "/ssh:gneuvill@levain:"))))
 (add-to-list 'tramp-default-proxies-alist '("myvmjavatest1" nil "/ssh:gneuvill@vmjavatest1:"))
+(add-to-list 'tramp-default-proxies-alist '("mychene2" nil "/ssh:gneuvill@chene2:"))
 
 ;; OrgMode
 ;; => remember mode
@@ -141,8 +144,8 @@
 (require 'ecb)
 
 ;; python : python-mode + pymacs + ropemacs
-;; (require 'pymacs)
-;; (pymacs-load "ropemacs" "rope-")
+(require 'pymacs)
+(pymacs-load "ropemacs" "rope-")
 
 ;; JDE
 ;; (load "jde-autoload")
