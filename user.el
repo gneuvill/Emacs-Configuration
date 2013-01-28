@@ -36,10 +36,10 @@
 
 ;; eshell
 ;; set environment variables
-(setenv "JAVA_HOME" "/usr/lib/jvm/java-6-openjdk")
-(setenv "M2_HOME" "/usr/local/share/maven")
-(setenv "ANT_HOME" "/usr/local/share/ant")
-(setenv "SCALA_HOME" "/usr/local/scala")
+;; (setenv "JAVA_HOME" "/usr/lib/jvm/java-6-openjdk")
+;; (setenv "M2_HOME" "/usr/local/share/maven")
+;; (setenv "ANT_HOME" "/usr/local/share/ant")
+;; (setenv "SCALA_HOME" "/usr/local/scala")
 (setenv "PATH"
         (concat
          (getenv "HOME") "/bin:"
@@ -82,11 +82,8 @@
 ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 ;; OrgMode
-;; => remember mode
-(org-remember-insinuate)
 ;;(setq org-directory "/home/sf1staff/gneuvill/ori/")
 ;;(setq org-default-notes-file (concat org-directory "ori-oai-ao.org"))
-(define-key global-map "\C-cr" 'org-remember)
  
 ;; Slime-style navigation for Emacs Lisp (https://github.com/purcell/elisp-slime-nav)
 (require 'elisp-slime-nav)
@@ -170,7 +167,9 @@
 ;; (add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
 
 ;; Scala
-(require 'scala-mode-auto)
+;; (require 'scala-mode-auto)
+;; Scala Mode 2 => https://github.com/hvesalai/scala-mode2
+(require 'scala-mode2)
 
 ;; Ensime for Scala
 (require 'ensime)
@@ -182,11 +181,11 @@
         (val . (:foreground "#784000"))
         (varField . (:foreground "#df8600"))
         (valField . (:foreground "#784000"))
-        (functionCall . (:foreground "#4400b1"))
+        ;; (functionCall . (:foreground "#4400b1"))
         (param . (:foreground "#c3a500"))
-        (class . (:foreground "#009100"))
-        (trait . (:foreground "#002f00"))
-        (object . (:foreground "#00c800"))
+        (class . font-lock-type-face)
+        (trait . font-lock-type-face)
+        ;; (object . (:foreground "#00c800"))
         (package . font-lock-preprocessor-face)
         ))
 
