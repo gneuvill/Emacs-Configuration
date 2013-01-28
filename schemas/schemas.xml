@@ -3,10 +3,16 @@
 
   <uri pattern="*.xsl" typeId="XSLT-2"/>
 
-  <namespace ns="http://www.w3.org/1999/XSL/Transform" typeId="XSLT-2"/>
+  <namespace ns="http://www.w3.org/1999/XSL/Transform" typeId="XSLT-2" />
+  <namespace ns="http://java.sun.com/xml/ns/jaxb" typeId="JAXB" />
+  <namespace ns="http://java.sun.com/xml/ns/jaxws" typeId="JAXWS" />
 
-  <documentElement localName="stylesheet" typeId="XSLT-2"/>
-  <documentElement prefix="xsl" localName="transform" typeId="XSLT-2"/>
+  <documentElement localName="stylesheet" typeId="XSLT-2" />
+  <documentElement prefix="xsl" localName="transform" typeId="XSLT-2" />
+  <documentElement prefix="jaxb" localName="bindings" typeId="JAXB" />
+  <documentElement prefix="jaxws" localName="bindings" typeId="JAXWS" />
 
   <typeId id="XSLT-2" uri="xslt/xslt20.rnc"/>
+  <typeId id="JAXB" uri="jaxb.rnc"/>
+  <typeId id="JAXWS" uri="jaxws.rnc"/>
 </locatingRules>

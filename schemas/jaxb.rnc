@@ -1,0 +1,399 @@
+namespace P0 = ""
+namespace P1 = "http://java.sun.com/xml/ns/jaxb"
+namespace P3 = "http://www.w3.org/2001/XMLSchema"
+namespace P2 = "http://www.w3.org/2001/XMLSchema-instance"
+datatypes D0 = "http://www.w3.org/2001/XMLSchema-datatypes"
+start =
+  ( N50_ELEMENT_0_globalBindings |
+    N17_ELEMENT_0_schemaBindings |
+    N48_ELEMENT_0_class |
+    N1_ELEMENT_0_property |
+    N3_ELEMENT_0_javaType |
+    N19_ELEMENT_0_typesafeEnumClass |
+    N15_ELEMENT_0_typesafeEnumMember |
+    N34_ELEMENT_0_bindings |
+    N32_ELEMENT_0_dom |
+    N26_ELEMENT_0_inlineBinaryData |
+    N9_ELEMENT_0_serializable )
+N43_WILDCARD_0 =
+  element * - ( P0:* | P1:* ) {
+    N51_TYPE_1_anyType
+  }
+N37_ATTRIBUTES_0_propertyBaseType =
+  attribute name {
+    N28_TYPE_0_javaIdentifierType
+  }?
+N44_PARTICLE_0_nameXmlTransformRule =
+  empty
+N6_PARTICLE_1_anyType =
+  (N40_WILDCARD_1?)+
+N27_ELEMENTTYPE_0_typesafeEnumClass =
+  ( ( element P1:javadoc {
+        ( text,
+          attribute P2:type {
+            D0:QName "P3:string"
+          }?,
+          N7_SCHEMALOCATION )
+      }?,
+      (N15_ELEMENT_0_typesafeEnumMember?)+ ),
+    attribute name {
+      N28_TYPE_0_javaIdentifierType
+    }?,
+    attribute map {
+      D0:boolean
+    }?,
+    N7_SCHEMALOCATION )
+N46_ATTRIBUTEGROUP_0_XMLNameToJavaIdMappingDefaults =
+  attribute underscoreBinding {
+    N30_TYPE_0_underscoreBindingType
+  }?
+N39_ATTRIBUTEGROUP_0_propertyAttributes =
+  ( attribute collectionType {
+      N20_TYPE_0_referenceCollectionType
+    }?,
+    attribute fixedAttributeAsConstantProperty {
+      D0:boolean
+    }?,
+    attribute enableFailFastCheck {
+      D0:boolean
+    }?,
+    attribute generateIsSetMethod {
+      D0:boolean
+    }?,
+    attribute optionalProperty {
+      ( D0:NCName "wrapper" |
+        D0:NCName "primitive" |
+        D0:NCName "isSet" )
+    }?,
+    attribute generateElementProperty {
+      D0:boolean
+    }?,
+    attribute attachmentRef {
+      ( D0:NCName "resolve" |
+        D0:NCName "doNotResolve" |
+        D0:NCName "default" )
+    }? )
+N17_ELEMENT_0_schemaBindings =
+  element P1:schemaBindings {
+    N36_ELEMENTTYPE_0_schemaBindings
+  }
+N50_ELEMENT_0_globalBindings =
+  element P1:globalBindings {
+    N13_ELEMENTTYPE_0_globalBindings
+  }
+N28_TYPE_0_javaIdentifierType =
+  list { D0:NCName }
+N12_TYPE_0_typesafeEnumMemberNameType =
+  ( D0:string "generateName" |
+    D0:string "generateError" |
+    D0:string "skipGeneration" )
+N0_ATTRIBUTEGROUP_0_typesafeEnumClassDefaults =
+  ( attribute typesafeEnumMemberName {
+      N12_TYPE_0_typesafeEnumMemberNameType
+    }?,
+    attribute typesafeEnumBase {
+      N31_TYPE_0_typesafeEnumBaseType
+    }?,
+    attribute typesafeEnumMaxMembers {
+      D0:int
+    }? )
+N40_WILDCARD_1 =
+  ( ( N50_ELEMENT_0_globalBindings |
+      N17_ELEMENT_0_schemaBindings |
+      N48_ELEMENT_0_class |
+      N1_ELEMENT_0_property |
+      N3_ELEMENT_0_javaType |
+      N19_ELEMENT_0_typesafeEnumClass |
+      N15_ELEMENT_0_typesafeEnumMember |
+      N34_ELEMENT_0_bindings |
+      N32_ELEMENT_0_dom |
+      N26_ELEMENT_0_inlineBinaryData |
+      N9_ELEMENT_0_serializable ) |
+    element * - ( P1:globalBindings | P1:schemaBindings | P1:class | P1:property | P1:javaType | P1:typesafeEnumClass | P1:typesafeEnumMember | P1:bindings | P1:dom | P1:inlineBinaryData | P1:serializable ) {
+      N51_TYPE_1_anyType
+    } )
+N15_ELEMENT_0_typesafeEnumMember =
+  element P1:typesafeEnumMember {
+    N5_ELEMENTTYPE_0_typesafeEnumMember
+  }
+N47_TYPE_0_nameXmlTransformRule =
+  ( N44_PARTICLE_0_nameXmlTransformRule,
+    N45_ATTRIBUTES_0_nameXmlTransformRule )
+N22_PARTICLE_0_packageType =
+  element P1:javadoc {
+    ( text,
+      attribute P2:type {
+        D0:QName "P3:string"
+      }?,
+      N7_SCHEMALOCATION )
+  }?
+N14_ATTRIBUTES_0_packageType =
+  attribute name {
+    N28_TYPE_0_javaIdentifierType
+  }?
+N35_ELEMENTTYPE_0_bindings =
+  ( (( N38_GROUP_0_declaration |
+      N34_ELEMENT_0_bindings )?)+,
+    attribute schemaLocation {
+      D0:anyURI
+    }?,
+    attribute node {
+      text
+    }?,
+    attribute version {
+      D0:token
+    }?,
+    N8_ATTRIBUTE_0_version?,
+    N7_SCHEMALOCATION )
+N41_WILDCARD_2 =
+  ( ( N8_ATTRIBUTE_0_version?,
+      N25_ATTRIBUTE_0_extensionBindingPrefixes? ),
+    (attribute * - ( P2:* | P1:version | P1:extensionBindingPrefixes ) {
+      text
+    }?)+ )
+N42_ATTRIBUTES_0_nameXmlTransformType =
+  empty
+N19_ELEMENT_0_typesafeEnumClass =
+  element P1:typesafeEnumClass {
+    N27_ELEMENTTYPE_0_typesafeEnumClass
+  }
+N38_GROUP_0_declaration =
+  ( N50_ELEMENT_0_globalBindings |
+    N17_ELEMENT_0_schemaBindings |
+    N48_ELEMENT_0_class |
+    N1_ELEMENT_0_property |
+    N19_ELEMENT_0_typesafeEnumClass |
+    N15_ELEMENT_0_typesafeEnumMember |
+    N3_ELEMENT_0_javaType |
+    N32_ELEMENT_0_dom |
+    N26_ELEMENT_0_inlineBinaryData |
+    N43_WILDCARD_0 )
+N36_ELEMENTTYPE_0_schemaBindings =
+  ( ( element P1:package {
+        ( N11_TYPE_0_packageType,
+          attribute P2:type {
+            D0:QName "P1:packageType"
+          }?,
+          N7_SCHEMALOCATION )
+      }? &
+      element P1:nameXmlTransform {
+        ( N4_TYPE_0_nameXmlTransformType,
+          attribute P2:type {
+            D0:QName "P1:nameXmlTransformType"
+          }?,
+          N7_SCHEMALOCATION )
+      }? ),
+    N7_SCHEMALOCATION )
+N2_ELEMENTTYPE_0_javaType =
+  ( attribute name {
+      N28_TYPE_0_javaIdentifierType
+    },
+    attribute xmlType {
+      D0:QName
+    }?,
+    attribute parseMethod {
+      N28_TYPE_0_javaIdentifierType
+    }?,
+    attribute printMethod {
+      N28_TYPE_0_javaIdentifierType
+    }?,
+    attribute hasNsContext {
+      D0:boolean
+    }?,
+    N7_SCHEMALOCATION )
+N20_TYPE_0_referenceCollectionType =
+  ( D0:string "indexed" |
+    N28_TYPE_0_javaIdentifierType )
+N13_ELEMENTTYPE_0_globalBindings =
+  ( ( (N3_ELEMENT_0_javaType?)+,
+      N9_ELEMENT_0_serializable?,
+      N43_WILDCARD_0 )?,
+    N46_ATTRIBUTEGROUP_0_XMLNameToJavaIdMappingDefaults,
+    N0_ATTRIBUTEGROUP_0_typesafeEnumClassDefaults,
+    N39_ATTRIBUTEGROUP_0_propertyAttributes,
+    attribute generateValueClass {
+      D0:boolean
+    }?,
+    attribute generateElementClass {
+      D0:boolean
+    }?,
+    attribute mapSimpleTypeDef {
+      D0:boolean
+    }?,
+    attribute localScoping {
+      ( D0:NCName "nested" |
+        D0:NCName "toplevel" )
+    }?,
+    attribute enableJavaNamingConventions {
+      D0:boolean
+    }?,
+    attribute choiceContentProperty {
+      D0:boolean
+    }?,
+    N7_SCHEMALOCATION )
+N29_ATTRIBUTES_1_anyType =
+  N41_WILDCARD_2
+N31_TYPE_0_typesafeEnumBaseType =
+  list { D0:QName }
+N48_ELEMENT_0_class =
+  element P1:class {
+    N24_ELEMENTTYPE_0_class
+  }
+N25_ATTRIBUTE_0_extensionBindingPrefixes =
+  attribute P1:extensionBindingPrefixes {
+    list { D0:normalizedString }
+  }
+N45_ATTRIBUTES_0_nameXmlTransformRule =
+  ( attribute prefix {
+      text
+    }?,
+    attribute suffix {
+      text
+    }? )
+N16_PARTICLE_0_nameXmlTransformType =
+  ( element P1:typeName {
+      ( N47_TYPE_0_nameXmlTransformRule,
+        attribute P2:type {
+          D0:QName "P1:nameXmlTransformRule"
+        }?,
+        N7_SCHEMALOCATION )
+    }? &
+    element P1:elementName {
+      ( N47_TYPE_0_nameXmlTransformRule,
+        attribute P2:type {
+          D0:QName "P1:nameXmlTransformRule"
+        }?,
+        N7_SCHEMALOCATION )
+    }? &
+    element P1:modelGroupName {
+      ( N47_TYPE_0_nameXmlTransformRule,
+        attribute P2:type {
+          D0:QName "P1:nameXmlTransformRule"
+        }?,
+        N7_SCHEMALOCATION )
+    }? &
+    element P1:anonymousTypeName {
+      ( N47_TYPE_0_nameXmlTransformRule,
+        attribute P2:type {
+          D0:QName "P1:nameXmlTransformRule"
+        }?,
+        N7_SCHEMALOCATION )
+    }? )
+N34_ELEMENT_0_bindings =
+  element P1:bindings {
+    N35_ELEMENTTYPE_0_bindings
+  }
+N10_ELEMENTTYPE_0_serializable =
+  ( attribute uid {
+      D0:long
+    }?,
+    N7_SCHEMALOCATION )
+N11_TYPE_0_packageType =
+  ( N22_PARTICLE_0_packageType,
+    N14_ATTRIBUTES_0_packageType )
+N26_ELEMENT_0_inlineBinaryData =
+  element P1:inlineBinaryData {
+    N33_ELEMENTTYPE_0_inlineBinaryData
+  }
+N18_ELEMENTTYPE_0_property =
+  ( ( element P1:javadoc {
+        ( text,
+          attribute P2:type {
+            D0:QName "P3:string"
+          }?,
+          N7_SCHEMALOCATION )
+      }? &
+      element P1:baseType {
+        ( N49_TYPE_0_propertyBaseType,
+          attribute P2:type {
+            D0:QName "P1:propertyBaseType"
+          }?,
+          N7_SCHEMALOCATION )
+      }? ),
+    attribute name {
+      N28_TYPE_0_javaIdentifierType
+    }?,
+    N39_ATTRIBUTEGROUP_0_propertyAttributes,
+    N7_SCHEMALOCATION )
+N3_ELEMENT_0_javaType =
+  element P1:javaType {
+    N2_ELEMENTTYPE_0_javaType
+  }
+N30_TYPE_0_underscoreBindingType =
+  ( D0:string "asWordSeparator" |
+    D0:string "asCharInWord" )
+N49_TYPE_0_propertyBaseType =
+  ( N23_PARTICLE_0_propertyBaseType,
+    N37_ATTRIBUTES_0_propertyBaseType )
+N51_TYPE_1_anyType =
+  ( N6_PARTICLE_1_anyType,
+    N29_ATTRIBUTES_1_anyType )
+N4_TYPE_0_nameXmlTransformType =
+  ( N16_PARTICLE_0_nameXmlTransformType,
+    N42_ATTRIBUTES_0_nameXmlTransformType )
+N23_PARTICLE_0_propertyBaseType =
+  N3_ELEMENT_0_javaType?
+N1_ELEMENT_0_property =
+  element P1:property {
+    N18_ELEMENTTYPE_0_property
+  }
+N33_ELEMENTTYPE_0_inlineBinaryData =
+  ( N51_TYPE_1_anyType,
+    N7_SCHEMALOCATION )
+N8_ATTRIBUTE_0_version =
+  attribute P1:version {
+    D0:token
+  }
+N21_ELEMENTTYPE_0_dom =
+  ( attribute type {
+      D0:NCName
+    }?,
+    N7_SCHEMALOCATION )
+N7_SCHEMALOCATION =
+  ( attribute P2:schemaLocation {
+      list { (D0:anyURI?)+ }
+    }?,
+    attribute P2:noNamespaceSchemaLocation {
+      D0:anyURI
+    }? )
+N32_ELEMENT_0_dom =
+  element P1:dom {
+    N21_ELEMENTTYPE_0_dom
+  }
+N24_ELEMENTTYPE_0_class =
+  ( element P1:javadoc {
+      ( text,
+        attribute P2:type {
+          D0:QName "P3:string"
+        }?,
+        N7_SCHEMALOCATION )
+    }?,
+    attribute name {
+      N28_TYPE_0_javaIdentifierType
+    }?,
+    attribute implClass {
+      N28_TYPE_0_javaIdentifierType
+    }?,
+    attribute generateValueClass {
+      D0:boolean
+    }?,
+    N7_SCHEMALOCATION )
+N5_ELEMENTTYPE_0_typesafeEnumMember =
+  ( element P1:javadoc {
+      ( text,
+        attribute P2:type {
+          D0:QName "P3:string"
+        }?,
+        N7_SCHEMALOCATION )
+    }?,
+    attribute value {
+      text
+    }?,
+    attribute name {
+      N28_TYPE_0_javaIdentifierType
+    },
+    N7_SCHEMALOCATION )
+N9_ELEMENT_0_serializable =
+  element P1:serializable {
+    N10_ELEMENTTYPE_0_serializable
+  }
