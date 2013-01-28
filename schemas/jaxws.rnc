@@ -1,0 +1,175 @@
+namespace P1 = ""
+namespace P3 = "http://www.w3.org/2001/XMLSchema"
+namespace P2 = "http://www.w3.org/2001/XMLSchema-instance"
+namespace P0 = "http://java.sun.com/xml/ns/jaxws"
+datatypes D0 = "http://www.w3.org/2001/XMLSchema-datatypes"
+start =
+  ( N12_ELEMENT_0_bindings |
+    N3_ELEMENT_0_package |
+    N9_ELEMENT_0_enableWrapperStyle |
+    N15_ELEMENT_0_enableAsyncMapping |
+    N11_ELEMENT_0_enableMIMEContent |
+    N27_ELEMENT_0_class |
+    N16_ELEMENT_0_method |
+    N0_ELEMENT_0_parameter |
+    N1_ELEMENT_0_provider )
+N16_ELEMENT_0_method =
+  element P0:method {
+    N23_ELEMENTTYPE_0_method
+  }
+N23_ELEMENTTYPE_0_method =
+  ( N10_PARTICLE_0_tJavaDoc,
+    N13_ATTRIBUTES_0_tJavaDoc,
+    attribute name {
+      text
+    },
+    N6_SCHEMALOCATION )
+N10_PARTICLE_0_tJavaDoc =
+  element P0:javadoc {
+    ( text,
+      attribute P2:type {
+        D0:QName "P3:string"
+      }?,
+      N6_SCHEMALOCATION )
+  }?
+N0_ELEMENT_0_parameter =
+  element P0:parameter {
+    N4_ELEMENTTYPE_0_parameter
+  }
+N22_ELEMENTTYPE_0_package =
+  ( N10_PARTICLE_0_tJavaDoc,
+    N13_ATTRIBUTES_0_tJavaDoc,
+    attribute name {
+      text
+    },
+    N6_SCHEMALOCATION )
+N1_ELEMENT_0_provider =
+  element P0:provider {
+    N8_ELEMENTTYPE_0_provider
+  }
+N21_ELEMENTTYPE_0_enableAsyncMapping =
+  ( D0:boolean,
+    attribute P2:type {
+      D0:QName "P3:boolean"
+    }?,
+    N6_SCHEMALOCATION )
+N4_ELEMENTTYPE_0_parameter =
+  ( attribute part {
+      text
+    },
+    attribute childElementName {
+      D0:QName
+    }?,
+    attribute name {
+      text
+    },
+    N6_SCHEMALOCATION )
+N17_GROUP_0_declaration =
+  ( N3_ELEMENT_0_package |
+    N9_ELEMENT_0_enableWrapperStyle |
+    N15_ELEMENT_0_enableAsyncMapping |
+    N11_ELEMENT_0_enableMIMEContent |
+    N27_ELEMENT_0_class |
+    N16_ELEMENT_0_method |
+    N0_ELEMENT_0_parameter |
+    N1_ELEMENT_0_provider |
+    N20_WILDCARD_0 )
+N19_WILDCARD_2 =
+  (attribute * - P2:* {
+    text
+  }?)+
+N8_ELEMENTTYPE_0_provider =
+  ( N28_TYPE_1_anyType,
+    N6_SCHEMALOCATION )
+N11_ELEMENT_0_enableMIMEContent =
+  element P0:enableMIMEContent {
+    N7_ELEMENTTYPE_0_enableMIMEContent
+  }
+N26_ELEMENTTYPE_0_class =
+  ( N10_PARTICLE_0_tJavaDoc,
+    N13_ATTRIBUTES_0_tJavaDoc,
+    attribute name {
+      text
+    },
+    N6_SCHEMALOCATION )
+N9_ELEMENT_0_enableWrapperStyle =
+  element P0:enableWrapperStyle {
+    N24_ELEMENTTYPE_0_enableWrapperStyle
+  }
+N27_ELEMENT_0_class =
+  element P0:class {
+    N26_ELEMENTTYPE_0_class
+  }
+N3_ELEMENT_0_package =
+  element P0:package {
+    N22_ELEMENTTYPE_0_package
+  }
+N6_SCHEMALOCATION =
+  ( attribute P2:schemaLocation {
+      list { (D0:anyURI?)+ }
+    }?,
+    attribute P2:noNamespaceSchemaLocation {
+      D0:anyURI
+    }? )
+N5_PARTICLE_1_anyType =
+  (N18_WILDCARD_1?)+
+N13_ATTRIBUTES_0_tJavaDoc =
+  empty
+N12_ELEMENT_0_bindings =
+  element P0:bindings {
+    N14_ELEMENTTYPE_0_bindings
+  }
+N15_ELEMENT_0_enableAsyncMapping =
+  element P0:enableAsyncMapping {
+    N21_ELEMENTTYPE_0_enableAsyncMapping
+  }
+N28_TYPE_1_anyType =
+  ( N5_PARTICLE_1_anyType,
+    N2_ATTRIBUTES_1_anyType )
+N2_ATTRIBUTES_1_anyType =
+  N19_WILDCARD_2
+N25_TYPE_0_tJavaDoc =
+  ( N10_PARTICLE_0_tJavaDoc,
+    N13_ATTRIBUTES_0_tJavaDoc )
+N18_WILDCARD_1 =
+  ( ( N12_ELEMENT_0_bindings |
+      N3_ELEMENT_0_package |
+      N9_ELEMENT_0_enableWrapperStyle |
+      N15_ELEMENT_0_enableAsyncMapping |
+      N11_ELEMENT_0_enableMIMEContent |
+      N27_ELEMENT_0_class |
+      N16_ELEMENT_0_method |
+      N0_ELEMENT_0_parameter |
+      N1_ELEMENT_0_provider ) |
+    element * - ( P0:bindings | P0:package | P0:enableWrapperStyle | P0:enableAsyncMapping | P0:enableMIMEContent | P0:class | P0:method | P0:parameter | P0:provider ) {
+      N28_TYPE_1_anyType
+    } )
+N24_ELEMENTTYPE_0_enableWrapperStyle =
+  ( D0:boolean,
+    attribute P2:type {
+      D0:QName "P3:boolean"
+    }?,
+    N6_SCHEMALOCATION )
+N20_WILDCARD_0 =
+  element * - ( P1:* | P0:* ) {
+    N28_TYPE_1_anyType
+  }
+N14_ELEMENTTYPE_0_bindings =
+  ( (( N17_GROUP_0_declaration |
+      N12_ELEMENT_0_bindings )?)+,
+    attribute wsdlLocation {
+      D0:anyURI
+    }?,
+    attribute node {
+      text
+    }?,
+    attribute version {
+      D0:token
+    }?,
+    N6_SCHEMALOCATION )
+N7_ELEMENTTYPE_0_enableMIMEContent =
+  ( D0:boolean,
+    attribute P2:type {
+      D0:QName "P3:boolean"
+    }?,
+    N6_SCHEMALOCATION )

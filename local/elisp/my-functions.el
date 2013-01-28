@@ -2,6 +2,11 @@
   "Mes fonctions à moi"
   :group 'local)
 
+(defun my-eshell ()
+  (interactive)
+  (eshell)
+  (call-interactively 'my-rename-buf))
+
 (defun my-rename-buf (name)
   "Renames current buffer"
   (interactive "MBuffer Name :")

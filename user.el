@@ -36,10 +36,10 @@
 
 ;; eshell
 ;; set environment variables
-;; (setenv "JAVA_HOME" "/usr/lib/jvm/java-6-openjdk")
-;; (setenv "M2_HOME" "/usr/local/share/maven")
-;; (setenv "ANT_HOME" "/usr/local/share/ant")
-;; (setenv "SCALA_HOME" "/usr/local/scala")
+(setenv "JAVA_HOME" "/usr/lib/jvm/default-java")
+(setenv "M2_HOME" "/usr/local/share/maven")
+(setenv "ANT_HOME" "/usr/local/share/ant")
+(setenv "SCALA_HOME" "/usr/local/scala")
 (setenv "PATH"
         (concat
          (getenv "HOME") "/bin:"
@@ -50,6 +50,7 @@
          (getenv "PATH"))) ; inherited from OS
 (setq exec-path
       (append exec-path
+              (list "/usr/sbin")
               (list (concat (getenv "HOME") "/bin"))
               (list (concat (getenv "JAVA_HOME") "/bin"))
               (list (concat (getenv "M2_HOME") "/bin"))
@@ -69,14 +70,14 @@
      '("mutt" "vim" "tail" "lftp" "telnet" "pacman" "yaourt")
      eshell-visual-commands))))
 
-(add-hook
- 'eshell-mode-hook
- (lambda ()
-   (call-interactively 'my-rename-buf)))
-
 ;; tramp : sudo on a remote server
+;; alias (ex: mylevain) must NOT equals hostname (ex: levain) (otherwise bug)
 (set-default 'tramp-default-proxies-alist (quote (("mylevain" nil "/ssh:gneuvill@levain:"))))
 (add-to-list 'tramp-default-proxies-alist '("myvmjavatest1" nil "/ssh:gneuvill@vmjavatest1:"))
+(add-to-list 'tramp-default-proxies-alist '("mychene2" nil "/ssh:gneuvill@chene2:"))
+(add-to-list 'tramp-default-proxies-alist '("myvmqual" nil "/ssh:gneuvill@vmqualite:"))
+(add-to-list 'tramp-default-proxies-alist '("myenor" nil "/ssh:gneuvill@enor:"))
+(add-to-list 'tramp-default-proxies-alist '("lionel" nil "/ssh:llevague@129.20.129.69:"))
 
 ;; a supplementary package archive
 ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -110,6 +111,9 @@
 ;; BBdB for Gnus
 (require 'bbdb)
 (bbdb-initialize 'gnus 'message)
+
+;; org-confluence
+(require 'org-confluence)
 
 ;; ajout d'extensions pour charger le nxml-mode
 (setq auto-mode-alist
@@ -150,8 +154,8 @@
 (require 'ecb)
 
 ;; python : python-mode + pymacs + ropemacs
-;; (require 'pymacs)
-;; (pymacs-load "ropemacs" "rope-")
+(require 'pymacs)
+(pymacs-load "ropemacs" "rope-")
 
 ;; JDE
 ;; (load "jde-autoload")
@@ -174,6 +178,8 @@
 ;; Ensime for Scala
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+;; (remove-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+
 ;; ensime semantic highlighting
 (setq ensime-sem-high-faces
       '(
@@ -214,7 +220,7 @@
 			    ))
 
 ;; plantuml
-(setq custom-plantuml-jar-path "/opt/plantuml/plantuml.jar")
+(setq custom-plantuml-jar-path "/usr/local/share/plantuml.jar")
 (require 'plantuml-mode)
 
 ;; w3m (not installed through apt but from sources fetched from github)
