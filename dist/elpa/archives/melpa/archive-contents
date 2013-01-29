@@ -102,7 +102,7 @@
 	    [(20130123 2144)
 	     nil "Emacs WebSocket client and server [source: github]" single])
  (web-mode .
-	   [(20130122 1508)
+	   [(20130129 846)
 	    nil "major mode for editing HTML templates [source: github]" single])
  (wc-mode .
 	  [(20120531 1344)
@@ -425,7 +425,7 @@
 	   [(20120905 2101)
 	    nil "Support sequential operation which omitted prefix keys. [source: github]" single])
  (smartparens .
-	      [(20130124 500)
+	      [(20130128 1352)
 	       ((dash
 		 (1 0 2)))
 	       "Autoinsert pairs of defined brackets and wrap regions [source: github]" single])
@@ -905,7 +905,7 @@
 	  [(20110508 1256)
 	   nil "minor mode for editing parentheses [source: darcs]" single])
  (pandoc-mode .
-	      [(20130115 2218)
+	      [(20130129 145)
 	       nil "Minor mode for interacting with Pandoc [source: github]" tar])
  (page-break-lines .
 		   [(20121114 931)
@@ -1353,7 +1353,7 @@
 	[(20130102 1159)
 	 nil "An interactive tail mode [source: github]" single])
  (isearch+ .
-	   [(20130116 1708)
+	   [(20130128 2322)
 	    nil "Extensions to `isearch.el'. [source: wiki]" single])
  (ir_black-theme .
 		 [(20120503 1930)
@@ -1532,7 +1532,7 @@
 	    (20120509)))
 	  "helm-sources and some utilities for GNU R. [source: github]" single])
  (helm .
-       [(20130127 836)
+       [(20130129 907)
 	nil "Helm is an Emacs incremental and narrowing framework [source: github]" tar])
  (header2 .
 	  [(20121228 2051)
@@ -1914,7 +1914,7 @@
 	 [(20120831 1448)
 	  nil "No description available. [source: github]" tar])
  (ergoemacs-mode .
-		 [(20130126 337)
+		 [(20130129 18)
 		  nil "A minor mode, a keybinding set based on ergonomics. [source: git]" tar])
  (eredis .
 	 [(20120808 2207)
@@ -2103,7 +2103,7 @@
 		[(20130122 14)
 		 nil "No description available. [source: wiki]" single])
  (dired+ .
-	 [(20121228 2052)
+	 [(20130128 2345)
 	  nil "Extensions to Dired. [source: wiki]" single])
  (dircmp .
 	 [(20120517 2118)
@@ -2127,7 +2127,7 @@
 	     [(20100517 820)
 	      nil "Kill text between delimiters. [source: github]" single])
  (deft .
-   [(20130128 1139)
+   [(20130128 1522)
     nil "quickly browse, filter, and edit plain text notes [source: git]" single])
  (deferred .
    [(20120306 1807)
@@ -2418,7 +2418,7 @@
 	      [(20080905 553)
 	       nil "major mode for editing Apache configuration files [source: wiki]" single])
  (anti-zenburn-theme .
-		     [(20130110 2314)
+		     [(20130129 21)
 		      nil "Low-contrast Zenburn-inverted theme [source: github]" single])
  (ansi .
        [(20121008 1920)
