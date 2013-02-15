@@ -21,6 +21,8 @@
 (define-key global-map (kbd "S-C-<right>") 'shrink-window-horizontally)
 (define-key global-map (kbd "S-C-<up>") 'enlarge-window)
 (define-key global-map (kbd "S-C-<down>") 'shrink-window)
+;; increment number at point
+(global-set-key (kbd "C-M-+") 'increment-number-at-point)
 ;; OrgMode
 (global-set-key "\C-ca" 'org-agenda)
 ;; reload file = refresh buffer (called revert-buffer in emacs)

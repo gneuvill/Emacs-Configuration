@@ -689,7 +689,7 @@
 			  [(20080502 1652)
 			   nil "Set project-local variables from a file. [source: wiki]" single])
  (pretty-symbols-mode .
-		      [(20120507 1339)
+		      [(20130129 909)
 		       nil "Draw tokens as Unicode glyphs. [source: github]" single])
  (pretty-mode .
 	      [(20120919 1239)
@@ -1549,7 +1549,7 @@
 	   (1 2)))
 	 "Emacs client for hastebin (http://hastebin.com/about.md) [source: github]" single])
  (haskell-mode .
-	       [(20130122 830)
+	       [(20130129 1034)
 		nil "A Haskell editing mode [source: github]" tar])
  (hardhat .
 	  [(20121126 1228)
@@ -1960,10 +1960,8 @@
 	   [(20120413 1107)
 	    nil "Emacs window session manager [source: github]" single])
  (elpy .
-       [(20130120 1341)
-	((pymacs
-	  (0 25))
-	 (auto-complete
+       [(20130129 1027)
+	((auto-complete
 	  (1 4))
 	 (yasnippet
 	  (0 8))
@@ -2351,9 +2349,6 @@
 	      ((bbdb
 		(3 0)))
 	      "vCard import/export for BBDB [source: github]" tar])
- (bbdb .
-       [(20130113 1649)
-	nil "core of BBDB [source: git]" tar])
  (bbcode-mode .
 	      [(20130121 2108)
 	       nil "Major mode for writing BBCode markup [source: github]" single])
@@ -2482,5 +2477,8 @@
 	      nil "auto-complete.el source for dabbrev [source: wiki]" single])
  (abl-mode .
 	   [(20120718 1655)
-	    nil "Python TDD minor mode [source: github]" single]))
+	    nil "Python TDD minor mode [source: github]" single])
+ (bbdb .
+       [(20130113 1649)
+	nil "core of BBDB [source: git]" tar]))
 

@@ -85,9 +85,15 @@
                            ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; OrgMode
-;;(setq org-directory "/home/sf1staff/gneuvill/ori/")
-;;(setq org-default-notes-file (concat org-directory "ori-oai-ao.org"))
- 
+;; syntax highlighting of source code blocks in .org files
+(setq org-src-fontify-natively t)
+;; syntax highlighting of source code blocks when exporting to latex/pdf
+(setq org-export-latex-listings 'minted)
+(require 'org-latex)
+(add-to-list 'org-export-latex-packages-alist '("" "minted"))
+;; org-confluence
+(require 'org-confluence)
+
 ;; Slime-style navigation for Emacs Lisp (https://github.com/purcell/elisp-slime-nav)
 (require 'elisp-slime-nav)
 (add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t)))
@@ -113,9 +119,6 @@
 ;; BBdB for Gnus
 (require 'bbdb)
 (bbdb-initialize 'gnus 'message)
-
-;; org-confluence
-(require 'org-confluence)
 
 ;; ajout d'extensions pour charger le nxml-mode
 (setq auto-mode-alist

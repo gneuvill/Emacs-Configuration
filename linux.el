@@ -1,5 +1,3 @@
-;; Emacs Code Brower
-(add-to-list 'load-path (concat grail-dist-elisp "ecb"))
 ;; jde
 ;; (add-to-list 'load-path (concat grail-dist-elisp "jde/lisp"))
 ;; malabar-mode => should replace this with emacs-eclim
