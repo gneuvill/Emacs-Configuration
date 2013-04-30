@@ -152,7 +152,7 @@
 ;; (require 'semantic/sb)
 ;; (semantic-mode 1)
 
-;; ECB (CVS version of ECB works with emacs 23.2 builtin CEDET)
+;; ECB (github version of ECB works with emacs >= 23.2 builtin CEDET)
 (require 'ecb)
 
 ;; python : python-mode + pymacs + ropemacs
@@ -177,7 +177,12 @@
 ;; Scala Mode 2 => https://github.com/hvesalai/scala-mode2
 (require 'scala-mode2)
 
-;; Ensime for Scala
+;; Scala : emacs-scalaz-unicode-input-method
+(require 'scalaz-unicode-input-method)
+(add-hook 'scala-mode-hook 
+	  (lambda () (set-input-method "scalaz-unicode")))
+
+;; Scala : Ensime for Scala
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 ;; (remove-hook 'scala-mode-hook 'ensime-scala-mode-hook)

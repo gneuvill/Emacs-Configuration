@@ -79,7 +79,7 @@
 		  [(20130401 229)
 		   nil "show whole days of world-time diffs [source: github]" single])
  (workgroups2 .
-	      [(20130430 1325)
+	      [(20130430 1640)
 	       nil "New workspaces for Emacs [source: github]" tar])
  (workgroups .
 	     [(20110724 1825)
@@ -1136,6 +1136,11 @@
  (paredit-menu .
 	       [(20121025 1201)
 		nil "Adds a menu to paredit.el as memory aid [source: hg]" single])
+ (paredit-everywhere .
+		     [(20130430 1059)
+		      ((paredit
+			(22)))
+		      "Enable some paredit features in non-lisp buffers [source: github]" single])
  (paredit .
 	  [(20130407 1708)
 	   nil "minor mode for editing parentheses [source: git]" single])
@@ -1143,7 +1148,7 @@
 	      [(20130420 129)
 	       nil "Minor mode for interacting with Pandoc [source: github]" tar])
  (pallet .
-	 [(20130428 903)
+	 [(20130430 1244)
 	  ((carton
 	    (0 3 0)))
 	  "A package manager for Emacs, using Carton. [source: github]" tar])
@@ -2285,7 +2290,7 @@
        [(20130424 656)
 	nil "Factor's Ultimate Emacs Library [source: git]" tar])
  (fsharp-mode .
-	      [(20130419 1211)
+	      [(20130430 1405)
 	       ((popup
 		 (0 5))
 		(pos-tip
