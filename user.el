@@ -115,7 +115,7 @@
 (bbdb-initialize 'gnus 'message)
 
 ;; org-confluence
-(require 'org-confluence)
+;; (require 'org-confluence)
 
 ;; ajout d'extensions pour charger le nxml-mode
 (setq auto-mode-alist
@@ -156,8 +156,8 @@
 (require 'ecb)
 
 ;; python : python-mode + pymacs + ropemacs
-(require 'pymacs)
-(pymacs-load "ropemacs" "rope-")
+;; (require 'pymacs)
+;; (pymacs-load "ropemacs" "rope-")
 
 ;; JDE
 ;; (load "jde-autoload")
@@ -222,11 +222,11 @@
 			    ))
 
 ;; plantuml
-(setq custom-plantuml-jar-path "/usr/local/share/plantuml.jar")
-(require 'plantuml-mode)
+;; (setq custom-plantuml-jar-path "/usr/local/share/plantuml.jar")
+;; (require 'plantuml-mode)
 
 ;; w3m (not installed through apt but from sources fetched from github)
-(require 'w3m-load)
+(require 'w3m)
 (setq browse-url-browser-function 'w3m-browse-url)
 (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
  ;; optional keyboard short-cut : should find another one 'cause \C-xm seems to be bound to mail
