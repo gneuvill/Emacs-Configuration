@@ -116,7 +116,7 @@
 (bbdb-initialize 'gnus 'message)
 
 ;; org-confluence
-(require 'org-confluence)
+;; (require 'org-confluence)
 
 ;; org-impress (https://github.com/kinjo/org-impress-js.el)
 (add-to-list 'load-path "~/org-impress-js.el")
@@ -157,7 +157,7 @@
 ;; (require 'semantic/sb)
 ;; (semantic-mode 1)
 
-;; ECB (CVS version of ECB works with emacs 23.2 builtin CEDET)
+;; ECB (github version of ECB works with emacs >= 23.2 builtin CEDET)
 (require 'ecb)
 
 ;; python : python-mode + pymacs + ropemacs
@@ -182,12 +182,17 @@
 ;; Scala Mode 2 => https://github.com/hvesalai/scala-mode2
 (require 'scala-mode2)
 
-;; ;; Ensime for Scala
+;; Scala : emacs-scalaz-unicode-input-method
+(require 'scalaz-unicode-input-method)
+(add-hook 'scala-mode-hook 
+	  (lambda () (set-input-method "scalaz-unicode")))
+
+;; Scala : Ensime for Scala
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 ;; (remove-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
-;; ;; ensime semantic highlighting
+;; ensime semantic highlighting
 (setq ensime-sem-high-faces
       '(
         ;; (var . (:foreground "#df8600"))
@@ -202,20 +207,20 @@
         (package . font-lock-preprocessor-face)
         ))
 
-;; ;; ;;JKB-MODE (édition m3u)
+;;JKB-MODE (édition m3u)
 (autoload 'jkb-mode "jkb-mode" "" t)
 (add-to-list 'auto-mode-alist '("\\.m3u$" . jkb-mode))
 
-;; ;; ;; XQuery
+;; XQuery
 (require 'xquery-mode)
 
-;; ;; ;; html-script
+;; html-script
 (require 'html-script)
 
-;; ;; ;; http://code.google.com/p/emacs-textmate/ (for brackets, parentheses, etc... insertion)
+;; http://code.google.com/p/emacs-textmate/ (for brackets, parentheses, etc... insertion)
 (require 'emacs-textmate)
 
-;; ;; js-comint : javascript dev with js2-mode + comint + rhino
+;; js-comint : javascript dev with js2-mode + comint + rhino
 (require 'js-comint)
 (setq inferior-js-program-command "/usr/bin/js")
 (add-hook 'js2-mode-hook '(lambda () 
@@ -226,12 +231,12 @@
 			    (local-set-key "\C-cl" 'js-load-file-and-go)
 			    ))
 
-;; ;; plantuml
+;; plantuml
 (setq custom-plantuml-jar-path "/usr/local/share/plantuml.jar")
 (require 'plantuml-mode)
 
-;; ;; w3m (not installed through apt but from sources fetched from github)
-(require 'w3m-load)
+;; w3m (not installed through apt but from sources fetched from github)
+(require 'w3m)
 (setq browse-url-browser-function 'w3m-browse-url)
 (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
  ;; optional keyboard short-cut : should find another one 'cause \C-xm seems to be bound to mail
