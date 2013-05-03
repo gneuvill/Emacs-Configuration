@@ -36,7 +36,7 @@
 
 ;; eshell
 ;; set environment variables
-(setenv "JAVA_HOME" "/usr/lib/jvm/default-java")
+(setenv "JAVA_HOME" "/usr/lib/jvm/java-7-openjdk")
 (setenv "M2_HOME" "/usr/local/share/maven")
 (setenv "ANT_HOME" "/usr/local/share/ant")
 (setenv "SCALA_HOME" "/usr/local/scala")
@@ -83,6 +83,7 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                            ("marmalade" . "http://marmalade-repo.org/packages/")
                            ("melpa" . "http://melpa.milkbox.net/packages/")))
+(package-initialize)
 
 ;; OrgMode
 ;;(setq org-directory "/home/sf1staff/gneuvill/ori/")
@@ -116,6 +117,10 @@
 
 ;; org-confluence
 (require 'org-confluence)
+
+;; org-impress (https://github.com/kinjo/org-impress-js.el)
+(add-to-list 'load-path "~/org-impress-js.el")
+(require 'org-impress-js)
 
 ;; ajout d'extensions pour charger le nxml-mode
 (setq auto-mode-alist
@@ -156,8 +161,8 @@
 (require 'ecb)
 
 ;; python : python-mode + pymacs + ropemacs
-(require 'pymacs)
-(pymacs-load "ropemacs" "rope-")
+;; (require 'pymacs)
+;; (pymacs-load "ropemacs" "rope-")
 
 ;; JDE
 ;; (load "jde-autoload")
@@ -177,40 +182,40 @@
 ;; Scala Mode 2 => https://github.com/hvesalai/scala-mode2
 (require 'scala-mode2)
 
-;; Ensime for Scala
+;; ;; Ensime for Scala
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 ;; (remove-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
-;; ensime semantic highlighting
+;; ;; ensime semantic highlighting
 (setq ensime-sem-high-faces
       '(
-        (var . (:foreground "#df8600"))
+        ;; (var . (:foreground "#df8600"))
         (val . (:foreground "#784000"))
-        (varField . (:foreground "#df8600"))
+        (varField . (:foreground "#cc3333"))
         (valField . (:foreground "#784000"))
         ;; (functionCall . (:foreground "#4400b1"))
-        (param . (:foreground "#c3a500"))
+        (param . (:foreground "#cc9900"))
         (class . font-lock-type-face)
         (trait . font-lock-type-face)
         ;; (object . (:foreground "#00c800"))
         (package . font-lock-preprocessor-face)
         ))
 
-;;JKB-MODE (édition m3u)
+;; ;; ;;JKB-MODE (édition m3u)
 (autoload 'jkb-mode "jkb-mode" "" t)
 (add-to-list 'auto-mode-alist '("\\.m3u$" . jkb-mode))
 
-;; XQuery
+;; ;; ;; XQuery
 (require 'xquery-mode)
 
-;; html-script
+;; ;; ;; html-script
 (require 'html-script)
 
-;; http://code.google.com/p/emacs-textmate/ (for brackets, parentheses, etc... insertion)
+;; ;; ;; http://code.google.com/p/emacs-textmate/ (for brackets, parentheses, etc... insertion)
 (require 'emacs-textmate)
 
-;; js-comint : javascript dev with js2-mode + comint + rhino
+;; ;; js-comint : javascript dev with js2-mode + comint + rhino
 (require 'js-comint)
 (setq inferior-js-program-command "/usr/bin/js")
 (add-hook 'js2-mode-hook '(lambda () 
@@ -221,11 +226,11 @@
 			    (local-set-key "\C-cl" 'js-load-file-and-go)
 			    ))
 
-;; plantuml
+;; ;; plantuml
 (setq custom-plantuml-jar-path "/usr/local/share/plantuml.jar")
 (require 'plantuml-mode)
 
-;; w3m (not installed through apt but from sources fetched from github)
+;; ;; w3m (not installed through apt but from sources fetched from github)
 (require 'w3m-load)
 (setq browse-url-browser-function 'w3m-browse-url)
 (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
