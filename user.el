@@ -28,11 +28,14 @@
 ;; => emacs ne ferait plus de bip ? En tout cas, sans clignotement, c'est mieux.
 (setq visible-bell t)
 
-;; déplacer le pointeur génant
-(mouse-avoidance-mode  'exile)
-
 ;; toujours y or n
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+(blink-cursor-mode 0)                          ; No blinking cursor
+(setq track-eol nil)                           ; Cursor don't track end-of-line
+(setq mouse-yank-at-point t)                   ; Paste at cursor position
+(setq scroll-preserve-screen-position t)       ; Scroll without moving cursor
+(mouse-avoidance-mode 'jump)                   ; Mouse avoids cursor
 
 ;; eshell
 ;; set environment variables
@@ -84,6 +87,9 @@
                            ("marmalade" . "http://marmalade-repo.org/packages/")
                            ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
+
+;; global smartparens mode (https://github.com/Fuco1/smartparens)
+(smartparens-global-mode t)
 
 ;; OrgMode
 ;;(setq org-directory "/home/sf1staff/gneuvill/ori/")
