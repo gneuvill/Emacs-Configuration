@@ -91,6 +91,12 @@
 ;; global smartparens mode (https://github.com/Fuco1/smartparens)
 (smartparens-global-mode t)
 
+;; ido-vertical-mode https://github.com/rson/ido-vertical-mode.el
+(ido-vertical-mode t)
+
+;; smex https://github.com/nonsequitur/smex
+(smex-initialize)
+
 ;; OrgMode
 ;;(setq org-directory "/home/sf1staff/gneuvill/ori/")
 ;;(setq org-default-notes-file (concat org-directory "ori-oai-ao.org"))
