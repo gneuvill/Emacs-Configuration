@@ -4,5 +4,4 @@ dist/elisp/ecb-snap
 dist/elisp/ensime/*
 dist/elisp/ensime-git/*
 dist/elisp/malabar-mode-src
-dist/elpa/*
 
