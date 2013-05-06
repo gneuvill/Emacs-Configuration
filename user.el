@@ -39,14 +39,12 @@
 (setenv "JAVA_HOME" "/usr/lib/jvm/default-java")
 (setenv "M2_HOME" "/usr/local/share/maven")
 (setenv "ANT_HOME" "/usr/local/share/ant")
-(setenv "SCALA_HOME" "/usr/local/scala")
 (setenv "PATH"
         (concat
          (getenv "HOME") "/bin:"
          (getenv "JAVA_HOME") "/bin:"
          (getenv "M2_HOME") "/bin:"
          (getenv "ANT_HOME") "/bin:"
-         (getenv "SCALA_HOME") "/bin:"
          (getenv "PATH"))) ; inherited from OS
 (setq exec-path
       (append exec-path
@@ -54,8 +52,7 @@
               (list (concat (getenv "HOME") "/bin"))
               (list (concat (getenv "JAVA_HOME") "/bin"))
               (list (concat (getenv "M2_HOME") "/bin"))
-              (list (concat (getenv "ANT_HOME") "/bin"))
-              (list (concat (getenv "SCALA_HOME") "/bin"))))
+              (list (concat (getenv "ANT_HOME") "/bin"))))
 
 ;; add tail to eshell visual commands
 ;; (eshell-visual-commands is void at emacs startup)
@@ -67,7 +64,7 @@
    (setq
     eshell-visual-commands
     (append
-     '("mutt" "vim" "tail" "lftp" "telnet" "pacman" "yaourt")
+     '("mutt" "vim" "tail" "lftp" "telnet" "pacman" "yaourt" "less")
      eshell-visual-commands))))
 
 ;; tramp : sudo on a remote server
@@ -159,8 +156,8 @@
 (require 'ecb)
 
 ;; python : python-mode + pymacs + ropemacs
-(require 'pymacs)
-(pymacs-load "ropemacs" "rope-")
+;; (require 'pymacs)
+;; (pymacs-load "ropemacs" "rope-")
 
 ;; JDE
 ;; (load "jde-autoload")
