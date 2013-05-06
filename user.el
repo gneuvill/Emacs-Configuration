@@ -130,16 +130,10 @@
 (require 'bbdb)
 (bbdb-initialize 'gnus 'message)
 
-<<<<<<< HEAD
-=======
-;; org-confluence
-;; (require 'org-confluence)
-
 ;; org-impress (https://github.com/kinjo/org-impress-js.el)
 (add-to-list 'load-path "~/org-impress-js.el")
 (require 'org-impress-js)
 
->>>>>>> c0a8e4d10b0c0d7a712b8de18ce346eea8bad21b
 ;; ajout d'extensions pour charger le nxml-mode
 (setq auto-mode-alist
       (append '(("\\.\\(xml\\|xsd\\|rng\\|xmap\\|xsl\\|xbl\\|xhtml\\)\\'" . nxml-mode))
