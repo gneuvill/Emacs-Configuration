@@ -28,15 +28,18 @@
 ;; => emacs ne ferait plus de bip ? En tout cas, sans clignotement, c'est mieux.
 (setq visible-bell t)
 
-;; déplacer le pointeur génant
-(mouse-avoidance-mode  'exile)
-
 ;; toujours y or n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(blink-cursor-mode 0)                          ; No blinking cursor
+(setq track-eol nil)                           ; Cursor don't track end-of-line
+(setq mouse-yank-at-point t)                   ; Paste at cursor position
+(setq scroll-preserve-screen-position t)       ; Scroll without moving cursor
+(mouse-avoidance-mode 'jump)                   ; Mouse avoids cursor
+
 ;; eshell
 ;; set environment variables
-(setenv "JAVA_HOME" "/usr/lib/jvm/default-java")
+(setenv "JAVA_HOME" "/usr/lib/jvm/java-7-openjdk")
 (setenv "M2_HOME" "/usr/local/share/maven")
 (setenv "ANT_HOME" "/usr/local/share/ant")
 (setenv "PATH"
@@ -80,6 +83,16 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                            ("marmalade" . "http://marmalade-repo.org/packages/")
                            ("melpa" . "http://melpa.milkbox.net/packages/")))
+(package-initialize)
+
+;; global smartparens mode (https://github.com/Fuco1/smartparens)
+(smartparens-global-mode t)
+
+;; ido-vertical-mode https://github.com/rson/ido-vertical-mode.el
+(ido-vertical-mode t)
+
+;; smex https://github.com/nonsequitur/smex
+(smex-initialize)
 
 ;; OrgMode
 ;; syntax highlighting of source code blocks in .org files
@@ -117,6 +130,16 @@
 (require 'bbdb)
 (bbdb-initialize 'gnus 'message)
 
+<<<<<<< HEAD
+=======
+;; org-confluence
+;; (require 'org-confluence)
+
+;; org-impress (https://github.com/kinjo/org-impress-js.el)
+(add-to-list 'load-path "~/org-impress-js.el")
+(require 'org-impress-js)
+
+>>>>>>> c0a8e4d10b0c0d7a712b8de18ce346eea8bad21b
 ;; ajout d'extensions pour charger le nxml-mode
 (setq auto-mode-alist
       (append '(("\\.\\(xml\\|xsd\\|rng\\|xmap\\|xsl\\|xbl\\|xhtml\\)\\'" . nxml-mode))
@@ -152,7 +175,7 @@
 ;; (require 'semantic/sb)
 ;; (semantic-mode 1)
 
-;; ECB (CVS version of ECB works with emacs 23.2 builtin CEDET)
+;; ECB (github version of ECB works with emacs >= 23.2 builtin CEDET)
 (require 'ecb)
 
 ;; python : python-mode + pymacs + ropemacs
@@ -177,7 +200,12 @@
 ;; Scala Mode 2 => https://github.com/hvesalai/scala-mode2
 (require 'scala-mode2)
 
-;; Ensime for Scala
+;; Scala : emacs-scalaz-unicode-input-method
+(require 'scalaz-unicode-input-method)
+(add-hook 'scala-mode-hook 
+	  (lambda () (set-input-method "scalaz-unicode")))
+
+;; Scala : Ensime for Scala
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 ;; (remove-hook 'scala-mode-hook 'ensime-scala-mode-hook)
@@ -185,12 +213,12 @@
 ;; ensime semantic highlighting
 (setq ensime-sem-high-faces
       '(
-        (var . (:foreground "#df8600"))
+        ;; (var . (:foreground "#df8600"))
         (val . (:foreground "#784000"))
-        (varField . (:foreground "#df8600"))
+        (varField . (:foreground "#cc3333"))
         (valField . (:foreground "#784000"))
         ;; (functionCall . (:foreground "#4400b1"))
-        (param . (:foreground "#c3a500"))
+        (param . (:foreground "#cc9900"))
         (class . font-lock-type-face)
         (trait . font-lock-type-face)
         ;; (object . (:foreground "#00c800"))
@@ -226,7 +254,7 @@
 (require 'plantuml-mode)
 
 ;; w3m (not installed through apt but from sources fetched from github)
-(require 'w3m-load)
+(require 'w3m)
 (setq browse-url-browser-function 'w3m-browse-url)
 (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
  ;; optional keyboard short-cut : should find another one 'cause \C-xm seems to be bound to mail
