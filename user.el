@@ -39,7 +39,6 @@
 
 ;; eshell
 ;; set environment variables
-(setenv "JAVA_HOME" "/usr/lib/jvm/java-7-openjdk")
 (setenv "M2_HOME" "/usr/local/share/maven")
 (setenv "ANT_HOME" "/usr/local/share/ant")
 (setenv "PATH"
@@ -87,6 +86,7 @@
 
 ;; global smartparens mode (https://github.com/Fuco1/smartparens)
 (smartparens-global-mode t)
+(sp-local-tag '(nxml-mode) "<" "<_>" "</_>")
 
 ;; ido-vertical-mode https://github.com/rson/ido-vertical-mode.el
 (ido-vertical-mode t)
