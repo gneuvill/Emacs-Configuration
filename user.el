@@ -56,6 +56,10 @@
               (list (concat (getenv "M2_HOME") "/bin"))
               (list (concat (getenv "ANT_HOME") "/bin"))))
 
+;; see http://stackoverflow.com/questions/9242651/emacs-ediff-error-no-newline-at-end-of-file
+;; (setq ediff-diff-program "/home/neuville/bin/mydiff.sh")
+;; (setq ediff-diff3-options "--diff-program=/home/neuville/bin/mydiff.sh")
+
 ;; add tail to eshell visual commands
 ;; (eshell-visual-commands is void at emacs startup)
 ;; (we could have used the customize-settings.el 
@@ -71,17 +75,17 @@
 
 ;; tramp : sudo on a remote server
 ;; alias (ex: mylevain) must NOT equals hostname (ex: levain) (otherwise bug)
-(set-default 'tramp-default-proxies-alist (quote (("mylevain" nil "/ssh:gneuvill@levain:"))))
-(add-to-list 'tramp-default-proxies-alist '("myvmjavatest1" nil "/ssh:gneuvill@vmjavatest1:"))
-(add-to-list 'tramp-default-proxies-alist '("mychene2" nil "/ssh:gneuvill@chene2:"))
-(add-to-list 'tramp-default-proxies-alist '("myvmqual" nil "/ssh:gneuvill@vmqualite:"))
-(add-to-list 'tramp-default-proxies-alist '("myenor" nil "/ssh:gneuvill@enor:"))
-(add-to-list 'tramp-default-proxies-alist '("lionel" nil "/ssh:llevague@129.20.129.69:"))
+(set-default 'tramp-default-proxies-alist (quote (("mylevain" nil "/sshx:gneuvill@levain:"))))
+(add-to-list 'tramp-default-proxies-alist '("myvmjavatest1" nil "/sshx:gneuvill@vmjavatest1:"))
+(add-to-list 'tramp-default-proxies-alist '("mychene2" nil "/sshx:gneuvill@chene2:"))
+(add-to-list 'tramp-default-proxies-alist '("myvmqual" nil "/sshx:gneuvill@vmqualite:"))
+(add-to-list 'tramp-default-proxies-alist '("myenor" nil "/sshx:gneuvill@enor:"))
+(add-to-list 'tramp-default-proxies-alist '("myvmjava-psnum1" nil "/sshx:gneuvill@vmjava-psnum1:"))
 
 ;; supplementary packages archives
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                           ("marmalade" . "http://marmalade-repo.org/packages/")
-                           ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")))
 (package-initialize)
 
 ;; global smartparens mode (https://github.com/Fuco1/smartparens)
@@ -100,9 +104,11 @@
 ;; syntax highlighting of source code blocks when exporting to latex/pdf
 (setq org-export-latex-listings 'minted)
 (require 'org-latex)
-(add-to-list 'org-export-latex-packages-alist '("" "minted"))
+;; (add-to-list 'org-export-latex-packages-alist '("" "minted")) ;; broken ?
 ;; org-confluence
 (require 'org-confluence)
+;; org-asciidoc (https://github.com/yashi/org-asciidoc)
+(require 'ox-asciidoc)
 
 ;; Slime-style navigation for Emacs Lisp (https://github.com/purcell/elisp-slime-nav)
 (require 'elisp-slime-nav)
@@ -112,7 +118,7 @@
 (require 'my-functions)
 
 ;; git-emacs (https://github.com/tsgates/git-emacs)
-(require 'git-emacs)
+;; (require 'git-emacs) => we use magit now
 
 ;; Uniquify (for buffers with identical names
 (require 'uniquify)
@@ -144,50 +150,12 @@
 (setq auto-mode-alist       
       (cons '("\\.rnc\\'" . rnc-mode) auto-mode-alist))
 
-;; php-mode
-;; on vérifie la syntaxe php à la frappe avec flymake
-(require 'flymake-php)
-(add-hook 'php-mode-hook 'flymake-php-load)
-(add-hook 'php-mode-hook
-	  (lambda ()
-	    (define-key c-mode-map (kbd "C-c d") 'flymake-display-err-menu-for-current-line)))
-
 ;;répertoire de snippets supplémentaires à ceux fournis par yasnippet-bundle
 ;;(ce dernier installé dans avec ELPA)
 ;; (yas/load-directory (concat grail-dist-elisp "my-snippets"))
 
 ;; GEBEN (http://code.google.com/p/geben-on-emacs/)
 (autoload 'geben "geben" "Remote Debugger on Emacs" t)
-
-;; CEDET : now shipped with emacs ! (cedet.elc below is in /usr/share/emacs/23.../lisp/cedet)
-;; (load-file (expand-file-name (concat grail-dist-elisp "cedet/common/cedet.el")))
-;; (global-ede-mode 1)                      ; Enable the Project management system
-;; (semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion
-;; (semantic-load-enable-gaudy-code-helpers) ;; intellisense mode, decoration mode, and stickyfunc mode (plus regular code helpers)
-;; Do we really need the following ?
-;; (global-ede-mode 1)
-;; (require 'semantic/sb)
-;; (semantic-mode 1)
-
-;; ECB (github version of ECB works with emacs >= 23.2 builtin CEDET)
-(require 'ecb)
-
-;; python : python-mode + pymacs + ropemacs
-;; (require 'pymacs)
-;; (pymacs-load "ropemacs" "rope-")
-
-;; JDE
-;; (load "jde-autoload")
-
-;; malabar-mode => buggy for now...
-;; (setq semantic-default-submodes '(global-semantic-idle-scheduler-mode
-;;                                           global-semanticdb-minor-mode
-;;                                           global-semantic-idle-summary-mode
-;;                                           global-semantic-mru-bookmark-mode))
-;; (semantic-mode 1)
-;; (require 'malabar-mode)
-;; (setq malabar-groovy-lib-dir (concat grail-dist-elisp "malabar-1.4.0/lib"))
-;; (add-to-list 'auto-mode-alist '("\\.java\\'" . malabar-mode))
 
 ;; Scala
 ;; (require 'scala-mode-auto)

@@ -6,5 +6,6 @@
 ;; (set-face-attribute 'default nil :height 90)
 ;; police
 ;; (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono")
-(add-to-list 'default-frame-alist '(font . "Inconsolata"))
+;; (add-to-list 'default-frame-alist '(font . "Inconsolata"))
+(add-to-list 'default-frame-alist '(font . "Source Code Pro"))
 
