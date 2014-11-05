@@ -22,6 +22,8 @@
  '(ecb-source-path (quote (("/home/neuville/emacs/" "emacs-conf") ("/usr/local/src/organichart" "organichart") ("/home/gneuvill/ori/src" "ori") ("/home/gneuvill/ori/src/ori-oai-ext-1.7" "ori-oai-ext-1.7") ("/home/gneuvill/ori/src-test" "ori-test") "/usr/local/src" ("/home/gneuvill/ur1" "ur1"))))
  '(ecb-tip-of-the-day nil)
  '(ecb-tree-indent 2)
+ '(ediff-custom-diff-program "/home/neuville/bin/mydiff.sh")
+ '(ediff-diff-program "/home/gneuvill/bin/mydiff.sh")
  '(ido-enabled (quote both) nil (ido))
  '(ido-mode (quote both) nil (ido))
  '(inhibit-startup-screen t)
@@ -37,7 +39,8 @@
  '(speedbar-use-images t)
  '(speedbar-use-imenu-flag t)
  '(tool-bar-mode nil)
- '(url-personal-mail-address "gregoire.neuville@gmail.com"))
+ '(url-personal-mail-address "gregoire.neuville@gmail.com")
+ '(vc-handled-backends (quote (RCS CVS SVN SCCS Bzr Hg Mtn Arch))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

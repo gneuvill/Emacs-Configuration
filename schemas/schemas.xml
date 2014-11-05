@@ -12,7 +12,7 @@
   <documentElement prefix="jaxb" localName="bindings" typeId="JAXB" />
   <documentElement prefix="jaxws" localName="bindings" typeId="JAXWS" />
 
-  <typeId id="XSLT-2" uri="xslt/xslt20.rnc"/>
+  <typeId id="XSLT-2" uri="xslt/2.0/xslt20.rnc"/>
   <typeId id="JAXB" uri="jaxb.rnc"/>
   <typeId id="JAXWS" uri="jaxws.rnc"/>
 </locatingRules>
