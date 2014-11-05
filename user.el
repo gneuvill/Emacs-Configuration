@@ -82,7 +82,7 @@
 ;; a supplementary package archive
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                            ("marmalade" . "http://marmalade-repo.org/packages/")
-                           ("melpa" . "http://melpa.milkbox.net/packages/")))
+                           ("melpa" . "http://melpa-stable.milkbox.net/packages/")))
 (package-initialize)
 
 ;; global smartparens mode (https://github.com/Fuco1/smartparens)
@@ -110,6 +110,9 @@
 
 ;; our functions
 (require 'my-functions)
+
+;; nix-mode
+(require 'nix-mode)
 
 ;; git-emacs (https://github.com/tsgates/git-emacs)
 (require 'git-emacs)
@@ -219,6 +222,13 @@
         (package . font-lock-preprocessor-face)
         ))
 
+;; haskell-mode
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+;; ghc-mod (haskell) (https://github.com/kazu-yamamoto/ghc-mod)
+(autoload 'ghc-init "ghc" nil t)
+(autoload 'ghc-debug "ghc" nil t)
+(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+
 ;;JKB-MODE (édition m3u)
 (autoload 'jkb-mode "jkb-mode" "" t)
 (add-to-list 'auto-mode-alist '("\\.m3u$" . jkb-mode))
@@ -251,5 +261,5 @@
 (require 'w3m)
 (setq browse-url-browser-function 'w3m-browse-url)
 (autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
- ;; optional keyboard short-cut : should find another one 'cause \C-xm seems to be bound to mail
- ;; (global-set-key "\C-xm" 'browse-url-at-point)
+;; optional keyboard short-cut : should find another one 'cause \C-xm seems to be bound to mail
+;; (global-set-key "\C-xm" 'browse-url-at-point)
