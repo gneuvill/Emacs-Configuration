@@ -1,10 +1,6 @@
 [submodule "dist/elisp/git-emacs"]
 	path = dist/elisp/git-emacs
 	url = https://github.com/tsgates/git-emacs.git
-[submodule "dist/elisp/ensime-git"]
-	path = dist/elisp/ensime-git
-	url = git://github.com/aemoncannon/ensime.git
-        ignore = untracked
 [submodule "dist/elisp/ecb-git"]
 	path = dist/elisp/ecb-git
 	url = https://github.com/emacsmirror/ecb.git
@@ -18,9 +14,6 @@
 [submodule "dist/elisp/grail"]
 	path = dist/elisp/grail
 	url = git://github.com/codermattie/Grail.git
-[submodule "dist/elisp/my-ensime-git"]
-	path = dist/elisp/my-ensime-git
-	url = git@github.com:gneuvill/ensime.git
 [submodule "dist/elisp/scala-mode2"]
 	path = dist/elisp/scala-mode2
 	url = git://github.com/hvesalai/scala-mode2.git
