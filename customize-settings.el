@@ -9,6 +9,7 @@
  '(ansi-color-names-vector
    (vector "#657b83" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#fdf6e3"))
  '(browse-url-browser-function (quote w3m-browse-url))
+ '(column-number-mode t)
  '(current-language-environment "UTF-8")
  '(custom-enabled-themes (quote (sanityinc-solarized-light)))
  '(custom-safe-themes
