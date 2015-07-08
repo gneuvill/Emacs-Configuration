@@ -24,9 +24,9 @@
 [submodule "dist/elisp/scala-mode2"]
 	path = dist/elisp/scala-mode2
 	url = git://github.com/hvesalai/scala-mode2.git
-[submodule "dist/elisp/org-confluence"]
-	path = dist/elisp/org-confluence
-	url = git://github.com/hgschmie/org-confluence.git
 [submodule "dist/elisp/emacs-scalaz-unicode-input-method"]
 	path = dist/elisp/emacs-scalaz-unicode-input-method
 	url = git://github.com/folone/emacs-scalaz-unicode-input-method.git
+[submodule "dist/elisp/org-impress-js"]
+	path = dist/elisp/org-impress-js
+	url = https://github.com/kinjo/org-impress-js.el.git

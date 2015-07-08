@@ -1,9 +1,6 @@
 ;; Set the debug option to enable a backtrace when a
 ;; problem occurs.
-(setq debug-on-error t)
-
-;; save desktop session => disabled : buggy !
-;; (desktop-save-mode t)
+;; (setq debug-on-error t)
 
 ;; stop creating those backup~ files
 (setq make-backup-files nil)
@@ -25,7 +22,6 @@
 (mouse-wheel-mode t)
 
 ;; supprimer le bip ; le remplacer par un clignotement
-;; => emacs ne ferait plus de bip ? En tout cas, sans clignotement, c'est mieux.
 (setq visible-bell t)
 
 ;; toujours y or n
@@ -77,15 +73,18 @@
 ;; alias (ex: mylevain) must NOT equals hostname (ex: levain) (otherwise bug)
 (set-default 'tramp-default-proxies-alist (quote (("mylevain" nil "/sshx:gneuvill@levain:"))))
 (add-to-list 'tramp-default-proxies-alist '("myvmjavatest1" nil "/sshx:gneuvill@vmjavatest1:"))
-(add-to-list 'tramp-default-proxies-alist '("mychene2" nil "/sshx:gneuvill@chene2:"))
 (add-to-list 'tramp-default-proxies-alist '("myvmqual" nil "/sshx:gneuvill@vmqualite:"))
 (add-to-list 'tramp-default-proxies-alist '("myenor" nil "/sshx:gneuvill@enor:"))
-(add-to-list 'tramp-default-proxies-alist '("myvmjava-psnum1" nil "/sshx:gneuvill@vmjava-psnum1:"))
+(add-to-list 'tramp-default-proxies-alist '("mypdevq1" nil "/sshx:gneuvill@vmjava-pdevq1:"))
+(add-to-list 'tramp-default-proxies-alist '("mypsnum1" nil "/sshx:gneuvill@vmjava-psnum1:"))
+(add-to-list 'tramp-default-proxies-alist '("mytopenidm" nil "/sshx:gneuvill@vmjava-topenidm:"))
 
 ;; supplementary packages archives
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")))
+                         ("melpa" . "http://melpa.org/packages/")
+                         ;; ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
+                         ))
 (package-initialize)
 
 ;; global smartparens mode (https://github.com/Fuco1/smartparens)
@@ -103,12 +102,14 @@
 (setq org-src-fontify-natively t)
 ;; syntax highlighting of source code blocks when exporting to latex/pdf
 (setq org-export-latex-listings 'minted)
-(require 'org-latex)
+
+;; org-impress (https://github.com/kinjo/org-impress-js.el)
+;; (add-to-list 'load-path "~/org-impress-js.el")
+(require 'ox-impress-js)
+;; (require 'org-latex)
 ;; (add-to-list 'org-export-latex-packages-alist '("" "minted")) ;; broken ?
-;; org-confluence
-(require 'org-confluence)
 ;; org-asciidoc (https://github.com/yashi/org-asciidoc)
-(require 'ox-asciidoc)
+;; (require 'ox-asciidoc)
 
 ;; Slime-style navigation for Emacs Lisp (https://github.com/purcell/elisp-slime-nav)
 (require 'elisp-slime-nav)
@@ -119,6 +120,9 @@
 
 ;; git-emacs (https://github.com/tsgates/git-emacs)
 ;; (require 'git-emacs) => we use magit now
+
+;; darcs
+(require 'darcsum)
 
 ;; Uniquify (for buffers with identical names
 (require 'uniquify)
@@ -132,13 +136,40 @@
 ;; NickNotify pour ERC
 (require 'erc-nick-notify)
 
-;; BBdB for Gnus
-(require 'bbdb)
-(bbdb-initialize 'gnus 'message)
+;; BBdB pour Gnus => on utilise https://www.gnu.org/software/emacs/manual/html_mono/eudc.html
+;; (require 'bbdb)
+;; (bbdb-initialize 'gnus 'message)
 
-;; org-impress (https://github.com/kinjo/org-impress-js.el)
-(add-to-list 'load-path "~/org-impress-js.el")
-(require 'org-impress-js)
+;; EUDC
+(require 'ldap)
+(require 'eudc)
+
+(setq ldap-ldapsearch-args (quote ("-tt" "-LLL" "-x" "-ZZ")))
+(setq ldap-host-parameters-alist
+      (quote (("ldap.univ-rennes1.fr" base "ou=people,dc=univ-rennes1,dc=fr"))))
+
+(setq eudc-default-return-attributes nil
+      eudc-strict-return-matches nil)
+(setq eudc-inline-query-format '((name)
+                                 (firstname)
+                                 (firstname name)
+                                 (email)))
+(eudc-set-server "ldap.univ-rennes1.fr" 'ldap t)
+(setq eudc-server-hotlist '(("ldap.univ-rennes1.fr" . ldap)))
+(setq eudc-inline-expansion-servers 'hotlist)
+
+(defun my-eudc-expand-inline()
+  (interactive)
+  (move-end-of-line 1)
+  (insert "*")
+  (unless (condition-case nil
+              (eudc-expand-inline)
+            (error nil))
+    (backward-delete-char-untabify 1)))
+
+;; ICalendar pour Gnus
+(require 'gnus-icalendar)
+(gnus-icalendar-setup)
 
 ;; ajout d'extensions pour charger le nxml-mode
 (setq auto-mode-alist
@@ -198,7 +229,7 @@
 (require 'html-script)
 
 ;; http://code.google.com/p/emacs-textmate/ (for brackets, parentheses, etc... insertion)
-(require 'emacs-textmate)
+;; (require 'emacs-textmate)
 
 ;; js-comint : javascript dev with js2-mode + comint + rhino
 (require 'js-comint)
