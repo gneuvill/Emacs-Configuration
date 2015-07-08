@@ -1,22 +1,9 @@
-[submodule "dist/elisp/git-emacs"]
-	path = dist/elisp/git-emacs
-	url = https://github.com/tsgates/git-emacs.git
-[submodule "dist/elisp/ecb-git"]
-	path = dist/elisp/ecb-git
-	url = https://github.com/emacsmirror/ecb.git
-[submodule "dist/elisp/emacs-w3m"]
-	path = dist/elisp/emacs-w3m
-	url = https://github.com/emacsmirror/w3m.git
-        ignore = untracked
 [submodule "schemas/xslt"]
 	path = schemas/xslt
 	url = git://github.com/ndw/xslt-relax-ng.git
 [submodule "dist/elisp/grail"]
 	path = dist/elisp/grail
 	url = git://github.com/codermattie/Grail.git
-[submodule "dist/elisp/scala-mode2"]
-	path = dist/elisp/scala-mode2
-	url = git://github.com/hvesalai/scala-mode2.git
 [submodule "dist/elisp/emacs-scalaz-unicode-input-method"]
 	path = dist/elisp/emacs-scalaz-unicode-input-method
 	url = git://github.com/folone/emacs-scalaz-unicode-input-method.git
