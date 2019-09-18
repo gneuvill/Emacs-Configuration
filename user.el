@@ -33,6 +33,9 @@
 (setq scroll-preserve-screen-position t)       ; Scroll without moving cursor
 (mouse-avoidance-mode 'jump)                   ; Mouse avoids cursor
 
+;; use eww as web browser
+(setq browse-url-browser-function 'eww-browse-url)
+
 ;; eshell
 ;; set environment variables
 (setenv "M2_HOME" "/usr/local/share/maven")
@@ -76,23 +79,60 @@
 (add-to-list 'tramp-default-proxies-alist '("myvmqual" nil "/sshx:gneuvill@vmqualite:"))
 (add-to-list 'tramp-default-proxies-alist '("myenor" nil "/sshx:gneuvill@enor:"))
 (add-to-list 'tramp-default-proxies-alist '("mypdevq1" nil "/sshx:gneuvill@vmjava-pdevq1:"))
+(add-to-list 'tramp-default-proxies-alist '("mytsnum1" nil "/sshx:gneuvill@vmjava-tsnum1:"))
 (add-to-list 'tramp-default-proxies-alist '("mypsnum1" nil "/sshx:gneuvill@vmjava-psnum1:"))
 (add-to-list 'tramp-default-proxies-alist '("mytopenidm" nil "/sshx:gneuvill@vmjava-topenidm:"))
+(add-to-list 'tramp-default-proxies-alist '("mygipapplis1" nil "/sshx:gneuvill@vmjava-gi-papplis1:"))
+(add-to-list 'tramp-default-proxies-alist '("mygipapplis2" nil "/sshx:gneuvill@vmjava-gi-papplis2:"))
+(add-to-list 'tramp-default-proxies-alist '("mytapplis4" nil "/sshx:gneuvill@vmjava-gi-tapplis4:"))
+(add-to-list 'tramp-default-proxies-alist '("mytexas3" nil "/sshx:gneuvill@vmjava-texas3:"))
 
 ;; supplementary packages archives
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ;; ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")
                          ;; ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
                          ))
 (package-initialize)
 
+;; deferred (https://github.com/kiwanami/emacs-deferred) + concurrent
+(require 'deferred)
+(require 'concurrent)
+
+;; emojify
+(add-hook 'after-init-hook #'global-emojify-mode)
+
+;; point-undo
+(require 'point-undo)
+(global-set-key (kbd "C-M-,") 'point-undo)
+(global-set-key (kbd "C-M-;") 'point-redo)
+
+;; ace-link
+(require 'ace-link)
+(ace-link-setup-default)
+(add-hook 'gnus-group-mode-hook
+          (lambda ()
+            (define-key gnus-summary-mode-map (kbd "M-o") 'ace-link-gnus)
+            (define-key gnus-article-mode-map (kbd "M-o") 'ace-link-gnus)))
+
 ;; global smartparens mode (https://github.com/Fuco1/smartparens)
 (smartparens-global-mode t)
 (sp-local-tag '(nxml-mode) "<" "<_>" "</_>")
 
+;; ido + flx-ido
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil)
+
 ;; ido-vertical-mode https://github.com/rson/ido-vertical-mode.el
 (ido-vertical-mode t)
+
+;; projectile
+(projectile-global-mode)
 
 ;; smex https://github.com/nonsequitur/smex
 (smex-initialize)
@@ -101,11 +141,11 @@
 ;; syntax highlighting of source code blocks in .org files
 (setq org-src-fontify-natively t)
 ;; syntax highlighting of source code blocks when exporting to latex/pdf
-(setq org-export-latex-listings 'minted)
+;; (setq org-export-latex-listings 'minted)
 
 ;; org-impress (https://github.com/kinjo/org-impress-js.el)
 ;; (add-to-list 'load-path "~/org-impress-js.el")
-(require 'ox-impress-js)
+;; (require 'ox-impress-js)
 ;; (require 'org-latex)
 ;; (add-to-list 'org-export-latex-packages-alist '("" "minted")) ;; broken ?
 ;; org-asciidoc (https://github.com/yashi/org-asciidoc)
@@ -121,27 +161,11 @@
 ;; nix-mode
 (require 'nix-mode)
 
-;; git-emacs (https://github.com/tsgates/git-emacs)
-;; (require 'git-emacs) => we use magit now
-
 ;; darcs
 (require 'darcsum)
 
 ;; Uniquify (for buffers with identical names
 (require 'uniquify)
-
-;; Bitlbee
-(require 'bitlbee)
-
-;; PSVN (now shipped with emacs ?)
-(require 'psvn)
-
-;; NickNotify pour ERC
-(require 'erc-nick-notify)
-
-;; BBdB pour Gnus => on utilise https://www.gnu.org/software/emacs/manual/html_mono/eudc.html
-;; (require 'bbdb)
-;; (bbdb-initialize 'gnus 'message)
 
 ;; EUDC
 (require 'ldap)
@@ -184,17 +208,42 @@
 (setq auto-mode-alist       
       (cons '("\\.rnc\\'" . rnc-mode) auto-mode-alist))
 
-;;répertoire de snippets supplémentaires à ceux fournis par yasnippet-bundle
-;;(ce dernier installé dans avec ELPA)
-;; (yas/load-directory (concat grail-dist-elisp "my-snippets"))
+;; vdiff-magit
+;; (require 'vdiff-magit)
+;; (define-key magit-mode-map "e" 'vdiff-magit-dwim)
+;; (define-key magit-mode-map "E" 'vdiff-magit-popup)
+;; (setcdr (assoc ?e (plist-get magit-dispatch-popup :actions))
+;;         '("vdiff dwim" 'vdiff-magit-dwim))
+;; (setcdr (assoc ?E (plist-get magit-dispatch-popup :actions))
+;;         '("vdiff popup" 'vdiff-magit-popup))
 
-;; GEBEN (http://code.google.com/p/geben-on-emacs/)
-(autoload 'geben "geben" "Remote Debugger on Emacs" t)
+;; This flag will default to using ediff for merges. vdiff-magit does not yet
+;; support 3-way merges. Please see the docstring of this variable for more
+;; information
+;; (setq vdiff-magit-use-ediff-for-merges nil)
+
+;; Whether vdiff-magit-dwim runs show variants on hunks.  If non-nil,
+;; vdiff-magit-show-staged or vdiff-magit-show-unstaged are called based on what
+;; section the hunk is in.  Otherwise, vdiff-magit-dwim runs vdiff-magit-stage
+;; when point is on an uncommitted hunk.  (setq vdiff-magit-dwim-show-on-hunks
+;; nil)
+
+;; Whether vdiff-magit-show-stash shows the state of the index.
+;; (setq vdiff-magit-show-stash-with-index t)
+
+;; Only use two buffers (working file and index) for vdiff-magit-stage
+;; (setq vdiff-magit-stage-is-2way nil)
+
+;; yasnippet: répertoire de snippets supplémentaires à ceux fournis par yasnippet-bundle
+;;(ce dernier installé dans avec ELPA)
+(require 'yasnippet)
+(yas-global-mode 1)
+(setq yas-snippet-dirs (concat grail-dist-elisp "my-snippets"))
 
 ;; Scala
 ;; (require 'scala-mode-auto)
 ;; Scala Mode 2 => https://github.com/hvesalai/scala-mode2
-(require 'scala-mode2)
+(require 'scala-mode)
 
 ;; Scala : emacs-scalaz-unicode-input-method
 (require 'scalaz-unicode-input-method)
@@ -228,37 +277,19 @@
 (autoload 'ghc-debug "ghc" nil t)
 (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
 
-;;JKB-MODE (édition m3u)
-(autoload 'jkb-mode "jkb-mode" "" t)
-(add-to-list 'auto-mode-alist '("\\.m3u$" . jkb-mode))
+;; js2-mode
+(setq js2-bounce-indent-p t)
+(setq js2-auto-indent-p nil)
 
-;; XQuery
-(require 'xquery-mode)
+;; typescript (http://github.com/ananthakumaran/tide)
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save idle-change new-line mode-enabled))
+  (eldoc-mode +1)
+  (company-mode +1))
 
-;; html-script
-(require 'html-script)
+(add-hook 'typescript-mode-hook 'setup-tide-mode)
 
-;; http://code.google.com/p/emacs-textmate/ (for brackets, parentheses, etc... insertion)
-;; (require 'emacs-textmate)
-
-;; js-comint : javascript dev with js2-mode + comint + rhino
-(require 'js-comint)
-(setq inferior-js-program-command "/usr/bin/js")
-(add-hook 'js2-mode-hook '(lambda () 
-			    (local-set-key "\C-x\C-e" 'js-send-last-sexp)
-			    (local-set-key "\C-\M-x" 'js-send-last-sexp-and-go)
-			    (local-set-key "\C-cb" 'js-send-buffer)
-			    (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
-			    (local-set-key "\C-cl" 'js-load-file-and-go)
-			    ))
-
-;; plantuml
-(setq custom-plantuml-jar-path "/usr/local/share/plantuml.jar")
-(require 'plantuml-mode)
-
-;; w3m (not installed through apt but from sources fetched from github)
-(require 'w3m)
-(setq browse-url-browser-function 'w3m-browse-url)
-(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
-;; optional keyboard short-cut : should find another one 'cause \C-xm seems to be bound to mail
-;; (global-set-key "\C-xm" 'browse-url-at-point)
+(add-hook 'js2-mode-hook 'setup-tide-mode)
